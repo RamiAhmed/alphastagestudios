@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--[if lt IE 9]>
+        <script src="html5shiv.js"></script>
+        <![endif]-->
+        <title>Rock Solid Games</title>
+    </head>
+
+    <nav>
+        <a href="">Home</a>
+        <a href="">Games</a>
+        <a href="">Portfolio</a>
+        <a href="">Contact</a>
+    </nav>
+
+    <body>
+        <header>
+            Best Game Company in the World!
+        </header>
+
+        <section>
+            Rock Solid Games is... <wbr> ... awesome
+        </section>
+
+        <section>
+            Rock Solid Games was founded by <strong>us</strong>
+        </section>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+            <polygon points="100,10, 40,180 190,60 10,60, 160,180"
+                style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;">
+        </svg>
+
+        <canvas id="canvasTest" width="200" height="100" style="border:1px solid #000000;">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+
+        <script>
+            var c = document.getElementById("canvasTest");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(1, 1, 198, 98);
+
+            ctx.moveTo(50, 50);
+            ctx.lineTo(0, 100);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(50, 50, 25, 0, 2*Math.PI);
+            ctx.stroke();
+
+            ctx.font = "30px Arial #000000";
+            ctx.strokeText("My Canvas", 30, 30);
+        </script>
+
+        <video width="640" height="480" controls>
+            <source src="prezi_cam.mp4" type="video/mp4">
+            Your browser does not support HTML5 video tag.
+        </video>
+
+        <time>
+            <wbr>
+            15-06-2013
+        </time>
+    </body>
+
+    <footer>
+        <address>
+            Rami Ahmed Bock etc.
+        </address>
+        Copyright etc.
+    </footer>
+</html>
+
+
