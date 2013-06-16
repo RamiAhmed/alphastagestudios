@@ -2,43 +2,61 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Solid Games</title>
+    <meta charset="utf-8">
+    <title>Rock Solid Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rock Solid Games Official Website">
+    <meta name="author" content="Rock Solid Games">
 
-  <link href="bootstrap.min.css" rel="stylesheet">
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
-  <!--<script src="modernizr.min.js"></script>-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="excanvas.js"></script>
-  <![endif]-->
+    <link rel="shortcut icon" href="res/ico/favicon.png">
 
-  <link rel="shortcut icon" href="res/blockicon.png">
 </head>
 
 <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <header class="navbar-inner">
+            <div class="container">
 
-    <header>
-        <hgroup>
-            <h1>Rock Solid Games</h1>
-            <h2>Making rock solid games is our passion...</h2>
-        </hgroup>
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Development Blog</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+                <a class="brand" href="index.html">Rock Solid Games</a>
 
-    </header>
+                <nav class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Development Blog</a></li>
+                        <li class="active"><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
 
-    <article>
+    <!-- HEADER OF WEBSITE ENDS HERE -->
+
+
+
+    <article class="container">
         <header>
             <time datetime="2013-06-13" pubdate>
                 June 16th, 2013
@@ -47,16 +65,29 @@
             <h1>Medialogy: 6th Semester (Bachelor) Project</h1>
         </header>
 
-        <video width="640" height="480" controls>
-            <source src="res/med6_av.mp4" type="video/mp4">
-            Your browser does not support HTML5 video tag.
-        </video>
+        <section>
+            <video width="640" height="480" controls>
+                <source src="res/med6_av.mp4" type="video/mp4">
+                Your browser does not support HTML5 video tag.
+            </video>
+        </section>
 
     </article>
 
-    <footer>
-        <p>&#169; 2013 <a href="#">Daniel T. Staal &amp Rami A. Bock</a></p>
+
+
+    <!-- FOOTER OF WEBSITE STARTS HERE -->
+
+    <footer class="container">
+        <p>&#169; 2013 <a href="about.html">Daniel T. Staal &amp Rami A. Bock</a></p>
     </footer>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 
