@@ -28,6 +28,9 @@
         time {
             font-style: italic;
         }
+        fb-root {
+            display: none;
+        }
     </style>
 
     <script src="js/handleTabs.js" type="text/javascript">
@@ -49,30 +52,30 @@
 
 <body onload="initTabs()">
 
-    <div id="fb-root">
-        <script>
-        window.fbAsyncInit = function() {
-        // init the FB JS SDK
-        FB.init({
-          appId      : '216701708480524',                        // App ID from the app dashboard
-          channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
-          status     : false,                                 // Check Facebook Login status
-          xfbml      : true                                  // Look for social plugins on the page
-        });
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',                        // App ID from the app dashboard
+      channelUrl : '//www.alphastagestudios.com/channel.html', // Channel file for x-domain comms
+      status     : false,                                 // Check Facebook Login status
+      xfbml      : true                                  // Look for social plugins on the page
+    });
 
-        // Additional initialization code such as adding Event Listeners goes here
-        };
+    // Additional initialization code such as adding Event Listeners goes here
+    };
 
-          // Load the SDK asynchronously
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "//connect.facebook.net/en_US/all.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-        </script>
-    </div>
+      // Load the SDK asynchronously
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
 
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
@@ -102,7 +105,7 @@
     <!-- CONTENT -->
     <section class="tabContent" id="home">
         <section class="container">
-            <h1>Alpha Stage Studios Home</h1>
+            <h1>Alpha Stage Studios</h1>
             <article>
                 <p>Home page of Alpha Stage Studios.</p>
                 <p>This site is currently under construction.</p>
@@ -171,8 +174,8 @@
 
     <footer id="footer">
         <p><a href="#top">Back to top</a></p>
+        <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
         <div class="links">
-            <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
             <a href="#about">About Us</a>
         </div>
         <p>&#169; Alpha Stage Studios 2013 </p>
