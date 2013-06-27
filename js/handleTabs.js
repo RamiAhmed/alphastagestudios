@@ -1,5 +1,6 @@
 
 var tabLinks = new Array();
+var pageLinks = new Array();
 var contentSections = new Array();
 
 function initTabs() {
@@ -10,6 +11,15 @@ function initTabs() {
             var id = getHash(tabLink.getAttribute('href'));
             tabLinks[id] = tabLink;
             contentSections[id] = document.getElementById(id);
+        }
+    }
+
+    var pageLinkItems = document.getElementsByClassName('tablink');
+    for (var j = 0; j < pageLinkItems.length; j++) {
+        if (pageLinkItems[j].nodeName == "A") {
+            var pageLink = pageLinkItems[j];
+            var id = getHash(pageLink.getAttribute('href'));
+            pageLinks[id] = pageLink;
         }
     }
 
@@ -25,6 +35,13 @@ function initTabs() {
         }
 
         i++;
+    }
+
+    for (var id in pageLinks) {
+        pageLinks[id].onclick = showTab;
+        pageLinks[id].onfocus = function() {
+            this.blur();
+        };
     }
 
     var i = 0;
@@ -60,13 +77,13 @@ function showTab() {
 }
 
 function getFirstChildWithTagName(element, tagName) {
-  for (var i = 0; i < element.childNodes.length; i++) {
-    if (element.childNodes[i].nodeName == tagName)
-        return element.childNodes[i];
-  }
+    for (var i = 0; i < element.childNodes.length; i++) {
+        if (element.childNodes[i].nodeName == tagName)
+            return element.childNodes[i];
+    }
 }
 
 function getHash(url) {
-  var hashPos = url.lastIndexOf('#');
-  return url.substring(hashPos + 1);
+    var hashPos = url.lastIndexOf('#');
+    return url.substring(hashPos + 1);
 }
