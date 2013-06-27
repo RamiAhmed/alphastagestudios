@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,9 @@
     <meta name="author" content="Alpha Stage Studios">
     <meta http-equiv="Content-Language" content="en"/>
 
-    <link rel="shortcut icon" href="res/ico/favicon.png">
+    <link rel="shortcut icon" href="res/ico/favicon.png"/>
+
+    <link rel="canonical" href="http://www.alphastagestudios.com"/>
 
     <!-- Le styles -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -44,6 +46,8 @@
         ga('create', 'UA-42053022-1', 'alphastagestudios.com');
         ga('send', 'pageview');
     </script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -167,12 +171,24 @@
         </section>
     </section>
 
-    <fb:like href="http://www.alphastagestudios.com" send="true" width="450" show_faces="true"></fb:like>
-
     <footer class="container" id="footer">
         <p><a href="#top">Back to top</a></p>
 
-        <a href="#about" onclick="showTab(); return false;">About Us</a>
+        <div class="fb-like" data-href="http://www.alphastagestudios.com" data-send="true" data-width="450" data-show-faces="true"></div>
+
+        <div class="g-plusone" data-size="tall"></div>
+
+        <a href="https://twitter.com/alphastagestd" class="twitter-follow-button" data-show-count="false">Follow @alphastagestd</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+        <p>
+        <iframe src="http://www.youtube.com/subscribe_widget?p=AlphaStageStudios"
+       style="overflow: hidden; height: 105px; width: 300px; border: 0;"
+       scrolling="no" frameBorder="0">
+        </iframe>
+        </p>
+
+        <p><a href="#about" onclick="showTab(); return false;">About Us</a></p>
 
         <p>&#169; Alpha Stage Studios 2013 </p>
     </footer>
