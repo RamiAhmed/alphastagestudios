@@ -21,6 +21,7 @@
         body {
             padding-top: 60px;
             padding-bottom: 10px;
+            padding-left: 10px;
         }
         footer {
             padding-top: 100px;
@@ -57,25 +58,22 @@
     window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
-      appId      : '',                        // App ID from the app dashboard
+      appId      : '216701708480524',                        // App ID from the app dashboard
       channelUrl : '//www.alphastagestudios.com/channel.html', // Channel file for x-domain comms
       status     : false,                                 // Check Facebook Login status
       xfbml      : true                                  // Look for social plugins on the page
     });
-
     // Additional initialization code such as adding Event Listeners goes here
     };
 
-      // Load the SDK asynchronously
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/all.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=216701708480524";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
     </script>
-
 
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
@@ -87,7 +85,7 @@
                     <span class="icon-bar"></span>
                 </a>
 
-                <a class="brand" href="#home">Alpha Stage Studios</a>
+                <a class="brand" href="#home" onclick="showTab(); return false;">Alpha Stage Studios</a>
 
                 <nav class="nav-collapse collapse">
                     <ul class="nav" id="tabs">
@@ -175,11 +173,10 @@
     <footer class="container" id="footer">
         <p><a href="#top">Back to top</a></p>
 
-        <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+        <div class="fb-like" data-href="http://www.alphastagestudios.com" data-send="false" data-width="450" data-show-faces="false"></div>
 
-        <div class="links" onclick="showTab();">
-            <a href="#about">About Us</a>
-        </div>
+        <a href="#about" onclick="showTab(); return false;">About Us</a>
+
         <p>&#169; Alpha Stage Studios 2013 </p>
     </footer>
 

@@ -38,20 +38,25 @@ function initTabs() {
 }
 
 function showTab() {
-    var selectedId = getHash(this.getAttribute('href'));
+    if (this.nodeName == "A") {
+        var selectedId = getHash(this.getAttribute('href'));
 
-    for (var id in contentSections) {
-        if (id == selectedId) {
-            tabLinks[id].parentNode.className = 'active';
-            contentSections[id].className = 'tabContent';
+        for (var id in contentSections) {
+            if (id == selectedId) {
+                tabLinks[id].parentNode.className = 'active';
+                contentSections[id].className = 'tabContent';
+            }
+            else {
+                tabLinks[id].parentNode.className = '';
+                contentSections[id].className = 'tabContent hide';
+            }
         }
-        else {
-            tabLinks[id].parentNode.className = '';
-            contentSections[id].className = 'tabContent hide';
-        }
+
+        return false;
     }
-
-    return false;
+    else {
+        return true;
+    }
 }
 
 function getFirstChildWithTagName(element, tagName) {
