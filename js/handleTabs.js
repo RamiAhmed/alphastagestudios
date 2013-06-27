@@ -21,7 +21,7 @@ function initTabs() {
         };
 
         if (i == 0) {
-            tabLinks[id].className = 'active';
+            tabLinks[id].parentNode.className = 'active';
         }
 
         i++;
@@ -42,11 +42,11 @@ function showTab() {
 
     for (var id in contentSections) {
         if (id == selectedId) {
-            tabLinks[id].className = 'active';
+            tabLinks[id].parentNode.className = 'active';
             contentSections[id].className = 'tabContent';
         }
         else {
-            tabLinks[id].className = '';
+            tabLinks[id].parentNode.className = '';
             contentSections[id].className = 'tabContent hide';
         }
     }

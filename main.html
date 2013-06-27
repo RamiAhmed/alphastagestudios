@@ -48,15 +48,41 @@
 </head>
 
 <body onload="initTabs()">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <header class="navbar-inner">
-            <div class="container">
 
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <div id="fb-root">
+        <script>
+        window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+          appId      : '216701708480524',                        // App ID from the app dashboard
+          channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
+          status     : false,                                 // Check Facebook Login status
+          xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+        };
+
+          // Load the SDK asynchronously
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/all.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+    </div>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container" style="width: auto; padding-left:15px;">
+
+                <a type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
+                </a>
 
                 <a class="brand" href="#home">Alpha Stage Studios</a>
 
@@ -66,10 +92,11 @@
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#blog">Blog</a></li>
+                        <li><a href="#games">Games</a></li>
                     </ul>
                 </nav>
             </div>
-        </header>
+        </div>
     </div>
 
     <!-- CONTENT -->
@@ -128,10 +155,26 @@
         </section>
     </section>
 
+    <section class="tabContent" id="games">
+        <section class="container">
+            <h1>Games</h1>
+            <article>
+                <h2>Right to Rule</h2>
+                <p>Right to Rule will (probably) be the first Alpha Stage Studios game.</p>
+                <p>More coming soon!</p>
+            </article>
+        </section>
+    </section>
 
 
 
-    <footer class="container">
+
+    <footer id="footer">
+        <p><a href="#top">Back to top</a></p>
+        <div class="links">
+            <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+            <a href="#about">About Us</a>
+        </div>
         <p>&#169; Alpha Stage Studios 2013 </p>
     </footer>
 
