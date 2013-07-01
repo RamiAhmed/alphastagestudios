@@ -14,7 +14,7 @@ $(mapPage).live('pagebeforeshow', function() {
 
 function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    navigator.notification.alert("Found user position");
+    //navigator.notification.alert("Found user position");
 }
 
 function onError(error) {
@@ -28,7 +28,6 @@ $(mapPage).live("pageinit", function() {
 });
 
 function initializeMaps() {
-    navigator.notification.alert("initializeMaps");
     directionsDisplay = new google.maps.DirectionsRenderer();
     directionsService = new google.maps.DirectionsService();
 
@@ -58,12 +57,12 @@ function initializeMaps() {
 }
 
 function calculateRoute() {
-    navigator.notification.alert("calculateRoute");
+    //navigator.notification.alert("calculateRoute");
     var request = {
         origin: userPosition,
         destination: officeLocation,
         travelMode: google.maps.DirectionsTravelMode["DRIVING"]
-    }
+    };
 
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
@@ -71,7 +70,7 @@ function calculateRoute() {
             directionsDisplay.setDirections(response);
 
             $("#mapresults").show();
-            navigator.notification.alert("Show directions");
+            //navigator.notification.alert("Show directions");
         }
         else {
             navigator.notification.alert("Got status NOT OK from google");
@@ -93,6 +92,6 @@ function reloadGoogleMap() {
         google.maps.event.trigger(map, "resize");
         map.setCenter(currCenter);
         map.setZoom(12);
-        navigator.notification.alert("reloaded map");
+        //navigator.notification.alert("reloaded map");
     }
 }
