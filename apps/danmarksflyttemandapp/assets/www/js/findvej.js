@@ -36,18 +36,18 @@ function initializeMaps() {
     var myOptions = {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: officeLocation
-    }
+    };
 
     map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
     directionsDisplay.setMap(map);
 
-    var userPosMarker = new google.maps.Marker({
-        position: userPosition,
-        map: map,
-        title: "Din Placering"
-    });
-
     if (userPosition != '') {
+        var userPosMarker = new google.maps.Marker({
+            position: userPosition,
+            map: map,
+            title: "Din Placering"
+        });
+
         calculateRoute();
     }
     else {
