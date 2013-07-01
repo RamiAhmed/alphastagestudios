@@ -46,7 +46,6 @@ function initializeMaps() {
     }
     else {
         navigator.notification.alert("userPosition is null");
-        $("mapresults").hide();
     }
 }
 
@@ -64,11 +63,9 @@ function calculateRoute() {
             directionsDisplay.setDirections(response);
 
             //navigator.notification.alert("Show directions");
-            $("#mapresults").show();
         }
         else {
             navigator.notification.alert("Got status NOT OK from google");
-            $("#mapresults").hide();
         }
     });
 }
