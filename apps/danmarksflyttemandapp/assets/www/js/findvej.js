@@ -70,7 +70,7 @@ function calculateRoute() {
             directionsDisplay.setDirections(response);
 
             $("#mapresults").show();
-            //navigator.notification.alert("Show directions");
+            navigator.notification.alert("Show directions");
         }
         else {
             navigator.notification.alert("Got status NOT OK from google");
