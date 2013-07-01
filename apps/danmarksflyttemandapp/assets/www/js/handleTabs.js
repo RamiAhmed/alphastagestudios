@@ -162,19 +162,6 @@ function showInnerTab() {
     return true;
 }
 
-function reloadGoogleMap() {
-    if (map === null || map === undefined) {
-        navigator.notification.alert("map is %s", map);
-    }
-    else {
-        var currCenter = map.getCenter();
-        google.maps.event.trigger(map, "resize");
-        map.setCenter(currCenter);
-        map.setZoom(12);
-        navigator.notification.alert("reloaded map");
-    }
-}
-
 function getFirstChildWithTagName(element, tagName) {
     for (var i = 0; i < element.childNodes.length; i++) {
         if (element.childNodes[i].nodeName == tagName)
