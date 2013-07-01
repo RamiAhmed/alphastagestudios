@@ -10,8 +10,9 @@ $(document).on('pageinit', function() {
 }
 
 function onDeviceReady() {
+    navigator.notification.alert("device is ready");
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
-});
+}
 
 function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
