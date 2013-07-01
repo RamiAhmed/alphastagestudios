@@ -5,7 +5,7 @@ var map,
     directionsService,
     mapPage = '#kontakt';
 
-$(document).on('pageinit', function() {
+$(mapPage).live('pagecreate', function() {
     document.addEventListener("deviceready", onDeviceReady, false);
 }
 
