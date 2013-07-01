@@ -10,7 +10,6 @@ $(mapPage).live('pagecreate', function() {
 });
 
 function onDeviceReady() {
-    navigator.notification.alert("device is ready");
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
 }
 
@@ -26,12 +25,7 @@ function onError(error) {
     navigator.notification.alert("code: " + error.code);
     navigator.notification.alert("message: " + error.message);
 }
-/*
-$(mapPage).live("pageinit", function() {
-    $('#map_canvas').css({'height': $(window).height()/2, 'width': '99%'});
-    initializeMaps();
-});
-*/
+
 function initializeMaps() {
     directionsDisplay = new google.maps.DirectionsRenderer();
     directionsService = new google.maps.DirectionsService();
@@ -74,7 +68,7 @@ function calculateRoute() {
             directionsDisplay.setPanel(document.getElementById("map_panel"));
             directionsDisplay.setDirections(response);
 
-            navigator.notification.alert("Show directions");
+            //navigator.notification.alert("Show directions");
             $("#mapresults").show();
         }
         else {
@@ -90,7 +84,7 @@ $(mapPage).live("pageshow", function() {
 
 function reloadGoogleMap() {
     if (map === null || map === undefined) {
-        navigator.notification.alert("map is ", map);
+        navigator.notification.alert("map is %s", map);
     }
     else {
         var currCenter = map.getCenter();
