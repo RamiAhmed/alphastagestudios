@@ -51,18 +51,19 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/flexform.css">
 
-        <script src="js/findvej.js" type="text/javascript"></script>
-        <script src="js/handleTabs.js" type="text/javascript"></script>
-        <script src="js/flex-default.js" type="text/javascript"></script>
     </head>
 
-    <body>
+    <body onload="onLoad()">
 
         <script type="text/javascript">
-            $(document).ready(function() {
+            /*$(document).ready(function() {
                 navigator.notification.alert("document ready");
                 document.addEventListener("deviceready", initApp, false);
-            });
+            });*/
+            function onLoad() {
+                navigator.notification.alert("document ready");
+                document.addEventListener("deviceready", initApp, false);
+            }
 
             function initApp() {
                 initTabs();
@@ -331,6 +332,9 @@
         </section>
 
         <!-- Javascripts Loaded at bottom for optimization -->
+        <script src="js/findvej.js" type="text/javascript"></script>
+        <script src="js/handleTabs.js" type="text/javascript"></script>
+        <script src="js/flex-default.js" type="text/javascript"></script>
         <script src="js/flexform.js" type="text/javascript"></script>
     </body>
 
