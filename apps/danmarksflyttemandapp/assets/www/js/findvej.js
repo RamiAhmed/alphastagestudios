@@ -57,7 +57,7 @@ function initializeMaps() {
 }
 
 function calculateRoute() {
-    //navigator.notification.alert("calculateRoute");
+    navigator.notification.alert("calculateRoute");
     var request = {
         origin: userPosition,
         destination: officeLocation,
