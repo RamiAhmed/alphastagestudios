@@ -62,13 +62,8 @@
         <script type="text/javascript" src="js/flex-default.js"></script>
 
         <script type="text/javascript" charset="utf-8">
-            $(document).ready(function() {
-                //navigator.notification.alert("document ready");
-                document.addEventListener("deviceready", initApp, false);
-            });
-
             //navigator.notification.alert("listen for deviceready");
-            //document.addEventListener("deviceready", onDeviceReady, false);
+            document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady() {
                 //navigator.notification.alert("device ready");
