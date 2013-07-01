@@ -2,7 +2,7 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.alphastagestudios.danmarksflyttemandapp"
-        versionCode = "10"
+        versionCode = "2"
         version     = "2.0.0">
 
     <name>Danmarks Flyttemand App</name>
@@ -15,21 +15,28 @@
         Rami Ahmed Bock and Daniel Thormod Staal
     </author>
 
-    <preference name="permissions" value="none"/>
     <preference name="fullscreen" value="true" />
     <preference name="exit-on-suspend" value="true" />
+    <preference name="disable-cursor" value="true" />
+
+    <preference name="android-minSdkVersion" value="10" />
+    <preference name="android-maxSdkVersion" value="17" />
 
     <icon src="img/logo_small.png" />
 
-    <access origin="https://*.danmarksflyttemand.dk" />
-    <access origin="http://*.danmarksflyttemand.dk" />
-    <access origin="http://*.google.com" />
-    <access origin="https://*.google.com" />
-    <access origin="http://*.googleapis.com" />
-    <access origin="https://*.googleapis.com" />
-    <access origin="http://*.jquery.com" />
-    <access origin="https://*.jquery.com" />
-    <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
+    <access origin="*" />
+
+<!--
+    <access origin="https://*.danmarksflyttemand.dk*" />
+    <access origin="http://*.danmarksflyttemand.dk*" />
+    <access origin="http://*.google.com*" />
+    <access origin="https://*.google.com*" />
+    <access origin="http://*.googleapis.com*" />
+    <access origin="https://*.googleapis.com*" />
+    <access origin="http://*.jquery.com*" />
+    <access origin="https://*.jquery.com*" />
+    <access origin="http://127.0.0.1*"/>
+-->
 
     <feature name="http://api.phonegap.com/1.0/device"/>
     <!-- <feature name="http://api.phonegap.com/1.0/battery"/> -->

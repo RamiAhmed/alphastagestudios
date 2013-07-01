@@ -17,7 +17,7 @@ function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     //navigator.notification.alert("Found user position");
 
-    $('#map_canvas').css({'height': $(window).height()/2, 'width': '99%'});
+    $('#map-canvas').css({'height': $(window).height()/2, 'width': '99%'});
     initializeMaps();
 }
 
@@ -37,7 +37,7 @@ function initializeMaps() {
         center: officeLocation
     };
 
-    map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+    map = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
     directionsDisplay.setMap(map);
 
     if (userPosition != '') {
@@ -65,7 +65,7 @@ function calculateRoute() {
 
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setPanel(document.getElementById("map_panel"));
+            directionsDisplay.setPanel(document.getElementById('map-panel'));
             directionsDisplay.setDirections(response);
 
             //navigator.notification.alert("Show directions");
