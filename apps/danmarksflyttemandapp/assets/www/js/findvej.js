@@ -1,8 +1,8 @@
-var userPosition = null,
+var map,
+    userPosition,
+    officeLocation,
     directionsDisplay,
     directionsService,
-    map,
-    officeLocation = new google.maps.LatLng(55.689403, 12.521281),
     mapPage = '#kontakt';
 
 //document.addEventListener("deviceready", onDeviceReady, false);
@@ -27,15 +27,17 @@ $(mapPage).live("pageinit", function() {
 });
 
 function initializeMaps() {
-    directionsService = new google.maps.DirectionsService();
     directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsService = new google.maps.DirectionsService();
+
+    officeLocation = new google.maps.LatLng(55.689403, 12.521281);
 
     var myOptions = {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: officeLocation
     }
 
-    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
     directionsDisplay.setMap(map);
 
     var userPosMarker = new google.maps.Marker({
@@ -56,7 +58,7 @@ function calculateRoute() {
     var request = {
         origin: userPosition,
         destination: officeLocation,
-        travelMode: google.maps.DirectionsTravelMode.DRIVING
+        travelMode: google.maps.DirectionsTravelMode["DRIVING"]
     }
 
     directionsService.route(request, function(response, status) {
