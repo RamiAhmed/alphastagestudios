@@ -27,6 +27,8 @@
     <access origin="https://*.google.com" />
     <access origin="http://*.googleapis.com" />
     <access origin="https://*.googleapis.com" />
+    <access origin="http://*.jquery.com" />
+    <access origin="https://*.jquery.com" />
     <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
 
     <feature name="http://api.phonegap.com/1.0/device"/>
@@ -37,6 +39,6 @@
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <!-- <feature name="http://api.phonegap.com/1.0/media"/> -->
     <!-- <feature name="http://api.phonegap.com/1.0/network"/> -->
-    <!-- <feature name="http://api.phonegap.com/1.0/notification"/> -->
+    <feature name="http://api.phonegap.com/1.0/notification"/>
 
 </widget>
