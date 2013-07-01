@@ -17,8 +17,8 @@ function onSuccess(position) {
 }
 
 function onError(error) {
-    console.log("code: " + error.code);
-    console.log("message: " + error.message);
+    navigator.notification.alert("code: " + error.code);
+    navigator.notification.alert("message: " + error.message);
 }
 
 $(mapPage).live("pageinit", function() {
@@ -80,13 +80,13 @@ $(mapPage).live("pageshow", function() {
 
 function reloadGoogleMap() {
     if (map === null || map === undefined) {
-        console.log("map is ", map);
+        navigator.notification.alert("map is ", map);
     }
     else {
         var currCenter = map.getCenter();
         google.maps.event.trigger(map, "resize");
         map.setCenter(currCenter);
         map.setZoom(12);
-        console.log("reloaded map");
+        navigator.notification.alert("reloaded map");
     }
 }
