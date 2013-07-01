@@ -4,15 +4,21 @@ var map,
     directionsDisplay,
     directionsService;
 
-function initMaps() {
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
+google.maps.event.addDomListener(window, 'load', setup);
+
+function setup() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
+    }
 }
 
 function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    //navigator.notification.alert("Found user position");
+    navigator.notification.alert("Found user position");
 
-    $('#map-canvas').css({'height': $(window).height()/2, 'width': '99%'});
+    $('#map-canvas').css({'height': $(window).height(), 'width': '99%'});
     initializeMaps();
 }
 
