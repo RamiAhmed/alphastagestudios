@@ -46,6 +46,12 @@
             function loadPrisliste() {
                 $('#kasseprisliste').load('html/prisliste.html');
             }
+
+            function loadAllExternalHTML() {
+              loadTilbudform();
+              loadKontaktform();
+              loadPrisliste();
+            }
         </script>
 
         <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -69,6 +75,7 @@
                 initTabs();
                 RunOnLoad();
                 initMaps();
+                loadAllExternalHTML();
             }
         </script>
 
@@ -155,11 +162,7 @@
                 <p> Bobleplast: 150,- kr. inkl moms. pr. rulle. <br />
                   Silkepapir: 100,- kr. inkl moms. pr. rulle.</p>
 
-                <div id="kasseprisliste">
-                    <script type="text/javascript">
-                        loadTilbudform();
-                    </script>
-                </div>
+                <div id="kasseprisliste"></div>
             </article>
 
             <article class="innerTabContent" id="rydning">
@@ -201,11 +204,7 @@
         <!-- BOOK EN FLYTNING -->
         <section class="tabContent" id="book">
             <article style="background-color:#bbbbbb;">
-                <div id="indhenttilbud">
-                    <script type="text/javascript">
-                        loadTilbudform();
-                    </script>
-                </div>
+                <div id="indhenttilbud"></div>
             </article>
         </section>
 
@@ -259,11 +258,7 @@
 
                     <hr />
 
-                <div id="kontaktform">
-                    <script type="text/javascript">
-                        loadKontaktform();
-                    </script>
-                </div>
+                <div id="kontaktform"></div>
         </section>
 
 
