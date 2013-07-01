@@ -5,15 +5,9 @@ var map,
     directionsService,
     mapPage = '#kontakt';
 
-//$(mapPage).live('pagecreate', function() {
 $(document).bind('PG_pageinit', function() {
-    //document.addEventListener("deviceready", onDeviceReady, false);
-    onDeviceReady();
-});
-
-function onDeviceReady() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
-}
+});
 
 function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
