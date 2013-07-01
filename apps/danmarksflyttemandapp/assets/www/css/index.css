@@ -227,6 +227,12 @@ table.fronttable {
     position: relative;
     width: 100%;
 }
+table.fronttable tr {
+    width: 100%;
+}
+table.fronttable tr td {
+    width: 45%;
+}
 
 a.tablink {
     color: #ffffff;
