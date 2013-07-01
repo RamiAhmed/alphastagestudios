@@ -19,8 +19,8 @@ function onSuccess(position) {
 }
 
 function onError(error) {
-    navigator.notification.alert("code: " + error.code);
-    navigator.notification.alert("message: " + error.message);
+    navigator.notification.alert("code: " + error.code + ",\n" +
+                                 "message: " + error.message);
 }
 
 function initializeMaps() {
@@ -74,10 +74,6 @@ function calculateRoute() {
         }
     });
 }
-
-$(mapPage).live("pageshow", function() {
-    reloadGoogleMap();
-});
 
 function reloadGoogleMap() {
     if (map === null || map === undefined) {

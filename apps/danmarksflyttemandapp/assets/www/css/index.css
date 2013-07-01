@@ -149,10 +149,12 @@ body {
 
 section.tabContent {
     display: block;
-    padding: 5px 1px 5px 1px;
+    padding-top: 15px;
+    padding-bottom: 5px;
     width: 100%;
     text-align: left;
     float: left;
+    overflow: scroll;
 }
 section.tabContent.hide {
    display: none;
@@ -168,7 +170,7 @@ nav.hide {
 
 ul.MenuBarHorizontal {
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     -webkit-padding-start: 10px;
 }
 ul.MenuBarHorizontal li {
