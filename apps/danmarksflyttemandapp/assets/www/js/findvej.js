@@ -5,8 +5,10 @@ var map,
     directionsService,
     mapPage = '#kontakt';
 
-$(mapPage).live('pagecreate', function() {
-    document.addEventListener("deviceready", onDeviceReady, false);
+//$(mapPage).live('pagecreate', function() {
+$(document).bind('PG_pageinit', function() {
+    //document.addEventListener("deviceready", onDeviceReady, false);
+    onDeviceReady();
 });
 
 function onDeviceReady() {

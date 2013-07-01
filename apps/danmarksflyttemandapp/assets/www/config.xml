@@ -19,9 +19,6 @@
     <preference name="exit-on-suspend" value="true" />
     <preference name="disable-cursor" value="true" />
 
-    <preference name="android-minSdkVersion" value="10" />
-    <preference name="android-maxSdkVersion" value="17" />
-
     <icon src="img/logo_small.png" />
 
     <access origin="*" />

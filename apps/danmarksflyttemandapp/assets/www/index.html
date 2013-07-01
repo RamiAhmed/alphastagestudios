@@ -28,7 +28,7 @@
 
         <title>Danmarks Flyttemand App</title>
 
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
         <script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
         <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
 
@@ -40,6 +40,20 @@
 
                 $.mobile.allowCrossDomainPages = true;
                 $.support.cors = true;
+
+                var jqmReady = $.Deferred(),
+                    pgReady = $.Deferred();
+
+                // jqm page is ready
+                $(document).bind("pageinit", jqmReady.resolve);
+
+                // phonegap ready
+                document.addEventListener("deviceready", pgReady.resolve, false);
+
+                // all ready, throw a custom 'PG_pageinit' event
+                $.when(jqmReady, pgReady).then(function () {
+                  $(document).trigger('PG_pageinit');
+                });
             });
         </script>
     </head>
