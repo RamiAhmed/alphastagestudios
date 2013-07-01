@@ -11,10 +11,3 @@ document.addEventListener("deviceready", pgReady.resolve, false);
 $.when(jqmReady, pgReady).then(function () {
   $(document).trigger('PG_pageinit');
 });
-
-$(document).bind("PG_pageinit", function() {
-    // Make your jQuery Mobile framework configuration changes here!
-
-    $.mobile.allowCrossDomainPages = true;
-    $.support.cors = true;
-});
