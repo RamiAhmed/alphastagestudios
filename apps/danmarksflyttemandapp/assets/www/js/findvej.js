@@ -2,13 +2,11 @@ var map,
     userPosition,
     officeLocation,
     directionsDisplay,
-    directionsService,
-    mapPage = '#kontakt';
+    directionsService;
 
-//$(document).bind('PG_pageinit', function() {
 function initMaps() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
-});
+}
 
 function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
