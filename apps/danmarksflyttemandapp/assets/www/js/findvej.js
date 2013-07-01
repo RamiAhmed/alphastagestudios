@@ -22,17 +22,15 @@ function onError(error) {
 }
 
 $(mapPage).live("pageinit", function() {
-    $('#map_canvas').css({'height': $(window).height(), 'width': '99%'});
+    $('#map_canvas').css({'height': $(window).height()/2, 'width': '99%'});
     initializeMaps();
 });
 
-function
-initializeMaps() {
+function initializeMaps() {
     directionsService = new google.maps.DirectionsService();
     directionsDisplay = new google.maps.DirectionsRenderer();
 
     var myOptions = {
-        zoom:12,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: officeLocation
     }
@@ -75,6 +73,18 @@ function calculateRoute() {
 }
 
 $(mapPage).live("pageshow", function() {
-    $('#map_canvas').gmap('refresh');
-    $('#map_canvas').gmap({'center': officeLocation});
+    reloadGoogleMap();
 });
+
+function reloadGoogleMap() {
+    if (map === null || map === undefined) {
+        console.log("map is ", map);
+    }
+    else {
+        var currCenter = map.getCenter();
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(currCenter);
+        map.setZoom(12);
+        console.log("reloaded map");
+    }
+}
