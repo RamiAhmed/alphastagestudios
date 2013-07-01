@@ -7,7 +7,7 @@ var map,
 
 $(mapPage).live('pagecreate', function() {
     document.addEventListener("deviceready", onDeviceReady, false);
-}
+});
 
 function onDeviceReady() {
     navigator.notification.alert("device is ready");
