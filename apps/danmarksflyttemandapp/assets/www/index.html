@@ -57,13 +57,15 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
+                navigator.notification.alert("document ready");
                 document.addEventListener("deviceready", initApp, false);
             });
 
             function initApp() {
                 initTabs();
+                RunOnLoad();
                 initMaps();
-                navigator.notification.alert('all loaded');
+                navigator.notification.alert("device ready");
             }
         </script>
 
