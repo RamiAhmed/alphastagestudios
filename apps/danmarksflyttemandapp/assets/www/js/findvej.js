@@ -4,13 +4,12 @@ var userPosition = null,
     map,
     officeLocation = new google.maps.LatLng(55.689403, 12.521281);;
 
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
+//function onDeviceReady() {
+$(document).live("pagebeforeshow", "#kontakt", function() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
-
-
-}
+});
 
 function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -54,7 +53,6 @@ function initializeMaps() {
 }
 
 function calculateRoute() {
-
     var request = {
         origin: userPosition,
         destination: officeLocation,
@@ -63,8 +61,8 @@ function calculateRoute() {
 
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
             directionsDisplay.setPanel(document.getElementById("map_panel"));
+            directionsDisplay.setDirections(response);
 
             $("#mapresults").show();
         }
