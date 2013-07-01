@@ -2,12 +2,13 @@ var userPosition = null,
     directionsDisplay,
     directionsService,
     map,
-    officeLocation = new google.maps.LatLng(55.689403, 12.521281);;
+    officeLocation = new google.maps.LatLng(55.689403, 12.521281),
+    mapPage = '#kontakt';
 
 //document.addEventListener("deviceready", onDeviceReady, false);
 
 //function onDeviceReady() {
-$(document).live("pagebeforeshow", "#kontakt", function() {
+$(mapPage).live('pagebeforeshow', function() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
 });
 
@@ -20,12 +21,13 @@ function onError(error) {
     console.log("message: " + error.message);
 }
 
-$(document).on("pageinit", "#kontakt", function() {
+$(mapPage).live("pageinit", function() {
     $('#map_canvas').css({'height': $(window).height(), 'width': '99%'});
     initializeMaps();
 });
 
-function initializeMaps() {
+function
+initializeMaps() {
     directionsService = new google.maps.DirectionsService();
     directionsDisplay = new google.maps.DirectionsRenderer();
 
@@ -71,3 +73,8 @@ function calculateRoute() {
         }
     });
 }
+
+$(mapPage).live("pageshow", function() {
+    $('#map_canvas').gmap('refresh');
+    $('#map_canvas').gmap({'center': officeLocation});
+});
