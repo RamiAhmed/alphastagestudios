@@ -7,7 +7,7 @@ var innerTabs = new Array();
 var innerContentSections = new Array();
 
 function initTabs() {
-    console.log("initTabs");
+    navigator.notification.alert("initTabs");
     var tabListItems = document.getElementById('tabs').childNodes;
     for (var i = 0; i < tabListItems.length; i++) {
         if (tabListItems[i].nodeName == "LI") {
@@ -164,14 +164,14 @@ function showInnerTab() {
 
 function reloadGoogleMap() {
     if (map === null || map === undefined) {
-        console.log("map is %s", map);
+        navigator.notification.alert("map is %s", map);
     }
     else {
         var currCenter = map.getCenter();
         google.maps.event.trigger(map, "resize");
         map.setCenter(currCenter);
         map.setZoom(12);
-        console.log("reloaded map");
+        navigator.notification.alert("reloaded map");
     }
 }
 

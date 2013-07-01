@@ -34,7 +34,7 @@
         <!-- Add Google Maps API -->
         <script src="http://maps.google.com/maps/api/js?v=3&sensor=true&language=da" type="text/javascript"></script>
 
-        <script type="text/javascript">
+        <script type="text/javascript" charset="utf-8">
             function loadTilbudform() {
                 $('#indhenttilbud').load('html/tilbudform.html');
             }
@@ -55,15 +55,13 @@
         <script type="text/javascript" src="js/handleTabs.js"></script>
         <script type="text/javascript" src="js/flex-default.js"></script>
 
-        <script type="text/javascript">
+        <script type="text/javascript" charset="utf-8">
             /*$(document).ready(function() {
                 navigator.notification.alert("document ready");
                 document.addEventListener("deviceready", initApp, false);
             });*/
-            function onLoad() {
-                navigator.notification.alert("document ready");
-                document.addEventListener("deviceready", onDeviceReady, false);
-            }
+
+            document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady() {
                 navigator.notification.alert("device ready");
@@ -75,7 +73,7 @@
 
     </head>
 
-    <body onload="onLoad()">
+    <body>
 
         <!-- NAVIGATION BAR -->
         <section>
