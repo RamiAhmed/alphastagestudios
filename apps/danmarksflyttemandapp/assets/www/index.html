@@ -26,40 +26,27 @@
 
         <!-- <script type="text/javascript" src="cordova.js"></script> -->
 
-        <script type="text/javascript">
-            document.addEventListener("deviceready", onDeviceReady, false);
+        <title>Danmarks Flyttemand App</title>
 
-            // PhoneGap is ready
-            //
-            function onDeviceReady() {
-                navigator.geolocation.getCurrentPosition(onSuccess, onError);
-            }
-
-            // onSuccess Geolocation
-            //
-            function onSuccess(position) {
-                var element = document.getElementById('geolocation');
-                element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                                    'Longitude: '          + position.coords.longitude             + '<br />' +
-                                    'Altitude: '           + position.coords.altitude              + '<br />' +
-                                    'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                                    'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                                    'Heading: '            + position.coords.heading               + '<br />' +
-                                    'Speed: '              + position.coords.speed                 + '<br />' +
-                                    'Timestamp: '          + new Date(position.timestamp)          + '<br />';
-            }
-
-            // onError Callback receives a PositionError object
-            //
-            function onError(error) {
-                alert('code: '    + error.code    + '\n' +
-                      'message: ' + error.message + '\n');
-            }
-        </script>
-
-        <title>Hello Geolocation</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
     </head>
+
     <body>
-        <p id="geolocation">Finding geolocation...</p>
+
+        <div data-role="page">
+
+            <div data-role="header">
+                <h1>Danmarks Flyttemand</h1>
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <p>Flyttemand App...</p>
+            </div><!-- /content -->
+
+
+        </div><!-- /page -->
+
     </body>
 </html>
