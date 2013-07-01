@@ -14,6 +14,7 @@ $(mapPage).live('pagebeforeshow', function() {
 
 function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    navigator.notification.alert("Found user position");
 }
 
 function onError(error) {
@@ -27,6 +28,7 @@ $(mapPage).live("pageinit", function() {
 });
 
 function initializeMaps() {
+    navigator.notification.alert("initializeMaps");
     directionsDisplay = new google.maps.DirectionsRenderer();
     directionsService = new google.maps.DirectionsService();
 
@@ -50,11 +52,13 @@ function initializeMaps() {
         calculateRoute();
     }
     else {
+        navigator.notification.alert("userPosition is null");
         $("mapresults").hide();
     }
 }
 
 function calculateRoute() {
+    navigator.notification.alert("calculateRoute");
     var request = {
         origin: userPosition,
         destination: officeLocation,
@@ -67,8 +71,10 @@ function calculateRoute() {
             directionsDisplay.setDirections(response);
 
             $("#mapresults").show();
+            navigator.notification.alert("Show directions");
         }
         else {
+            navigator.notification.alert("Got status NOT OK from google");
             $("#mapresults").hide();
         }
     });
