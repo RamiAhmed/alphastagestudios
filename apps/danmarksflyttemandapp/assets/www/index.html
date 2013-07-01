@@ -35,18 +35,63 @@
 
     <body>
 
-        <div data-role="page">
+        <div data-role="page" id="index">
 
             <div data-role="header">
-                <h1>Danmarks Flyttemand</h1>
+                <a href="http://www.danmarksflyttemand.dk">
+                    <img class="brand" src="img/logo.png" alt="Danmarks Flyttemand Logo" />
+                </a>
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <table class="fronttable" cellpadding="5" cellspacing="15px">
+                    <tr>
+                        <td style="background-color: #a9c7de;">
+                            <a class="tablink" href="#privat">
+                            <img class="boximg" src="img/endbox-pri-erh.png" alt="Privat flytning | firmaflytning">
+                            <p class="boxtext">Privat | Erhverv</p>
+                            </a>
+                        </td>
+
+                        <td style="background-color: #B9BEC2;">
+                            <a class="tablink" href="#flytning">
+                            <img class="boximg" src="img/endbox-flyttekasser.png" alt="flyttekasser">
+                            <p class="boxtext">Book en Flytning</p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #DCDFE1;">
+                            <a class="tablink" href="#kontakt">
+                            <img class="boximg" src="img/endbox-rydning.png" alt="Kontakt">
+                            <p class="boxtext">Kontakt</p>
+                            </a>
+                        </td>
+
+                        <td style="background-color: #f7941d;">
+                            <a class="tablink" href="#omos">
+                            <img class="boximg" src="img/DanmarksFlytteman.png" alt="Om Os">
+                            <p class="boxtext">Om Os</p>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div><!-- /content -->
+
+
+        </div><!-- /page -->
+
+        <div data-role="page" id="privat">
+            <div data-role="header">
+                <h1>PRIVAT</h1>
 
                 <div data-role="navbar">
-                    <ul>
-                        <li><a href="#">Index</a></li>
-                        <li><a href="html/privat.html">Privat | Erhverv</a></li>
-                        <li><a href="#">Flytning</a></li>
-                        <li><a href="#">Kontakt</a></li>
-                        <li><a href="#">Om Os</a></li>
+                     <ul>
+                        <li><a href="#index">Index</a></li>
+                        <li><a href="#privat">Privat | Erhverv</a></li>
+                        <li><a href="#flytning">Flytning</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                        <li><a href="#omos">Om Os</a></li>
                     </ul>
 
                 </div> <!-- /navbar -->
@@ -54,9 +99,77 @@
             </div><!-- /header -->
 
             <div data-role="content">
-                <p>Flyttemand App...</p>
+                <p>Privat page content...</p>
             </div><!-- /content -->
 
+        </div><!-- /page -->
+
+        <div data-role="page" id="flytning">
+            <div data-role="header">
+                <h1>BOOK EN FLYTNING</h1>
+
+                <div data-role="navbar">
+                     <ul>
+                        <li><a href="#index">Index</a></li>
+                        <li><a href="#privat">Privat | Erhverv</a></li>
+                        <li><a href="#flytning">Flytning</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                        <li><a href="#omos">Om Os</a></li>
+                    </ul>
+
+                </div> <!-- /navbar -->
+
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <p>Flytning page content...</p>
+            </div><!-- /content -->
+
+        </div><!-- /page -->
+
+        <div data-role="page" id="kontakt">
+            <div data-role="header">
+                <h1>KONTAKT</h1>
+
+                <div data-role="navbar">
+                     <ul>
+                        <li><a href="#index">Index</a></li>
+                        <li><a href="#privat">Privat | Erhverv</a></li>
+                        <li><a href="#flytning">Flytning</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                        <li><a href="#omos">Om Os</a></li>
+                    </ul>
+
+                </div> <!-- /navbar -->
+
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <p>Kontakt page content...</p>
+            </div><!-- /content -->
+
+        </div><!-- /page -->
+
+        <div data-role="page" id="omos">
+            <div data-role="header">
+                <h1>OM OS</h1>
+
+                <div data-role="navbar">
+                     <ul>
+                        <li><a href="#index">Index</a></li>
+                        <li><a href="#privat">Privat | Erhverv</a></li>
+                        <li><a href="#flytning">Flytning</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                        <li><a href="#omos">Om Os</a></li>
+                    </ul>
+
+                </div> <!-- /navbar -->
+
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <p>Om Os page content...</p>
+            </div><!-- /content -->
 
         </div><!-- /page -->
 
