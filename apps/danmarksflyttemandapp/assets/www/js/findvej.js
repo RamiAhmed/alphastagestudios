@@ -1,12 +1,15 @@
-var userPosition = null;
+var userPosition = null,
+    directionsDisplay,
+    directionsService,
+    map,
+    officeLocation = new google.maps.LatLng(55.689403, 12.521281);;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
 
-    $('#map_canvas').css({'height': $(window).height(),
-                                     'width': '100%'});
+
 }
 
 function onSuccess(position) {
@@ -19,17 +22,13 @@ function onError(error) {
 }
 
 $(document).on("pageinit", "#kontakt", function() {
+    $('#map_canvas').css({'height': $(window).height(), 'width': '99%'});
     initializeMaps();
 });
-
-var directionsDisplay,
-    directionsService,
-    map;
 
 function initializeMaps() {
     directionsService = new google.maps.DirectionsService();
     directionsDisplay = new google.maps.DirectionsRenderer();
-    var officeLocation = new google.maps.LatLng(55.689403, 12.521281);
 
     var myOptions = {
         zoom:12,
@@ -39,6 +38,22 @@ function initializeMaps() {
 
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     directionsDisplay.setMap(map);
+
+    var userPosMarker = new google.maps.Marker({
+        position: userPosition,
+        map: map,
+        title: "Din Placering"
+    });
+
+    if (userPosition != '') {
+        calculateRoute();
+    }
+    else {
+        $("mapresults").hide();
+    }
+}
+
+function calculateRoute() {
 
     var request = {
         origin: userPosition,
@@ -50,6 +65,11 @@ function initializeMaps() {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
             directionsDisplay.setPanel(document.getElementById("map_panel"));
+
+            $("#mapresults").show();
+        }
+        else {
+            $("#mapresults").hide();
         }
     });
 }
