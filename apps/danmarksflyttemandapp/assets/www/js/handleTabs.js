@@ -7,7 +7,7 @@ var innerTabs = new Array();
 var innerContentSections = new Array();
 
 function initTabs() {
-    navigator.notification.alert("initTabs");
+    //navigator.notification.alert("initTabs");
     var tabListItems = document.getElementById('tabs').childNodes;
     for (var i = 0; i < tabListItems.length; i++) {
         if (tabListItems[i].nodeName == "LI") {

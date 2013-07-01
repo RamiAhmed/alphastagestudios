@@ -154,7 +154,7 @@ section.tabContent {
     width: 100%;
     text-align: left;
     float: left;
-    overflow: scroll;
+    overflow: auto;
 }
 section.tabContent.hide {
    display: none;
