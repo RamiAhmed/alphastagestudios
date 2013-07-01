@@ -55,10 +55,6 @@
         <script type="text/javascript" src="js/handleTabs.js"></script>
         <script type="text/javascript" src="js/flex-default.js"></script>
 
-    </head>
-
-    <body onload="onLoad()">
-
         <script type="text/javascript">
             /*$(document).ready(function() {
                 navigator.notification.alert("document ready");
@@ -66,16 +62,20 @@
             });*/
             function onLoad() {
                 navigator.notification.alert("document ready");
-                document.addEventListener("deviceready", initApp, false);
+                document.addEventListener("deviceready", onDeviceReady, false);
             }
 
-            function initApp() {
+            function onDeviceReady() {
+                navigator.notification.alert("device ready");
                 initTabs();
                 RunOnLoad();
                 initMaps();
-                navigator.notification.alert("device ready");
             }
         </script>
+
+    </head>
+
+    <body onload="onLoad()">
 
         <!-- NAVIGATION BAR -->
         <section>
