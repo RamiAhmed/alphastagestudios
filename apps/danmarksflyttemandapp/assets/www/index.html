@@ -61,6 +61,7 @@
                 document.addEventListener("deviceready", initApp, false);
             });*/
 
+            navigator.notification.alert("listen for deviceready");
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady() {
