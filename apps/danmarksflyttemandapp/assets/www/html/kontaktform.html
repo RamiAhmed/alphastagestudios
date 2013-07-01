@@ -1,0 +1,53 @@
+<h2>Kontaktform</h2>
+<div id="flexform">
+<form name="kontaktForm" action="javascript:flexform('kontaktpage','kontaktForm')" method="post">
+    <input type="hidden" name="_server" value="dd" /> <!-- "dd" / "ue" -->
+    <input type="hidden" name="_alert" value="Nogle felter er ikke udfyldt korrekt" />
+    <!-- input type="hidden" name="_confirm" value="Send Mail" / -->
+    <input type="hidden" name="_Send" value="return_tak" />
+    <input type="hidden" name="_CompanySubject" value="Kontakt fra hjemmesiden" />
+    <input type="hidden" name="_CompanyName" value="Danmarks flyttemand" />
+    <input type="hidden" name="_CompanySender" value="info€danmarksflyttemand.dk" />
+    <input type="hidden" name="_CompanyRecipient" value="info€danmarksflyttemand.dk" />
+    <input type="hidden" name="_CompanyReplay" value="" />
+    <input type="hidden" name="_CustomerText" value="Tak for din henvendelse" />
+    <input type="hidden" name="_CustomerSubject" value="Kontakt fra Danmarks flyttemand" />
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+        <td>Virksomhed</td>
+        <td><input type="text" name="Virksomhed" id="Virksomhed" class="FeldOK" /></td>
+        </tr>
+        <tr>
+        <td>Navn</td>
+        <td><input type="text" name="Navn" id="Navn" class="FeldOK" /></td>
+        </tr>
+        <tr>
+        <td>Adresse</td>
+        <td><input type="text" name="Adresse" id="Adresse" class="FeldOK" /></td>
+        </tr>
+        <tr>
+        <td>Postnr./by</td>
+        <td><input type="text" name="Byen" id="Byen" class="FeldOK" /></td>
+        </tr>
+        <tr>
+        <td>E-mail</td>
+        <td><input type="text" maxlength="256" name="Email" id="Email" class="FeldOK" /></td>
+        </tr>
+        <tr>
+        <td>Telefon</td>
+        <td><input type="text" maxlength="16" name="Telefon" id="Telefon" class="FeldOK" /></td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+        <td>Emne</td>
+        <td><input type="text" name="Emne" id="Emne" class="FeldOK" /></td>
+        </tr>
+        <tr>
+        <td colspan="2"><textarea name="Besked" id="Besked" class="FeldOK"></textarea></td>
+        </tr>
+        <tr>
+        <td colspan="2"><input type="submit" value="Send" class="button" /></td>
+        </tr>
+    </table>
+</form>
+</div>

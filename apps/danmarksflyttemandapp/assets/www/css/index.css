@@ -16,15 +16,39 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+/*
+@import url('flex/top.css');
+@import url('flex/topmenu.css');
+@import url('flex/page.css');
+@import url('flex/sidemenu.css');
+@import url('flex/footer.css');
+@import url('flex/tekst.css');
+@import url('flex/tools.css');
+@import url('flex/landing.css');
+*/
+@import url('../css/flexform.css');
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,500italic);
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+html {
+    overflow-y:scroll;
+    background-color: #152735;
+    width:100%;
+    height:100%;
 }
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+
+    /*
     background-color:#E4E4E4;
+
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -36,13 +60,25 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     background-attachment:fixed;
+
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
+    */
+   /* margin:0px;
+    padding:0px;*/
+    /*text-transform:uppercase;*/
     width:100%;
+    height:100%;
+
+    background-color: #152735;
+    color: #2C3D49;
+    height:auto;
+    position:static;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:500;
+    font-size:15px;
+    line-height:20px;
 }
 
 /* Portrait layout (default) */
@@ -69,15 +105,6 @@ body {
     }
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
-
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
@@ -102,14 +129,178 @@ h1 {
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 @-webkit-keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+
+/*
+    ALPHA STAGE STUDIOS ADDITIONS
+    rami@alphastagestudios.com
+*/
+
+section.tabContent {
+    display: block;
+    padding: 5px 1px 5px 1px;
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+section.tabContent.hide {
+   display: none;
+}
+
+nav {
+    display: block;
+}
+nav.hide {
+   display: none;
+}
+
+
+ul.MenuBarHorizontal {
+    width: 100%;
+    padding-bottom: 20px;
+    -webkit-padding-start: 10px;
+}
+ul.MenuBarHorizontal li {
+    list-style-type: none;
+    width:auto;
+    position: relative;
+    text-align: left;
+    float: left;
+    font-size:20px;
+    padding-right: 20px;
+}
+ul.MenuBarHorizontal ul {
+    list-style-type: none;
+    border-bottom: 2px #f7941d;
+}
+ul.MenuBarHorizontal a {
+    display: block;
+    color: #B9BEC2;
+    text-decoration: none;
+    text-align:center;
+    font-family: 'Ubuntu', sans-serif;
+}
+ul.MenuBarHorizontal a:hover,
+ul.MenuBarHorizontal a:focus {
+    color: #fff;
+    border-bottom:solid 5px #f7941d;
+}
+
+h1 {
+    color: #dddddd;
+    font-size:25px;
+    font-weight:normal;
+    overflow:visible;
+    padding:2px;
+    text-align:center;
+}
+h2 {
+    font-size: 16px;
+}
+h3 {
+    font-size: 14px;
+}
+
+img.brand {
+    background-color: #335E80;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border:none;
+    width: 100%;
+}
+
+table.fronttable {
+    border: none;
+    position: relative;
+    width: 100%;
+}
+
+a.tablink {
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+    position: relative;
+}
+
+img.boximg {
+    width: auto;
+    position: relative;
+}
+
+p.boxtext {
+    z-index: 100;
+    position: relative;
+    top: -20px;
+    width: auto;
+}
+
+nav.navbar-vertical {
+    font-family: 'Ubuntu', sans-serif;
+    float: left;
+    font-size: 18px;
+    width: 25%;
+    display: block;
+    color: #2C3D49;
+    line-height: 30px;
+}
+nav.navbar-vertical ul {
+    background-color: #152735;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+nav.navbar-vertical li {
+    list-style: none;
+    display: list-item;
+    padding-bottom: 5px;
+    margin-left: -30px;
+}
+nav.navbar-vertical li.selected {
+    color: #ffffff;
+    background-color: #f7941d;
+}
+
+nav.navbar-vertical li a {
+    color: #aaaaaa;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    color: #B9BEC2;
+}
+nav.navbar-vertical li.selected a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+article.innerTabContent {
+    display: inline-block;
+    /*padding: 1px 5px 1px 5px;*/
+    width: 70%;
+    text-align: left;
+    float: right;
+    background-color: #bbbbbb;
+    margin-left: -50px;
+}
+article.innerTabContent.hide {
+    display: none;
 }

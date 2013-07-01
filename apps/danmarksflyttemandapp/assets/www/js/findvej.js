@@ -5,7 +5,8 @@ var map,
     directionsService,
     mapPage = '#kontakt';
 
-$(document).bind('PG_pageinit', function() {
+//$(document).bind('PG_pageinit', function() {
+function initMaps() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
 });
 
