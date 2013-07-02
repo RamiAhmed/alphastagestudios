@@ -18,7 +18,8 @@ function onSuccess(position) {
     userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     navigator.notification.alert("Found user position");
 
-    $('#map-canvas').css({'height': $(window).height()/2, 'width': '99%'});
+    /*$('#map-canvas').css({'height': $(window).height()/2, 'width': '99%',
+                            'background':'red'});*/
     initializeMaps();
 }
 

@@ -33,7 +33,7 @@
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
         <!-- Add Google Maps API -->
-        <script src="http://maps.google.com/maps/api/js?v=3&sensor=true&language=da" type="text/javascript"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1uhDdWjtNEl9K35lJtuq5Sw2BjKR8-OM&sensor=false" type="text/javascript"></script>
 
         <script type="text/javascript" charset="utf-8">
             function loadTilbudform() {
@@ -68,10 +68,11 @@
 
             function onDeviceReady() {
                 //navigator.notification.alert("device ready");
+                loadAllExternalHTML();
                 initTabs();
                 RunOnLoad();
                 initMaps();
-                loadAllExternalHTML();
+
             }
         </script>
 
@@ -220,7 +221,13 @@
                 <h1>Find vej til hovedkontoret.</h1>
 
                 <div id="map-canvas"
-                    style="display:block; overflow:hidden; position:relative; border:1px solid #aaaaaa;">
+                    style="display:block;
+                            overflow:hidden;
+                            position:relative;
+                            border:1px solid #aaaaaa;
+                            width: 100%;
+                            height: 400px;
+                            background: red;">
                 </div>
                 <div id="map-panel" style="width:100%; height:90%; position:relative; "></div>
             </article>
@@ -288,7 +295,7 @@
                     Eventuelle skader p&aring; effekter,&nbsp;SKAL&nbsp;anmeldes, senest 48 timer efter endt flytning.
                 </p>
 
-         </article>
+            </article>
 
             <article class="innerTabContent" id="betingelser">
                 <h1>Betingelser</h1>
