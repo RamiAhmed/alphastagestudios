@@ -19,7 +19,6 @@ function onSuccess(position) {
     navigator.notification.alert("Found user position");
 
     $('#map-canvas').css({'height': $(window).height()/2, 'width': '99%'});
-    initializeMaps();
 }
 
 function onError(error) {
@@ -79,6 +78,8 @@ function calculateRoute() {
 function reloadGoogleMap() {
     if (map === null || map === undefined) {
         navigator.notification.alert("map is %s", map);
+        initializeMaps();
+        reloadGoogleMap();
     }
     else {
         var currCenter = map.getCenter();
