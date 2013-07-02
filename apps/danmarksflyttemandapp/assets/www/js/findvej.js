@@ -78,8 +78,6 @@ function calculateRoute() {
 function reloadGoogleMap() {
     if (map === null || map === undefined) {
         navigator.notification.alert("map is %s", map);
-        initializeMaps();
-        reloadGoogleMap();
     }
     else {
         var currCenter = map.getCenter();
