@@ -19,6 +19,7 @@ function onSuccess(position) {
     navigator.notification.alert("Found user position");
 
     $('#map-canvas').css({'height': $(window).height()/2, 'width': '99%'});
+    initializeMaps();
 }
 
 function onError(error) {
