@@ -74,7 +74,7 @@ html, body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-section.tabContent {
+.tabContent {
     display: block;
     padding-top: 15px;
     padding-bottom: 5px;
@@ -82,8 +82,20 @@ section.tabContent {
     text-align: left;
     float: left;
 }
-section.tabContent.hide {
+.tabContent.hide {
    display: none;
+}
+
+.innerTabContent {
+    display: inline-block;
+    width: 65%;
+    text-align: left;
+    float: right;
+    background-color: #bbbbbb;
+    margin-left: -50px;
+}
+.innerTabContent.hide {
+    display: none;
 }
 
 nav {
@@ -93,14 +105,14 @@ nav.hide {
    display: none;
 }
 
-#MenuBarHorizontal {
+ul.MenuBarHorizontal {
     width: 100%;
     padding-bottom: 15px;
     -webkit-padding-start: 10px;
     list-style-type: none;
     display: block;
 }
-#MenuBarHorizontal li {
+ul.MenuBarHorizontal li {
     list-style-type: none;
     width:auto;
     position: relative;
@@ -109,13 +121,13 @@ nav.hide {
     font-size:18px;
     padding-right: 15px;
 }
-#MenuBarHorizontal a {
+ul.MenuBarHorizontal a {
     color: #B9BEC2;
     text-decoration: none;
     text-align:left;
 }
-#MenuBarHorizontal a:hover,
-#MenuBarHorizontal a:focus {
+ul.MenuBarHorizontal a:hover,
+ul.MenuBarHorizontal a:focus {
     color: #ffffff;
     border-bottom:solid 5px #f7941d;
 }
@@ -205,16 +217,4 @@ nav.navbar-vertical li a {
 }
 nav.navbar-vertical li.selected a {
     color: #ffffff;
-}
-
-article.innerTabContent {
-    display: inline-block;
-    width: 65%;
-    text-align: left;
-    float: right;
-    background-color: #bbbbbb;
-    margin-left: -50px;
-}
-article.innerTabContent.hide {
-    display: none;
 }
