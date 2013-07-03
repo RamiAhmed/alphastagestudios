@@ -159,15 +159,13 @@ img.brand {
 table.fronttable {
     border: none;
     position: relative;
-    width: 90%;
-}
-table.fronttable tr {
-    width: 90%;
+    width: 95%;
+    height: 95%;
 }
 table.fronttable tr td {
     width: 45%;
+    height: 45%;
 }
-
 a.tablink {
     color: #ffffff;
     font-weight: 700;
@@ -177,18 +175,13 @@ a.tablink {
     text-decoration: none;
     position: relative;
 }
-
 img.boximg {
-    width: 45%;
-    height: 40%;
     position: relative;
 }
-
 p.boxtext {
     z-index: 100;
     position: relative;
     top: -20px;
-    width: auto;
 }
 
 nav.navbar-vertical {
@@ -203,7 +196,7 @@ nav.navbar-vertical li {
     list-style: none;
     display: list-item;
     padding-top: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin-left: -30px;
     font-weight: bold;
 }
