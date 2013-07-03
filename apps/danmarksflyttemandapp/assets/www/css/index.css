@@ -96,6 +96,7 @@ html, body {
     text-align: left;
     float: right;
     background-color: #bbbbbb;
+    width: 70%;
 }
 .innerTabContent.hide {
     display: none;
@@ -199,6 +200,7 @@ nav.navbar-vertical {
     font-size: 16px;
     display: inline-block;
     color: #2C3D49;
+    width: 25%;
 }
 
 nav.navbar-vertical li {
