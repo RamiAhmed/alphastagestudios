@@ -51,6 +51,16 @@
                 RunOnLoad();
                 initMaps();
             }
+
+            function openPDF() {
+                window.open('http://www.danmarksflyttemand.dk/forsikring/documents/Danmarksflyttemandvilk%C3%A5rogbetingelser.pdf',
+                    '_system',
+                    'location=yes');
+            }
+
+            $('#betingelserlink').click(function() {
+                openPDF();
+            });
         </script>
 
     </head>
@@ -273,7 +283,9 @@
 
             <article class="innerTabContent" id="betingelser">
                 <h1>Betingelser</h1>
-                    <p>Se vores <a href="http://www.danmarksflyttemand.dk/forsikring/documents/Danmarksflyttemandvilk%C3%A5rogbetingelser.pdf">Almindelige betingelser (PDF) her</a> (bruger browseren).</p>
+                    <p>
+                       Se vores <a id="betingelserlink" href="#">Almindelige betingelser (download PDF) her</a>
+                    </p>
             </article>
 
             <article class="innerTabContent" id="service">
