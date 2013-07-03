@@ -213,3 +213,8 @@ nav.navbar-vertical li a {
 nav.navbar-vertical li.selected a {
     color: #ffffff;
 }
+
+.container {
+    background-color: #bbbbbb;
+    display: block;
+}
