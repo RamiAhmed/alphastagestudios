@@ -33,26 +33,16 @@
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
         <!-- Add Google Maps API -->
-        <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1uhDdWjtNEl9K35lJtuq5Sw2BjKR8-OM&sensor=false" type="text/javascript"></script>
+        <!-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1uhDdWjtNEl9K35lJtuq5Sw2BjKR8-OM&sensor=false" type="text/javascript"></script> -->
 
         <script type="text/javascript" charset="utf-8">
-            function loadTilbudform() {
-                $('#indhenttilbud').load('html/tilbudform.html');
-            }
-
-            function loadKontaktform() {
-                $('#kontaktform').load('html/kontaktform.html');
-            }
-
-            function loadPrisliste() {
-                $('#kasseprisliste').load('html/prisliste.html');
-            }
-
-            function loadAllExternalHTML() {
-              loadTilbudform();
-              loadKontaktform();
-              loadPrisliste();
-            }
+           // function loadAllExternalHTML() {
+            $(document).ready(function() {
+              $('#indhenttilbud').load('html/tilbudform.html');
+              $('#kontaktform').load('html/kontaktform.html');
+              $('#kasseprisliste').load('html/prisliste.html');
+              console.log("Load external html");
+            });
         </script>
 
         <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -68,11 +58,10 @@
 
             function onDeviceReady() {
                 //navigator.notification.alert("device ready");
-                loadAllExternalHTML();
+                //loadAllExternalHTML();
                 initTabs();
                 RunOnLoad();
                 initMaps();
-
             }
         </script>
 
@@ -210,58 +199,46 @@
         <section class="tabContent" id="kontakt">
             <h1>Kontakt</h1>
 
-            <nav class="navbar-vertical">
-                <ul id="kontakt-tabs">
-                    <li><a href="#vej">Find vej</a></li>
-                    <li><a href="#kontaktinfo">Kontakt Info</a></li>
-                </ul>
-            </nav>
+            <h1>Find vej til hovedkontoret.</h1>
+            <p><a id='mapurl' href="#">Find vej med Google Maps</a></p>
 
-            <article class="innerTabContent" id="vej">
-                <h1>Find vej til hovedkontoret.</h1>
+            <hr />
 
-                <div id="map-canvas"
-                    style="display:block;
-                            overflow:hidden;
-                            position:relative;
-                            border:1px solid #aaaaaa;
-                            width: 100%;
-                            height: 400px;
-                            background: red;">
-                </div>
-                <div id="map-panel" style="width:100%; height:90%; position:relative; "></div>
-            </article>
-
-            <article class="innerTabContent" id="kontaktinfo">
-
-                <table width="95%" border="0" cellpadding="0" cellspacing="0"><tr>
+            <table width="95%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
                 <td valign="top" width="50%">
                     <h2>Informationer</h2>
                     <p>DanmarksFlyttemand ApS&#8203;</p>
                     <p>Godth&aring;bsvej 132<br />
                        2000 Frederiksberg</p>
                     <p>CVR:&#8203; 35229191</p>
+                </td>
 
-                </td><td valign="top">
+                <td valign="top">
                     <h2>Telefon tider</h2>
                     <p>Mandag - Fredag: 09:00 - 22:00<br />L&oslash;rdag: 10:00 - 22:00</p>
                     <p>S&oslash;ndag: Lukket</p>
                 </td>
-                </tr><tr>
+                </tr>
+
+                <tr>
                 <td valign="top">
                     <h2>Kontakt</h2>
                     <p>Telefon:&nbsp;20 54 54 54<br /><a href="mailto:info@danmarksflyttemand.dk">info@danmarksflyttemand.dk</a></p>
-                    <p>F&oslash;lg os p&aring; <a href="https://www.facebook.com/Danmarksflyttemand">Facebook</a></p>
+                    <p>F&oslash;lg os p&aring; <a href="http://www.facebook.com/Danmarksflyttemand">Facebook</a></p>
+                </td>
 
-                    </td><td valign="top">
-                        <h2>Bank oplysninger</h2>
-                        <p>BRF Kredit<br />Reg.:&nbsp;6482<br />Konto.: 2677393</p>
-                    </td>
-                    </tr></table>
+                <td valign="top">
+                    <h2>Bank oplysninger</h2>
+                    <p>BRF Kredit<br />Reg.:&nbsp;6482<br />Konto.: 2677393</p>
+                </td>
+                </tr>
+            </table>
 
-                    <hr />
+            <hr />
 
-                <div id="kontaktform"></div>
+            <div id="kontaktform"></div>
+
         </section>
 
 
@@ -299,13 +276,7 @@
 
             <article class="innerTabContent" id="betingelser">
                 <h1>Betingelser</h1>
-                    <script type="text/javascript">
-                        function openBetingelser() {
-                            window.location.href = "http://www.danmarksflyttemand.dk/forsikring/documents/Danmarksflyttemandvilk%C3%A5rogbetingelser.pdf";
-                        };
-                    </script>
-
-                    <p>Se vores <a href="#" onclick="openBetingelser(); return false">Almindelige betingelser (PDF) her</a>.</p>
+                    <p>Se vores <a href="http://www.danmarksflyttemand.dk/forsikring/documents/Danmarksflyttemandvilk%C3%A5rogbetingelser.pdf">Almindelige betingelser (PDF) her</a> (bruger browseren).</p>
             </article>
 
             <article class="innerTabContent" id="service">

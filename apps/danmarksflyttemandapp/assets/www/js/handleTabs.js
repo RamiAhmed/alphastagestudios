@@ -76,10 +76,6 @@ function showTab() {
 
         initInnerTabs(selectedId);
 
-        if (selectedId == "kontakt") {
-            reloadGoogleMap();
-        }
-
         return false;
     }
     else {
@@ -150,10 +146,6 @@ function showInnerTab() {
                 innerTabs[id].parentNode.className = '';
                 innerContentSections[id].className = 'innerTabContent hide';
             }
-        }
-
-        if (selectedId == "vej") {
-            reloadGoogleMap();
         }
 
         return false;
