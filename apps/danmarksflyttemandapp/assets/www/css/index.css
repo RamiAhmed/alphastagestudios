@@ -162,10 +162,6 @@ table.fronttable {
     width: 95%;
     height: 95%;
 }
-table.fronttable tr td {
-    width: auto;
-    height: 45%;
-}
 a.tablink {
     color: #ffffff;
     font-weight: 700;
