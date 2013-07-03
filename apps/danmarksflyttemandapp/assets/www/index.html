@@ -32,11 +32,20 @@
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
         <script type="text/javascript" charset="utf-8">
+            function loadExternalHTML(where, div) {
+                $.get(where, function(data) {
+                    $(div).html(data);
+                });
+            }
+
            // function loadAllExternalHTML() {
             $(document).ready(function() {
-              $('#indhenttilbud').load('html/tilbudform.html');
-              $('#kontaktform').load('html/kontaktform.html');
-              $('#kasseprisliste').load('html/prisliste.html');
+              //$('#indhenttilbud').load('html/tilbudform.html');
+              //$('#kontaktform').load('html/kontaktform.html');
+              //$('#kasseprisliste').load('html/prisliste.html');
+              loadExternalHTML('html/tilbudform.html', '.indhenttilbud');
+              loadExternalHTML('html/kontaktform.html', '.kontaktform');
+              loadExternalHTML('html/prisliste.html', '.kasseprisliste');
               console.log("Load external html");
             });
         </script>
