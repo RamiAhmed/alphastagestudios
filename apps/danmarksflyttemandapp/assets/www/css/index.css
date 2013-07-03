@@ -152,15 +152,30 @@ img.brand {
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 10px;
-    border:none;
-    width: 100%;
+    border: none;
+    width: 95%;
 }
-
 table.fronttable {
     border: none;
     position: relative;
     width: 95%;
     height: 95%;
+}
+#frontbox1 {
+    background-color: #a9c7de;
+    width: 40%;
+}
+#frontbox2 {
+    background-color: #B9BEC2;
+    width: 40%;
+}
+#frontbox3 {
+    background-color: #DCDFE1;
+    width: 40%;
+}
+#frontbox4 {
+    background-color: #f7941d;
+    width: 40%;
 }
 a.tablink {
     color: #ffffff;
