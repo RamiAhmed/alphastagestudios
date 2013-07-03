@@ -91,6 +91,7 @@ a {
     width: 100%;
     text-align: left;
     float: left;
+    background-color: #eeeeee;
 }
 .tabContent.hide {
    display: none;
@@ -120,14 +121,18 @@ ul.MenuBarHorizontal {
     -webkit-padding-start: 10px;
     list-style-type: none;
     display: block;
+    position: fixed;
+    top: 1px;
+    left: 1px;
+    z-index: 999;
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
-    width:auto;
+    width:20%;
     position: relative;
     text-align: left;
     float: left;
-    font-size:18px;
+    font-size:20px;
     padding-right: 15px;
 }
 ul.MenuBarHorizontal a {
