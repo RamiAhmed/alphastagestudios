@@ -30,27 +30,6 @@
 
         <!-- Add Cordova/PhoneGap javascript -->
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-
-        <script type="text/javascript" charset="utf-8">
-            function loadExternalHTML(where, div) {
-               /* $.get(where, function(data) {
-                    $(div).html(data);
-                });*/
-                $(div).load(where).show();
-            }
-
-           // function loadAllExternalHTML() {
-            $(document).ready(function() {
-              $('#indhenttilbud').load('tilbudform.html');
-              $('#kontaktform').load('kontaktform.html');
-              $('#kasseprisliste').load('prisliste.html');
-              //loadExternalHTML('tilbudform.html', '#indhenttilbud');
-              //loadExternalHTML('kontaktform.html', '#kontaktform');
-              //loadExternalHTML('prisliste.html', '#kasseprisliste');
-              //navigator.notification.alert("Loaded external html");
-            });
-        </script>
-
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/flexform.css">
 
@@ -59,12 +38,15 @@
         <script type="text/javascript" src="js/flex-default.js"></script>
 
         <script type="text/javascript" charset="utf-8">
-            //navigator.notification.alert("listen for deviceready");
-            document.addEventListener("deviceready", onDeviceReady, false);
+            $(document).ready(function() {
+              $('#indhenttilbud').load('tilbudform.html');
+              $('#kontaktform').load('kontaktform.html');
+              $('#kasseprisliste').load('prisliste.html');
+            });
 
+            document.addEventListener("deviceready", onDeviceReady, false);
             function onDeviceReady() {
                 //navigator.notification.alert("device ready");
-                //loadAllExternalHTML();
                 initTabs();
                 RunOnLoad();
                 initMaps();

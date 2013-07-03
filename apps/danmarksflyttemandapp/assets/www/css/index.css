@@ -34,56 +34,8 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
-html {
-    overflow-y:scroll;
-    background-color: #152735;
-    width:100%;
-    height:100%;
-}
-
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-
-    /*
-    background-color:#E4E4E4;
-
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    */
-   /* margin:0px;
-    padding:0px;*/
-    /*text-transform:uppercase;*/
-    width:100%;
-    height:100%;
-
-    background-color: #152735;
-    color: #2C3D49;
-    height:auto;
-    position:static;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight:500;
-    font-size:15px;
-    line-height:20px;
-}
-
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
@@ -105,47 +57,22 @@ body {
     }
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
-
-
 /*
     ALPHA STAGE STUDIOS ADDITIONS
     rami@alphastagestudios.com
 */
+
+html, body {
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+
+    overflow-y:scroll;
+    background-color: #152735;
+    width:100%;
+    height:100%;
+    font-family: 'Ubuntu', sans-serif;
+}
 
 section.tabContent {
     display: block;
@@ -154,7 +81,6 @@ section.tabContent {
     width: 100%;
     text-align: left;
     float: left;
-    overflow: auto;
 }
 section.tabContent.hide {
    display: none;
@@ -167,51 +93,45 @@ nav.hide {
    display: none;
 }
 
-
-ul.MenuBarHorizontal {
+#MenuBarHorizontal {
     width: 100%;
     padding-bottom: 15px;
     -webkit-padding-start: 10px;
+    list-style-type: none;
+    display: block;
 }
-ul.MenuBarHorizontal li {
+#MenuBarHorizontal li {
     list-style-type: none;
     width:auto;
     position: relative;
     text-align: left;
     float: left;
-    font-size:20px;
-    padding-right: 20px;
+    font-size:18px;
+    padding-right: 15px;
 }
-ul.MenuBarHorizontal ul {
-    list-style-type: none;
-    border-bottom: 2px #f7941d;
-}
-ul.MenuBarHorizontal a {
-    display: block;
+#MenuBarHorizontal a {
     color: #B9BEC2;
     text-decoration: none;
-    text-align:center;
-    font-family: 'Ubuntu', sans-serif;
+    text-align:left;
 }
-ul.MenuBarHorizontal a:hover,
-ul.MenuBarHorizontal a:focus {
-    color: #fff;
+#MenuBarHorizontal a:hover,
+#MenuBarHorizontal a:focus {
+    color: #ffffff;
     border-bottom:solid 5px #f7941d;
 }
 
 h1 {
     color: #dddddd;
-    font-size:25px;
+    font-size:26px;
     font-weight:normal;
-    overflow:visible;
     padding:2px;
     text-align:center;
 }
 h2 {
-    font-size: 16px;
+    font-size: 20px;
 }
 h3 {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 img.brand {
@@ -227,10 +147,10 @@ img.brand {
 table.fronttable {
     border: none;
     position: relative;
-    width: 100%;
+    width: 90%;
 }
 table.fronttable tr {
-    width: 100%;
+    width: 90%;
 }
 table.fronttable tr td {
     width: 45%;
@@ -238,19 +158,17 @@ table.fronttable tr td {
 
 a.tablink {
     color: #ffffff;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 25px;
+    font-size: 28px;
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
-    width: auto;
     position: relative;
 }
 
 img.boximg {
-    width: auto;
+    width: 45%;
+    height: 40%;
     position: relative;
 }
 
@@ -262,48 +180,36 @@ p.boxtext {
 }
 
 nav.navbar-vertical {
-    font-family: 'Ubuntu', sans-serif;
     float: left;
-    font-size: 18px;
+    font-size: 16px;
     width: 25%;
     display: block;
     color: #2C3D49;
-    line-height: 30px;
-}
-nav.navbar-vertical ul {
-    background-color: #152735;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: auto;
 }
 
 nav.navbar-vertical li {
     list-style: none;
     display: list-item;
-    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
     margin-left: -30px;
 }
 nav.navbar-vertical li.selected {
-    color: #ffffff;
+    color: #eeeeee;
     background-color: #f7941d;
 }
 
 nav.navbar-vertical li a {
-    color: #aaaaaa;
-    text-decoration: none;
     position: relative;
-    display: inline-block;
     color: #B9BEC2;
 }
 nav.navbar-vertical li.selected a {
     color: #ffffff;
-    text-decoration: none;
 }
 
 article.innerTabContent {
     display: inline-block;
-    /*padding: 1px 5px 1px 5px;*/
-    width: 70%;
+    width: 65%;
     text-align: left;
     float: right;
     background-color: #bbbbbb;
