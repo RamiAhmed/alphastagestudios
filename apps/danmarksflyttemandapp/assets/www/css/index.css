@@ -70,7 +70,7 @@ html, body {
 
     overflow-y:scroll;
     background-color: #404040;
-    width:95%;
+    width:100%;
     height:100%;
     font-family: 'Ubuntu', sans-serif;
     margin: 0px;
@@ -222,7 +222,6 @@ p.boxtext, a.tablink {
     background-color: #404040;
     margin-left: 10px;
     margin-right: 10px;
-    overflow: visible;
     z-index: 0;
 }
 .tabContent.hide {
@@ -242,9 +241,7 @@ p.boxtext, a.tablink {
     text-align: left;
     float: left;
     background-color: #bbbbbb;
-    padding: 0px 5px;
     width: 100%;
-    overflow: visible;
     z-index: 10;
 }
 
@@ -252,12 +249,14 @@ p.boxtext, a.tablink {
     background-color: #bbbbbb;
     display: block;
     padding: 10px 10px 10px 10px;
-    overflow: visible;
     z-index: 20;
 }
 
 #index {
     background-color: #152735;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
 }
 
 /*
