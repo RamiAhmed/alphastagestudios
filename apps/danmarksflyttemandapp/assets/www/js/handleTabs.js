@@ -3,6 +3,8 @@ var tabLinks = new Array();
 var pageLinks = new Array();
 var contentSections = new Array();
 
+var bShowNavBar = false;
+
 function initTabs() {
     //navigator.notification.alert("initTabs");
     var tabListItems = document.getElementById('tabs').childNodes;
@@ -64,11 +66,10 @@ function showTab() {
             }
         }
 
-        if (selectedId == "index") {
-            document.getElementById('nav_bar').className = 'hide';
-        }
-        else {
-            document.getElementById('nav_bar').className = 'active';
+        if (!bShowNavBar) {
+            document.getElementById('nav_bar').className = '';
+            document.getElementById('index').className = 'tabContent hide';
+            bShowNavBar = true;
         }
 
         document.getElementById('nav-title').update(this.text());

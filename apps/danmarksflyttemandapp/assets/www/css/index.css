@@ -62,6 +62,7 @@
     rami@alphastagestudios.com
 */
 
+/* DEFAULTS */
 html, body {
     -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
@@ -86,29 +87,7 @@ a {
     text-decoration: none;
 }
 
-.tabContent {
-    display: block;
-    padding-top: 15px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 100%;
-    text-align: left;
-    float: left;
-    background-color: #152735;
-}
-.tabContent.hide {
-   display: none;
-}
-
-.innerTabContent {
-    display: block;
-    text-align: left;
-    float: left;
-    background-color: #bbbbbb;
-    width: 100%;
-}
-
+/* NAVIGATION BAR */
 nav {
     display: block;
 }
@@ -130,7 +109,7 @@ ul.MenuBarHorizontal {
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
-    width:auto;
+    width: 25%;
     position: relative;
     text-align: left;
     float: left;
@@ -146,6 +125,12 @@ ul.MenuBarHorizontal a {
     color: #B9BEC2;
     text-decoration: none;
 }
+
+#nav-title {
+    border-bottom:solid 5px #f7941d;
+}
+
+/* HEADINGS */
 
 h1 {
     color: #ffffff;
@@ -163,6 +148,7 @@ h3 {
     color: #dddddd;
 }
 
+/* INDEX PAGE */
 img.brand {
     background-color: #152735;/*#335E80;*/
     padding-left: 5px;
@@ -207,6 +193,30 @@ p.boxtext, a.tablink {
     text-decoration: none;
 }
 
+/* CONTAINER TYPES */
+.tabContent {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+    text-align: left;
+    float: left;
+    background-color: #152735;
+}
+.tabContent.hide {
+   display: none;
+}
+
+.innerTabContent {
+    display: block;
+    text-align: left;
+    float: left;
+    background-color: #bbbbbb;
+    width: 100%;
+}
+
 .container {
     background-color: #bbbbbb;
     display: block;
@@ -220,6 +230,4 @@ p.boxtext, a.tablink {
     width: 100%;
 }
 
-#nav-title {
-    border-bottom:solid 5px #f7941d;
-}
+
