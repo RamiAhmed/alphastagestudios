@@ -102,14 +102,11 @@ a {
 }
 
 .innerTabContent {
-    display: inline-block;
+    display: block;
     text-align: left;
-    float: right;
+    float: left;
     background-color: #bbbbbb;
-    width: 70%;
-}
-.innerTabContent.hide {
-    display: none;
+    width: 100%;
 }
 
 nav {
@@ -119,15 +116,17 @@ nav.hide {
    display: none;
 }
 
-ul.MenuBarHorizontal {
+#nav_bar {
     width: 100%;
-    height: 40px;
+    height: 50px;
     padding-bottom: 15px;
     -webkit-padding-start: 10px;
-    list-style-type: none;
     display: block;
     float: left;
     background-color: #152735;
+}
+ul.MenuBarHorizontal {
+    list-style-type: none;
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
