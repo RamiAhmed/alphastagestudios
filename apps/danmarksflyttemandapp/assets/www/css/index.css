@@ -158,11 +158,13 @@ ul.MenuBarHorizontal li {
     text-align: center;
     font-size: 22px;
     background-image:url(images/nav_button_up.png);
+    background-size: 100% 100%;
     float: left;
     display: block;
 }
 ul.MenuBarHorizontal li.active {
     background-image:url(images/nav_button_down.png);
+    background-size: 100% 100%;
 }
 ul.MenuBarHorizontal a {
     color: #B9BEC2;
