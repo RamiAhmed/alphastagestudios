@@ -109,6 +109,7 @@ a {
     border-bottom:solid 5px #f7941d;
     text-align: center;
     margin: 0px auto;
+    vertical-align:middle;
 }
 
 ul.MenuBarHorizontal {

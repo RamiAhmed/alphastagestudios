@@ -55,6 +55,14 @@ function showTab() {
     if (this.nodeName == "A") {
         var selectedId = getHash(this.getAttribute('href'));
 
+        if (!bShowNavBar) {
+            document.getElementById('nav_bar').className = '';
+            document.getElementById('index').className = 'tabContent hide';
+            bShowNavBar = true;
+        }
+
+        document.getElementById('nav-title').innerHTML = this.innerHTML;
+
         for (var id in contentSections) {
             if (id == selectedId) {
                 tabLinks[id].parentNode.className = 'active';
@@ -65,14 +73,6 @@ function showTab() {
                 contentSections[id].className = 'tabContent hide';
             }
         }
-
-        if (!bShowNavBar) {
-            document.getElementById('nav_bar').className = '';
-            document.getElementById('index').className = 'tabContent hide';
-            bShowNavBar = true;
-        }
-
-        document.getElementById('nav-title').innerHTML = this.innerHTML;
 
         return false;
     }
