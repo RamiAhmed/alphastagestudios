@@ -226,11 +226,9 @@ p.boxtext, a.tablink {
     background-image: url(images/phonebox.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    width: 115px;
-    height: 32px;
-    padding: 5px;
+    padding: 5px 10px;
     display: inline-block;
-    float: left;
+    position: relative;
     text-align: right;
 }
 
