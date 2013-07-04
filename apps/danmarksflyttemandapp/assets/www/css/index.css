@@ -106,12 +106,13 @@ a {
 
 ul.MenuBarHorizontal {
     list-style-type: none;
+    width: 100%;
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
     width: 25%;
-    position: absolute;
-    text-align: center;
+    position: relative;
+    text-align: left;
     float: left;
     font-size:20px;
     background-image:url(images/nav_button_up.png);
