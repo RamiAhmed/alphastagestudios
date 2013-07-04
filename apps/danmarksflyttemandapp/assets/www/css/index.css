@@ -121,11 +121,9 @@ ul.MenuBarHorizontal li {
     background-image:url(images/nav_button_up.png);
     left: 1px;
 }
-ul.MenuBarHorizontal a.active {
-    color: #ffffff;
-}
-ul.MenuBarHorizontal li .active {
+ul.MenuBarHorizontal li.active {
     background-image:url(images/nav_button_down.png);
+    color: #ffffff;
 }
 ul.MenuBarHorizontal a {
     color: #B9BEC2;
