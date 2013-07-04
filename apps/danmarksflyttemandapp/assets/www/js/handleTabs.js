@@ -29,11 +29,11 @@ function initTabs() {
     var i = 0;
     for (var id in tabLinks) {
         tabLinks[id].onclick = showTab;
-
+/*
         if (i == 0) {
             tabLinks[id].parentNode.className = 'active';
         }
-
+*/
         i++;
     }
 
@@ -43,7 +43,7 @@ function initTabs() {
 
     var i = 0;
     for (var id in contentSections) {
-        if (i != 0) {
+        if (id != "index") {
             contentSections[id].className = 'tabContent hide';
         }
 
