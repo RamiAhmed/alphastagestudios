@@ -81,14 +81,14 @@ function showTab() {
     }
 }
 
-.swiping(function () {
-    .swipeLeft(function() {
-        navigator.notification.alert("swiped left!");
-    });
+var pagecontent = $('#pagecontent');
 
-    .swipeRight(function() {
-        navigator.notification.alert("swiped right!");
-    });
+pagecontent.swipeLeft(function() {
+    navigator.notification.alert("swiped left!");
+});
+
+pagecontent.swipeRight(function() {
+    navigator.notification.alert("swiped right!");
 });
 
 function getFirstChildWithTagName(element, tagName) {
