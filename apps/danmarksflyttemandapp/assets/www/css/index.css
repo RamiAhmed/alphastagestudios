@@ -230,6 +230,8 @@ p.boxtext, a.tablink {
     height: 32px;
     padding: 5px;
     display: inline-block;
+    float: left;
+    text-align: right;
 }
 
 /* CONTAINER TYPES */
