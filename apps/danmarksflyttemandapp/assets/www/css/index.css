@@ -75,13 +75,11 @@ html, body {
     font-family: 'Ubuntu', sans-serif;
     margin: 0px;
     padding: 0px;
-    font-size: 16px;
     display: block;
-    color: #152735;
+    color: #25445d;
 }
 
 a {
-    font-size: 16px;
     font-weight: bold;
     color: #de862e; /*#f7941d;*/
     text-decoration: none;
@@ -91,13 +89,39 @@ hr {
     color: #404040;
 }
 
+p, h1, h2, h3 {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+html, body, p, a, h3 {
+    font-size: 20px;
+}
+
+/* HEADINGS */
+
+h1 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    color: #de862e; /*#f7941d;*/
+}
+h3 {
+    color: #dddddd;
+}
+
 /* NAVIGATION BAR */
 #nav_bar {
     width: 100%;
     height: 90px;
     display: block;
     float: left;
-    background-color: #152735;
+    background-color: #25445d;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -132,7 +156,7 @@ ul.MenuBarHorizontal li {
     height: 30px;
     position: relative;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
     background-image:url(images/nav_button_up.png);
     float: left;
     display: block;
@@ -148,40 +172,23 @@ ul.MenuBarHorizontal li.active a {
     color: #ffffff;
 }
 
-
-/* HEADINGS */
-
-h1 {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 2px;
-    text-align: center;
-}
-h2 {
-    font-size: 18px;
-    color: #de862e; /*#f7941d;*/
-}
-h3 {
-    font-size: 16px;
-    color: #dddddd;
-}
-
 /* INDEX PAGE */
 img.brand {
-    background-color: #152735;/*#335E80;*/
+    background-color: #25445d;/*#335E80;*/
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 10px;
     border: none;
     width: 95%;
+    margin: 0px auto;
 }
 table.fronttable {
     border: none;
     position: relative;
-    height: 95%;
+    height: 80%;
     display: table;
+    margin: 0px auto;
 }
 #frontbox1 {
     background-color: #a9c7de;
@@ -196,7 +203,7 @@ table.fronttable {
     background-color: #f7941d;
 }
 img.boximg {
-    padding-top: 30px;
+    padding-top: 45px;
     width: 100%;
     position: relative;
 }
@@ -213,6 +220,14 @@ p.boxtext, a.tablink {
 }
 
 /* CONTAINER TYPES */
+#pagecontent {
+    display: block;
+    padding-top: 70px;
+    width: 100%;
+    margin: 0px auto;
+    z-index: 5;
+}
+
 .tabContent {
     display: block;
     padding-top: 15px;
@@ -220,20 +235,11 @@ p.boxtext, a.tablink {
     text-align: left;
     float: left;
     background-color: #404040;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0px auto;
     z-index: 0;
 }
 .tabContent.hide {
    display: none;
-}
-
-#pagecontent {
-    display: block;
-    padding-top: 70px;
-    width: 100%;
-    margin: 0px auto;
-    z-index: 5;
 }
 
 .innerTabContent {
@@ -243,6 +249,7 @@ p.boxtext, a.tablink {
     background-color: #bbbbbb;
     width: 100%;
     z-index: 10;
+    margin: 0px auto;
 }
 
 .container {
@@ -250,17 +257,18 @@ p.boxtext, a.tablink {
     display: block;
     padding: 10px 10px 10px 10px;
     z-index: 20;
+    margin: 0px auto;
 }
 
 #index {
-    background-color: #152735;
+    background-color: #25445d;
     width: 100%;
     height: 100%;
     margin: 0px auto;
 }
 
 /*
-Dark Blue: #152735
+Dark Blue: #152735 - NEW: #25445d;
 Orange highlight: #f7941d
 Orange text: #de862e
 Dark grey: #404040
