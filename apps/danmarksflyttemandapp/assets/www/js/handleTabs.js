@@ -61,7 +61,7 @@ function showTab() {
             bShowNavBar = true;
         }
 
-        document.getElementById('nav-title').innerHTML = this.innerHTML;
+        document.getElementById('nav-title').innerHTML = tabLinks[selectedId].innerHTML;
 
         for (var id in contentSections) {
             if (id == selectedId) {
