@@ -108,14 +108,14 @@ a {
     display: inline-block;
     border-bottom:solid 5px #f7941d;
     text-align: center;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
 ul.MenuBarHorizontal {
     list-style-type: none;
     width: 100%;
     margin: 0px;
-    padding: 0px;
+    padding: 10px 0px 0px 0px;
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
