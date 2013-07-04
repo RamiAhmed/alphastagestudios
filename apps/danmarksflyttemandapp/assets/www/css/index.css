@@ -117,9 +117,8 @@ ul.MenuBarHorizontal li {
     width: 25%;
     position: relative;
     text-align: center;
-    font-size:20px;
+    font-size: 20px;
     background-image:url(images/nav_button_up.png);
-    left: 1px;
 }
 ul.MenuBarHorizontal li.active {
     background-image:url(images/nav_button_down.png);
