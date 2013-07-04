@@ -90,9 +90,7 @@ a {
 /* NAVIGATION BAR */
 #nav_bar {
     width: 100%;
-    height: 70px;
-    padding-bottom: 15px;
-    -webkit-padding-start: 10px;
+    height: 100px;
     display: block;
     float: left;
     background-color: #152735;
@@ -111,8 +109,8 @@ a {
 ul.MenuBarHorizontal {
     list-style-type: none;
     width: 100%;
-    margin: -1px;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
