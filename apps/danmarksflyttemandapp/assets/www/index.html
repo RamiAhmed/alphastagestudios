@@ -25,16 +25,18 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-        <!-- Add jQuery Javascript -->
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/flexform.css">
+
+        <!-- Add jQuery Javascript (hosted by Google) -->
         <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" ></script>
 
         <!-- Add Cordova/PhoneGap javascript -->
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="stylesheet" type="text/css" href="css/flexform.css">
-
+        <!-- Add custom javascripts -->
         <script type="text/javascript" charset="utf-8" src="js/findvej.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/handleTabs.js"></script>
+        <!-- Add Flex-Media javascript -->
         <script type="text/javascript" charset="utf-8" src="js/flex-default.js"></script>
 
         <script type="text/javascript" charset="utf-8">
@@ -42,26 +44,30 @@
               $('#indhenttilbud').load('tilbudform.html');
               $('#kontaktform').load('kontaktform.html');
               $('#kasseprisliste').load('prisliste.html');
+              initBetingelserLink();
             });
 
             document.addEventListener("deviceready", onDeviceReady, false);
             function onDeviceReady() {
-                //navigator.notification.alert("device ready");
                 initTabs();
                 RunOnLoad();
                 initMaps();
             }
 
             function openPDF() {
-                /*window.open('http://www.danmarksflyttemand.dk/forsikring/documents/Danmarksflyttemandvilk%C3%A5rogbetingelser.pdf',
-                    '_system',
-                    'location=yes');*/
-                window.location.href = 'http://www.danmarksflyttemand.dk/forsikring/documents/Danmarksflyttemandvilk%C3%A5rogbetingelser.pdf';
+                var url = 'http://www.danmarksflyttemand.dk/forsikring/documents/Danmarksflyttemandvilk%C3%A5rogbetingelser.pdf',
+                    googleUrl = 'http://docs.google.com/viewer?url=';
+                window.open(
+                    googleUrl + url,
+                    '_blank',
+                    'location=no');
             }
 
-            $('#betingelserlink').click(function() {
-                openPDF();
-            });
+            function initBetingelserLink() {
+                $('#betingelserlink').click(function() {
+                    openPDF();
+                });
+            }
         </script>
 
     </head>
@@ -222,8 +228,19 @@
                     <tr>
                     <td valign="top">
                         <h2>Kontakt</h2>
-                        <p>Telefon:&nbsp;20 54 54 54<br /><a href="mailto:info@danmarksflyttemand.dk">info@danmarksflyttemand.dk</a></p>
-                        <p>F&oslash;lg os p&aring; <a href="http://www.facebook.com/Danmarksflyttemand">Facebook</a></p>
+                        <p>
+                          Telefon:
+                            <a href="tel:+4520545454">
+                                <div id="phonebox">20 54 54 54</div>
+                            </a>
+
+                            <br />
+                            <a href="mailto:info@danmarksflyttemand.dk">info@danmarksflyttemand.dk</a>
+                        </p>
+                        <p>
+                            F&oslash;lg os p&aring;
+                            <a href="http://www.facebook.com/Danmarksflyttemand">Facebook</a>
+                        </p>
                     </td>
 
                     <td valign="top">
@@ -270,7 +287,7 @@
             <article class="container">
                 <h1>Betingelser</h1>
                     <p>
-                       Se vores <a id="betingelserlink" href="#">Almindelige betingelser (download PDF) her</a>.
+                      Se vores <a id="betingelserlink" href="#"> almindelige betingelser </a>.
                     </p>
             </article>
         </section>

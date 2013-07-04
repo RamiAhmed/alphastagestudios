@@ -220,6 +220,15 @@ p.boxtext, a.tablink {
     text-decoration: none;
 }
 
+/* TELEHPONE BOX */
+#phonebox {
+    color: #ffffff;
+    background-image: url(images/phonebox.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 5px;
+}
+
 /* CONTAINER TYPES */
 #navbuffer {
     display: block;
