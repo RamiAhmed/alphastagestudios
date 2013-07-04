@@ -81,6 +81,16 @@ function showTab() {
     }
 }
 
+.swiping(function () {
+    .swipeLeft(function() {
+        navigator.notification.alert("swiped left!");
+    });
+
+    .swipeRight(function() {
+        navigator.notification.alert("swiped right!");
+    });
+});
+
 function getFirstChildWithTagName(element, tagName) {
     for (var i = 0; i < element.childNodes.length; i++) {
         if (element.childNodes[i].nodeName == tagName)
