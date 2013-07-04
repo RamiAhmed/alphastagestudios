@@ -90,7 +90,7 @@ a {
 /* NAVIGATION BAR */
 #nav_bar {
     width: 100%;
-    height: 50px;
+    height: 70px;
     padding-bottom: 15px;
     -webkit-padding-start: 10px;
     display: block;
@@ -104,6 +104,10 @@ a {
     display: none;
 }
 
+#nav-title {
+    border-bottom:solid 5px #f7941d;
+}
+
 ul.MenuBarHorizontal {
     list-style-type: none;
     width: 100%;
@@ -112,10 +116,11 @@ ul.MenuBarHorizontal li {
     list-style-type: none;
     width: 25%;
     position: relative;
-    text-align: left;
+    text-align: center;
     float: left;
     font-size:20px;
     background-image:url(images/nav_button_up.png);
+    clear: both;
 }
 ul.MenuBarHorizontal a.active {
     color: #ffffff;
@@ -128,9 +133,6 @@ ul.MenuBarHorizontal a {
     text-decoration: none;
 }
 
-#nav-title {
-    border-bottom:solid 5px #f7941d;
-}
 
 /* HEADINGS */
 
