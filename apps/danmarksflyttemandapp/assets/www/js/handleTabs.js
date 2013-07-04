@@ -3,9 +3,6 @@ var tabLinks = new Array();
 var pageLinks = new Array();
 var contentSections = new Array();
 
-var innerTabs = new Array();
-var innerContentSections = new Array();
-
 function initTabs() {
     //navigator.notification.alert("initTabs");
     var tabListItems = document.getElementById('tabs').childNodes;
@@ -74,84 +71,13 @@ function showTab() {
             document.getElementById('nav_bar').className = 'active';
         }
 
-        initInnerTabs(selectedId);
+        document.getElementById('nav-title').update(this.text());
 
         return false;
     }
     else {
         return true;
     }
-}
-
-function initInnerTabs(selectedId) {
-    if (Object.size(innerTabs) > 0) {
-        for (var id in innerContentSections) {
-            innerContentSections[id].className = 'innerTabContent hide';
-            innerTabs[id].parentNode.className = '';
-        }
-
-        innerTabs = new Array();
-        innerContentSections = new Array();
-    }
-
-    var innerTabContainer = document.getElementById(selectedId + '-tabs');
-    if (selectedId == "" || innerTabContainer == null) {
-        return;
-    }
-
-    var innerTabListItems = innerTabContainer.childNodes;
-    for (var i = 0; i < innerTabListItems.length; i++) {
-        if (innerTabListItems[i].nodeName == "LI") {
-            var innerTabLink = getFirstChildWithTagName(innerTabListItems[i], 'A');
-            var id = getHash(innerTabLink.getAttribute('href'));
-            innerTabs[id] = innerTabLink;
-            innerContentSections[id] = document.getElementById(id);
-        }
-    }
-
-    var i = 0;
-    for (var id in innerTabs) {
-        innerTabs[id].onclick = showInnerTab;
-
-        if (i == 0) {
-            innerTabs[id].parentNode.className = 'selected';
-        }
-
-        i++;
-    }
-
-    var i = 0;
-    for (var id in innerContentSections) {
-        if (i != 0) {
-            innerContentSections[id].className = 'innerTabContent hide';
-        }
-        else {
-            innerContentSections[id].className = 'innerTabContent';
-        }
-
-        i++;
-    }
-}
-
-function showInnerTab() {
-    if (this.nodeName == "A") {
-        var selectedId = getHash(this.getAttribute('href'));
-
-        for (var id in innerContentSections) {
-            if (id == selectedId) {
-                innerTabs[id].parentNode.className = 'selected';
-                innerContentSections[id].className = 'innerTabContent';
-            }
-            else {
-                innerTabs[id].parentNode.className = '';
-                innerContentSections[id].className = 'innerTabContent hide';
-            }
-        }
-
-        return false;
-    }
-
-    return true;
 }
 
 function getFirstChildWithTagName(element, tagName) {
