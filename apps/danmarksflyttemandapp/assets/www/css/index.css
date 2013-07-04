@@ -83,7 +83,7 @@ html, body {
 a {
     font-size: 16px;
     font-weight: bold;
-    color: #f7941d;
+    color: #de862e; /*#f7941d;*/
     text-decoration: none;
 }
 
@@ -111,7 +111,7 @@ a {
 ul.MenuBarHorizontal {
     list-style-type: none;
     width: 100%;
-    margin: 0;
+    margin: -1px;
     padding: 0;
 }
 ul.MenuBarHorizontal li {
@@ -121,6 +121,7 @@ ul.MenuBarHorizontal li {
     text-align: center;
     font-size: 20px;
     background-image:url(images/nav_button_up.png);
+    float: left;
 }
 ul.MenuBarHorizontal li.active {
     background-image:url(images/nav_button_down.png);
@@ -143,7 +144,7 @@ h1 {
 }
 h2 {
     font-size: 18px;
-    color: #f7941d;
+    color: #de862e; /*#f7941d;*/
 }
 h3 {
     font-size: 16px;
