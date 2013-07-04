@@ -95,16 +95,17 @@ a {
     float: left;
     background-color: #152735;
     position: fixed;
-    top: 1px;
-    left: 1px;
+    top: 0px;
+    left: 0px;
     margin: 0 auto;
+    z-index: 500;
 }
 #nav_bar.hide {
     display: none;
 }
 
 #nav-title {
-    display: inline;
+    display: inline-block;
     border-bottom:solid 5px #f7941d;
     text-align: center;
     margin: 0 auto;
@@ -202,13 +203,12 @@ p.boxtext, a.tablink {
 .tabContent {
     display: block;
     padding-top: 15px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
     width: 100%;
     text-align: left;
     float: left;
     background-color: #152735;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .tabContent.hide {
    display: none;
