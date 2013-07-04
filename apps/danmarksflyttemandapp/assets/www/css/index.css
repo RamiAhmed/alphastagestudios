@@ -218,6 +218,7 @@ p.boxtext, a.tablink {
     background-color: #404040;
     margin-left: 10px;
     margin-right: 10px;
+    overflow: hidden;
 }
 .tabContent.hide {
    display: none;
@@ -229,13 +230,15 @@ p.boxtext, a.tablink {
     float: left;
     background-color: #bbbbbb;
     margin: 0px 5px;
-    width: 90%;
+    width: 100%;
+    overflow: visible;
 }
 
 .container {
     background-color: #bbbbbb;
     display: block;
     padding: 10px 10px 10px 10px;
+    overflow: visible;
 }
 
 #pagecontent {
