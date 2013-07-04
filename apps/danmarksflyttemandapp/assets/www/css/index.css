@@ -109,8 +109,9 @@ a {
     text-align: center;
     margin: 0px auto;
     vertical-align:middle;
-    width: auto;
+    width: 40%;
     display: block;
+    position: relative;
 }
 
 ul.MenuBarHorizontal {
@@ -119,6 +120,7 @@ ul.MenuBarHorizontal {
     margin: 0px;
     padding: 10px 0px 0px 0px;
     display: block;
+    position: relative;
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
