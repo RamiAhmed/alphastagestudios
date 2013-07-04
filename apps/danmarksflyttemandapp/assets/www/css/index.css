@@ -103,7 +103,10 @@ a {
 }
 
 #nav-title {
+    display: inline;
     border-bottom:solid 5px #f7941d;
+    padding-bottom: -10px;
+    text-align: center;
 }
 
 ul.MenuBarHorizontal {
