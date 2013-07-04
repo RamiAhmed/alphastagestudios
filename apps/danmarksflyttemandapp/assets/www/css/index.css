@@ -105,11 +105,12 @@ a {
 }
 
 #nav-title {
-    display: inline-block;
     border-bottom:solid 5px #f7941d;
     text-align: center;
     margin: 0px auto;
     vertical-align:middle;
+    width: auto;
+    display: block;
 }
 
 ul.MenuBarHorizontal {
@@ -117,6 +118,7 @@ ul.MenuBarHorizontal {
     width: 100%;
     margin: 0px;
     padding: 10px 0px 0px 0px;
+    display: block;
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
@@ -126,6 +128,7 @@ ul.MenuBarHorizontal li {
     font-size: 20px;
     background-image:url(images/nav_button_up.png);
     float: left;
+    display: block;
 }
 ul.MenuBarHorizontal li.active {
     background-image:url(images/nav_button_down.png);
