@@ -56,8 +56,8 @@ function showTab() {
         var selectedId = getHash(this.getAttribute('href'));
 
         if (!bShowNavBar) {
-            document.getElementById('nav_bar').className = '';
             document.getElementById('index').className = 'tabContent hide';
+            document.getElementById('nav_bar').className = '';
             bShowNavBar = true;
         }
 
