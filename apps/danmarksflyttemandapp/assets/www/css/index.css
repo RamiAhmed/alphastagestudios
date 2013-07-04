@@ -203,14 +203,14 @@ table.fronttable {
     background-color: #f7941d;
 }
 img.boximg {
-    padding-top: 45px;
+    top: 50px;
     width: 100%;
     position: relative;
 }
 p.boxtext, a.tablink {
     z-index: 100;
     position: relative;
-    top: -20px;
+    top: -10px;
     color: #ffffff;
     font-weight: 700;
     font-size: 28px;
