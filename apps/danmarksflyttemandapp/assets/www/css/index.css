@@ -206,36 +206,6 @@ p.boxtext, a.tablink {
     text-decoration: none;
 }
 
-nav.navbar-vertical {
-    float: left;
-    font-size: 16px;
-    display: inline-block;
-    color: #2C3D49;
-    width: 25%;
-}
-
-nav.navbar-vertical li {
-    list-style: none;
-    display: list-item;
-    padding-top: 5px;
-    padding-bottom: 20px;
-    margin-left: -30px;
-    font-weight: bold;
-}
-nav.navbar-vertical li.selected {
-    color: #eeeeee;
-    background-color: #f7941d;
-}
-
-nav.navbar-vertical li a {
-    position: relative;
-    text-decoration: none;
-    color: #B9BEC2;
-}
-nav.navbar-vertical li.selected a {
-    color: #ffffff;
-}
-
 .container {
     background-color: #bbbbbb;
     display: block;
