@@ -136,14 +136,15 @@ ul.MenuBarHorizontal li {
     float: left;
     font-size:19px;
     padding-right: 15px;
+    background-image:url(images/nav_button_up.png);
+}
+ul.MenuBarHorizontal a.active {
+    color: #ffffff;
+    background-image:url(images/nav_button_down.png);
 }
 ul.MenuBarHorizontal a {
     color: #B9BEC2;
     text-decoration: none;
-}
-ul.MenuBarHorizontal a:hover,
-ul.MenuBarHorizontal a:focus {
-    color: #ffffff;
 }
 
 h1 {

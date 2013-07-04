@@ -21,6 +21,8 @@
 
     <icon src="img/logo_small.png" />
 
+    <gap:splash src="img/splash.png" />
+
     <access origin="*" />
 
 <!--
