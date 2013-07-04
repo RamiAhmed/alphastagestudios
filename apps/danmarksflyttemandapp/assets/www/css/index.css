@@ -210,7 +210,6 @@ img.boximg {
 p.boxtext, a.tablink {
     z-index: 100;
     position: relative;
-    top: -10px;
     color: #ffffff;
     font-weight: 700;
     font-size: 28px;
@@ -220,12 +219,10 @@ p.boxtext, a.tablink {
 }
 
 /* CONTAINER TYPES */
-#pagecontent {
+#navbuffer {
     display: block;
     padding-top: 70px;
     width: 100%;
-    margin: 0px auto;
-    z-index: 5;
 }
 
 .tabContent {

@@ -6,7 +6,6 @@ var contentSections = new Array();
 var bShowNavBar = false;
 
 function initTabs() {
-    //navigator.notification.alert("initTabs");
     var tabListItems = document.getElementById('tabs').childNodes;
     for (var i = 0; i < tabListItems.length; i++) {
         if (tabListItems[i].nodeName == "LI") {
@@ -29,11 +28,6 @@ function initTabs() {
     var i = 0;
     for (var id in tabLinks) {
         tabLinks[id].onclick = showTab;
-/*
-        if (i == 0) {
-            tabLinks[id].parentNode.className = 'active';
-        }
-*/
         i++;
     }
 
@@ -80,16 +74,6 @@ function showTab() {
         return true;
     }
 }
-
-var pagecontent = $('#pagecontent');
-
-pagecontent.swipeLeft(function() {
-    navigator.notification.alert("swiped left!");
-});
-
-pagecontent.swipeRight(function() {
-    navigator.notification.alert("swiped right!");
-});
 
 function getFirstChildWithTagName(element, tagName) {
     for (var i = 0; i < element.childNodes.length; i++) {
