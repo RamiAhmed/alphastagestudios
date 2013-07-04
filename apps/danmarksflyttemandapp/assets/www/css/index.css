@@ -184,22 +184,20 @@ table.fronttable {
 #frontbox4 {
     background-color: #f7941d;
 }
-a.tablink {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 28px;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
-}
 img.boximg {
+    width: 100%;
     position: relative;
 }
 p.boxtext {
     z-index: 100;
     position: relative;
     top: -20px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
 }
 
 nav.navbar-vertical {
