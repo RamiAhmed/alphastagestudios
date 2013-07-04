@@ -72,7 +72,7 @@ function showTab() {
             bShowNavBar = true;
         }
 
-        document.getElementById('nav-title').update(this.text());
+        document.getElementById('nav-title').innerHTML = this.innerHTML;
 
         return false;
     }

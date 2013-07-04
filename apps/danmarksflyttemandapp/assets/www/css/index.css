@@ -111,6 +111,8 @@ a {
 ul.MenuBarHorizontal {
     list-style-type: none;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 ul.MenuBarHorizontal li {
     list-style-type: none;
