@@ -221,7 +221,7 @@ p.boxtext, a.tablink {
 }
 
 /* TELEHPONE BOX */
-div.phonebox {
+#phonebox {
     color: #ffffff;
     background-image: url(images/phonebox.png);
     background-size: 100% 100%;
