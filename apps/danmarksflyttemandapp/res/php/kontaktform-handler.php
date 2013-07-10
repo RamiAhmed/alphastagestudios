@@ -1,3 +1,7 @@
+/* Script written by Rami@alphastagestudios.com
+    All Copyrights preserved.
+*/
+
 <?php
     $errors = '';
     $myemail = 'rami@alphastagestudios.com';
