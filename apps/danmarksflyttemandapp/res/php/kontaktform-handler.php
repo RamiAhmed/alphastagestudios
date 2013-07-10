@@ -5,8 +5,8 @@
     if (empty($_POST['Name'])      ||
         empty($_POST['Email'])      ||
         empty($_POST['Subject'])    ||
-        emppty($_POST['Message'])) {
-       $errors .= '\n Error: all fields are required';
+        empty($_POST['Message'])) {
+       $errors .= '\n Et påkrævet felt er ikke blevet udfyldt!';
     }
 
     $company = $_POST['Company'];
@@ -19,7 +19,7 @@
     $message = $_POST['Message'];
 
     if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", $email_address)) {
-        $errors .= "\n Error: Invalid email address";
+        $errors .= "\n Ugyldig email addresse";
     }
 
     if (empty($errors)) {
@@ -34,7 +34,7 @@
                     "Besked: $message.\n";
 
         $headers = "From: $myemail\n";
-        $headers .= "Svar: $email_address\n";
+        $headers .= "Reply-To: $email_address\n";
 
         mail($to, $email_subject, $email_body, $headers);
         echo "success";
