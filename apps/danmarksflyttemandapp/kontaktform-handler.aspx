@@ -10,7 +10,7 @@ public class MailHelper {
 
     string toEmail = "rami@alphastagestudios.com";
 
-    [System.Web.Services.WebMethod]
+    //[System.Web.Services.WebMethod]
     public static string SendMail(object sender, EventArgs e) {
         //Response.ContentType = "text/plain";
 
