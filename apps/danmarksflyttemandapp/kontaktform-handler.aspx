@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Exception;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
@@ -7,7 +10,11 @@ public class MailHelper {
 
     string toEmail = "rami@alphastagestudios.com";
 
+    [System.Web.Services.WebMethod]
     public static string SendMail(object sender, EventArgs e) {
+        string errors = "";
+        Response.ContentType = "text/plain";
+
         try {
             string company = Request.Form["Company"].ToString();
             string name = Request.Form["Name"].ToString();
@@ -19,16 +26,21 @@ public class MailHelper {
             string userMessage = Request.Form["Message"].ToString();
 
             if (!ValidateEmail(email)) {
-                return "Indtastet email er ugyldig.";
+                errors = "Indtastet email er ugyldig.";
             }
             else if (String.IsNullOrEmpty(name)) {
-                return "Indtast et navn.";
+                errors = "Indtast et navn.";
             }
             else if (String.IsNullOrEmpty(subject)) {
-                return "Skriv et emne.";
+                errors = "Skriv et emne.";
             }
             else if (String.IsNullOrEmpty(userMessage)) {
-                return "Skriv en besked.";
+                errors = "Skriv en besked.";
+            }
+
+            if (!String.IsNullOrEmpty(errors)) {
+                Response.Write(errors);
+                return errors;
             }
 
             string message = "Afsender: " + name + " - " + email + "\n";
@@ -49,9 +61,11 @@ public class MailHelper {
             SmtpClient client = new SmtpClient("localhost");
             client.Send(mail);
 
+            Response.Write("success");
             return "success";
         }
         catch (Exception e) {
+            Response.Write(e.ToString());
             return e.ToString();
         }
     }
