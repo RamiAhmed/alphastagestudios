@@ -1,49 +1,47 @@
+<%@ WebHandler Language="C#" Class="ContactHandler" %>
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Exception;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 
-public class ContactHandler {
+public class ContactHandler : IHttpHandler {
 
     string toEmail = "rami@alphastagestudios.com";
 
-    //[System.Web.Services.WebMethod]
-    public static string SendMail(object sender, EventArgs e) {
-        //Response.ContentType = "text/plain";
+    public bool IsReusable { get { return false; } }
 
-        try {
-            string errors = "";
+    public void ProcessRequest(HttpContext context) {
+        HttpResponse response = context.Response;
+        response.ContentType = "text/plain";
 
-            string company = Request.Form["Company"].ToString();
-            string name = Request.Form["Name"].ToString();
-            string address = Request.Form["Address"].ToString();
-            string city = Request.Form["City"].ToString();
-            string email = Request.Form["Email"].ToString();
-            string telephone = Request.Form["Telephone"].ToString();
-            string subject = Request.Form["Subject"].ToString();
-            string userMessage = Request.Form["Message"].ToString();
+        string errors = "",
+            name = context.Request.QueryString["Name"],
+            company = context.Request.QueryString["Company"],
+            address = context.Request.QueryString["Address"],
+            city = context.Request.QueryString["City"],
+            email = context.Request.QueryString["Email"],
+            telephone = context.Request.QueryString["Telephone"],
+            subject = context.Request.QueryString["Subject"],
+            userMessage = context.Request.QueryString["Message"];
 
-            if (String.IsNullOrEmpty(email) || !ValidateEmail(email)) {
-                errors = "Indtastet email er ugyldig.";
-            }
-            else if (String.IsNullOrEmpty(name)) {
-                errors = "Indtast et navn.";
-            }
-            else if (String.IsNullOrEmpty(subject)) {
-                errors = "Skriv et emne.";
-            }
-            else if (String.IsNullOrEmpty(userMessage)) {
-                errors = "Skriv en besked.";
-            }
+        if (String.IsNullOrEmpty(email) || !ValidateEmail(email)) {
+            errors = "Indtastet email er ugyldig.";
+        }
+        else if (String.IsNullOrEmpty(name)) {
+            errors = "Indtast et navn.";
+        }
+        else if (String.IsNullOrEmpty(subject)) {
+            errors = "Skriv et emne.";
+        }
+        else if (String.IsNullOrEmpty(userMessage)) {
+            errors = "Skriv en besked.";
+        }
 
-            if (!String.IsNullOrEmpty(errors)) {
-                //Response.Write(errors);
-                return errors;
-            }
-
+        if (!String.IsNullOrEmpty(errors)) {
+            response.Write(errors);
+        }
+        else {
             string message = "Afsender: " + name + " - " + email + "\n";
             if (!String.IsNullOrEmpty(message))
                 message += "Virksomhed: " + company + "\n";
@@ -59,16 +57,13 @@ public class ContactHandler {
             MailMessage mail = new MailMessage(email, toEmail, subject, message);
             mail.IsBodyHtml = false;
 
-            SmtpClient client = new SmtpClient("localhost");
-            client.Send(mail);
+            //SmtpClient client = new SmtpClient("localhost");
+            //client.Send(mail);
 
-            //Response.Write("success");
-            return "success";
+            response.Write("success");
         }
-        catch (Exception e) {
-            //Response.Write(e.ToString());
-            return e.ToString();
-        }
+
+        response.End();
     }
 
     private bool ValidateEmail(string email)
