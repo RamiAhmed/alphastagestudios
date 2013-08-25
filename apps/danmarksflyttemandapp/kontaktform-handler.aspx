@@ -13,7 +13,7 @@ public class MailHelper {
     [System.Web.Services.WebMethod]
     public static string SendMail(object sender, EventArgs e) {
         string errors = "";
-        Response.ContentType = "text/plain";
+        //Response.ContentType = "text/plain";
 
         try {
             string company = Request.Form["Company"].ToString();
@@ -39,7 +39,7 @@ public class MailHelper {
             }
 
             if (!String.IsNullOrEmpty(errors)) {
-                Response.Write(errors);
+                //Response.Write(errors);
                 return errors;
             }
 
@@ -61,11 +61,11 @@ public class MailHelper {
             SmtpClient client = new SmtpClient("localhost");
             client.Send(mail);
 
-            Response.Write("success");
+            //Response.Write("success");
             return "success";
         }
         catch (Exception e) {
-            Response.Write(e.ToString());
+            //Response.Write(e.ToString());
             return e.ToString();
         }
     }
