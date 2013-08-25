@@ -2,7 +2,9 @@
 
 using System;
 using System.Web;
+using System.Linq;
 using System.Net.Mail;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 public class ContactHandler : IHttpHandler {
