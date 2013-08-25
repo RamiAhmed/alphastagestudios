@@ -12,10 +12,11 @@ public class MailHelper {
 
     [System.Web.Services.WebMethod]
     public static string SendMail(object sender, EventArgs e) {
-        string errors = "";
         //Response.ContentType = "text/plain";
 
         try {
+            string errors = "";
+
             string company = Request.Form["Company"].ToString();
             string name = Request.Form["Name"].ToString();
             string address = Request.Form["Address"].ToString();
@@ -25,7 +26,7 @@ public class MailHelper {
             string subject = Request.Form["Subject"].ToString();
             string userMessage = Request.Form["Message"].ToString();
 
-            if (!ValidateEmail(email)) {
+            if (String.IsNullOrEmpty(email) || !ValidateEmail(email)) {
                 errors = "Indtastet email er ugyldig.";
             }
             else if (String.IsNullOrEmpty(name)) {
