@@ -14,8 +14,7 @@ public class ContactHandler : IHttpHandler {
     public bool IsReusable { get { return false; } }
 
     public void ProcessRequest(HttpContext context) {
-        HttpResponse response = context.Response;
-        //response.ContentType = "text/plain";
+        context.Response.ContentType = "application/json";
 
         string errors = "",
             name = context.Request.QueryString["Name"],
@@ -41,7 +40,7 @@ public class ContactHandler : IHttpHandler {
         }
 
         if (!String.IsNullOrEmpty(errors)) {
-            response.Write("{\"success\":false, error:\"" + errors + "\"}");
+            context.Response.Write("{\"success\":\"false\", \"error\":\"" + errors + "\"}");
         }
         else {
             string message = "Afsender: " + name + " - " + email + "\n";
@@ -62,11 +61,11 @@ public class ContactHandler : IHttpHandler {
             //SmtpClient client = new SmtpClient("localhost");
             //client.Send(mail);
 
-            response.Write("{\"success\":true, error:none}");
+            context.Response.Write("{\"success\":\"true\", \"error\":\"none\"}");
         }
 
-        //response.Finalize();
-        //response.End();
+        //context.Response.Finalize();
+        //context.Response.End();
     }
 
     private bool ValidateEmail(string email)
