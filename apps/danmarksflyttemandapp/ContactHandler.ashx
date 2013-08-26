@@ -1,4 +1,4 @@
-<%@ WebHandler Language="C#" Class="ContactHandler" %>
+<%@ WebHandler Language="C#" Class="ContactHandler" ResponseEncoding="utf-8" %>
 
 using System;
 using System.Web;
@@ -15,7 +15,7 @@ public class ContactHandler : IHttpHandler {
 
     public void ProcessRequest(HttpContext context) {
         HttpResponse response = context.Response;
-        response.ContentType = "text/plain";
+        //response.ContentType = "text/plain";
 
         string errors = "",
             name = context.Request.QueryString["Name"],
@@ -41,7 +41,7 @@ public class ContactHandler : IHttpHandler {
         }
 
         if (!String.IsNullOrEmpty(errors)) {
-            response.Write(errors);
+            response.Write("{\"success\":false, error:\"" + errors + "\"}");
         }
         else {
             string message = "Afsender: " + name + " - " + email + "\n";
@@ -62,10 +62,11 @@ public class ContactHandler : IHttpHandler {
             //SmtpClient client = new SmtpClient("localhost");
             //client.Send(mail);
 
-            response.Write("success");
+            response.Write("{\"success\":true, error:none}");
         }
 
-        response.End();
+        //response.Finalize();
+        //response.End();
     }
 
     private bool ValidateEmail(string email)
