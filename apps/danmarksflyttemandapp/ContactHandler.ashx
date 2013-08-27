@@ -66,7 +66,8 @@ public class ContactHandler : IHttpHandler {
             //context.Response.Write("{\"success\":\"true\", \"error\":\"none\"}");
         }
 
-        context.Response.Write(JsonConvert.SerializeObject(result));
+        //context.Response.Write(JsonConvert.SerializeObject(result));
+        context.Response.Write(result);
 
         //context.Response.Finalize();
         //context.Response.End();
