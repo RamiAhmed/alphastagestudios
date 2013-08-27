@@ -7,16 +7,18 @@ using System.Net.Mail;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
+using Newtonsoft.Json;
+
 public class ContactHandler : IHttpHandler {
 
     string toEmail = "rami@alphastagestudios.com";
 
-    public bool IsReusable { get { return false; } }
-
     public void ProcessRequest(HttpContext context) {
-        context.Response.ContentType = "application/json";
+        //context.Response.ContentType = "application/json";
+        context.Response.ContentType = "text/plain";
 
-        string errors = "",
+        string result = "",
+            errors = "",
             name = context.Request.QueryString["Name"],
             company = context.Request.QueryString["Company"],
             address = context.Request.QueryString["Address"],
@@ -40,7 +42,8 @@ public class ContactHandler : IHttpHandler {
         }
 
         if (!String.IsNullOrEmpty(errors)) {
-            context.Response.Write("{\"success\":\"false\", \"error\":\"" + errors + "\"}");
+            result = new { d = errors };
+            //context.Response.Write("{\"success\":\"false\", \"error\":\"" + errors + "\"}");
         }
         else {
             string message = "Afsender: " + name + " - " + email + "\n";
@@ -61,8 +64,11 @@ public class ContactHandler : IHttpHandler {
             //SmtpClient client = new SmtpClient("localhost");
             //client.Send(mail);
 
-            context.Response.Write("{\"success\":\"true\", \"error\":\"none\"}");
+            result = new { d = "success" };
+            //context.Response.Write("{\"success\":\"true\", \"error\":\"none\"}");
         }
+
+        context.Response.Write(JsonConvert.SerializeObject(result));
 
         //context.Response.Finalize();
         //context.Response.End();
@@ -76,5 +82,11 @@ public class ContactHandler : IHttpHandler {
            return true;
         else
            return false;
+    }
+
+    public bool IsReusable {
+        get {
+            return false;
+        }
     }
 }
