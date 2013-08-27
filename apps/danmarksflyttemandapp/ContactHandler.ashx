@@ -2,12 +2,20 @@
 
 using System;
 using System.Web;
+using System.Web.Script;
 
 public class ContactHandler : IHttpHandler {
 
     public void ProcessRequest(HttpContext context) {
+        //string jsonData = new StreamReader(context.Request.InputStream, System.Text.Encoding.UTF8).ReadToEnd();
+
+        string result = "Hello World!";
+
         context.Response.ContentType = "text/json";
-        context.Response.Write("{\"success\":\"true\"}");
+
+        JavaScriptSerializer serializer = new JavaScriptSerializer();
+        var output = serializer.Serialize(result);
+        context.Response.Write(output);
     }
 
     public bool IsReusable {
