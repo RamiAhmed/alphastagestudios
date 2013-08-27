@@ -1,3 +1,5 @@
+/* Script written by Rami@alphastagestudios.com 2013 */
+<%@ WebHandler Language="C#" Class="ContactHandler" ResponseEncoding="utf-8" %>
 using System;
 using System.Web;
 using System.Linq;
