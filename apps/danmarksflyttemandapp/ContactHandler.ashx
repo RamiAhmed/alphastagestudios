@@ -12,8 +12,8 @@ public class ContactHandler : IHttpHandler {
     string toEmail = "rami@alphastagestudios.com";
 
     public void ProcessRequest(HttpContext context) {
-        //context.Response.ContentType = "application/json";
-        context.Response.ContentType = "text/plain";
+        context.Response.ContentType = "application/json";
+        //context.Response.ContentType = "text/plain";
 
         var result;
         string errors = "",
