@@ -15,8 +15,8 @@ public class ContactHandler : IHttpHandler {
         //context.Response.ContentType = "application/json";
         context.Response.ContentType = "text/plain";
 
-        string result = "",
-            errors = "",
+        var result;
+        string errors = "",
             name = context.Request.QueryString["Name"],
             company = context.Request.QueryString["Company"],
             address = context.Request.QueryString["Address"],
