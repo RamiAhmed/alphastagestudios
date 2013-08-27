@@ -1,4 +1,24 @@
-/* Script written by Rami@alphastagestudios.com 2013 */
+<%@ WebHandler Language="C#" Class="ContactHandler" %>
+
+using System;
+using System.Web;
+
+public class ContactHandler : IHttpHandler {
+
+    public void ProcessRequest(HttpContext context) {
+        context.Response.ContentType = "text/json";
+        context.Response.Write("Hello!");
+    }
+
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+}
+
+
+/*
 <%@ WebHandler Language="C#" Class="ContactHandler" ResponseEncoding="utf-8" %>
 using System;
 using System.Web;
@@ -91,3 +111,4 @@ public class ContactHandler : IHttpHandler {
         }
     }
 }
+*/
