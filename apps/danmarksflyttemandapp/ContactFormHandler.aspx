@@ -12,8 +12,9 @@ public class ContactFormHandler {
     string toEmail = "rami@alphastagestudios.com";
 
     [WebMethod()]
-    public static string SendMail(object sender, EventArgs e) {
+    public static string SendMail() {
         try {
+
             string errors = "",
                 name = context.Request.QueryString["Name"],
                 company = context.Request.QueryString["Company"],
