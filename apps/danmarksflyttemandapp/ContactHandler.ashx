@@ -1,4 +1,4 @@
-<%@ WebHandler Language="C#" Class="ContactHandler" ResponseEncoding="utf-8" %>
+//<%@ WebHandler Language="C#" Class="ContactHandler" ResponseEncoding="utf-8" %>
 
 using System;
 using System.Web;
