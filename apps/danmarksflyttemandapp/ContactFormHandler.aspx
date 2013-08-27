@@ -11,7 +11,7 @@ public class ContactFormHandler {
 
     string toEmail = "rami@alphastagestudios.com";
 
-    [WebMethod]
+    [WebMethod()]
     public static string SendMail(object sender, EventArgs e) {
         try {
             string errors = "",
