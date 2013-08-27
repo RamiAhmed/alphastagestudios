@@ -59,15 +59,15 @@ public class ContactHandler : IHttpHandler {
             MailMessage mail = new MailMessage(email, toEmail, subject, message);
             mail.IsBodyHtml = false;
 
-            //SmtpClient client = new SmtpClient("localhost");
+            //SmtpClient client = new SmtpClient();
             //client.Send(mail);
 
             result = new { d = "success" };
             //context.Response.Write("{\"success\":\"true\", \"error\":\"none\"}");
         }
 
-        //context.Response.Write(JsonConvert.SerializeObject(result));
-        context.Response.Write(result);
+        context.Response.Write(JsonConvert.SerializeObject(result));
+        //context.Response.Write(result);
 
         //context.Response.Finalize();
         //context.Response.End();
