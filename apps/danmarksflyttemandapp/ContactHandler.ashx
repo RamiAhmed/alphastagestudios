@@ -7,7 +7,7 @@ public class ContactHandler : IHttpHandler {
 
     public void ProcessRequest(HttpContext context) {
         context.Response.ContentType = "text/json";
-        context.Response.Write("Hello!");
+        context.Response.Write("{\"success\":\"true\"}");
     }
 
     public bool IsReusable {
