@@ -5,11 +5,13 @@
 using System;
 using System.Exception;
 using System.Net.Mail;
+using System.Web.Services;
 
 public class ContactFormHandler {
 
     string toEmail = "rami@alphastagestudios.com";
 
+    [WebMethod]
     public static string SendMail(object sender, EventArgs e) {
         try {
             string errors = "",
