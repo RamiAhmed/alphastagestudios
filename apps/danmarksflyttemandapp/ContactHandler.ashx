@@ -11,11 +11,11 @@ public class ContactHandler : IHttpHandler {
 
         string result = "Hello World!";
 
-        context.Response.ContentType = "text/json";
+        //context.Response.ContentType = "text/json";
 
-        JavaScriptSerializer serializer = new JavaScriptSerializer();
-        var output = serializer.Serialize(result);
-        context.Response.Write(output);
+        //JavaScriptSerializer serializer = new JavaScriptSerializer();
+        //var output = serializer.Serialize(result);
+        context.Response.Write(result);
     }
 
     public bool IsReusable {
