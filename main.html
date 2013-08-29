@@ -32,9 +32,6 @@
         time {
             font-style: italic;
         }
-        div.fb-root {
-            display: none;
-        }
         img {
             border: 0;
         }
@@ -51,8 +48,6 @@
         ga('send', 'pageview');
     </script>
 
-    <script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
-
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -60,28 +55,6 @@
 </head>
 
 <body onload="initTabs()">
-
-    <div id="fb-root"></div>
-    <script>
-    window.fbAsyncInit = function() {
-        // init the FB JS SDK
-        FB.init({
-          appId      : '216701708480524',                        // App ID from the app dashboard
-          channelUrl : '//WWW.alphastagestudios.COM/channel.html', // Channel file for x-domain comms
-          status     : false,                                 // Check Facebook Login status
-          xfbml      : true                                  // Look for social plugins on the page
-        });
-
-    // Additional initialization code such as adding Event Listeners goes here
-    };
-
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=216701708480524";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
 
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
@@ -200,31 +173,8 @@
     <footer class="container" id="footer">
         <!--<p><a href="#top">Back to top</a></p>-->
 
-        <p><div class="fb-like" data-href="http://www.alphastagestudios.com" data-send="true" data-width="400" data-show-faces="false"></div></p>
 
         <p>
-            <div class="g-plusone" data-size="large"></div>
-
-            <a href="https://twitter.com/alphastagestd" class="twitter-follow-button" data-show-count="false">Follow @alphastagestd</a>
-            <script>
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-            </script>
-        </p>
-
-
-        <p>
-            <iframe src="http://www.youtube.com/subscribe_widget?p=AlphaStageStudios" id="fr"
-           style="overflow: hidden; height: 105px; width: 300px; border: 0; background-color:#333333;"
-           scrolling="no" frameBorder="0">
-            </iframe>
-        </p>
-
-        <p>
-            Find us on:
-            <a href="https://www.facebook.com/pages/Alpha-Stage-Studios/525820797467165?fref=ts">Facebook</a> |
-            <a href="https://plus.google.com/101565492138867818989" rel="publisher">Google+</a> |
-            <a href="https://twitter.com/AlphaStageSTD">Twitter</a> |
-            <a href="http://www.youtube.com/user/AlphaStageStudios">Youtube</a> |
             <a href="#about" class="tablink">About Us</a>
             <p>CVR nr. (DK): 35090142</p>
         </p>
@@ -240,6 +190,31 @@
 
         <p>&#169; Alpha Stage Studios 2013 </p>
     </footer>
+
+    <!-- AddThis Smart Layers BEGIN -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <script type="text/javascript" charset="utf-8" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-521f5a26519ca481"></script>
+    <script type="text/javascript" charset="utf-8">
+      addthis.layers({
+        'theme' : 'transparent',
+        'share' : {
+          'position' : 'left',
+          'numPreferredServices' : 6
+        },
+        'follow' : {
+          'services' : [
+            {'service': 'facebook', 'id': 'Alpha-Stage-Studios'},
+            {'service': 'twitter', 'id': 'AlphaStageStd'},
+            {'service': 'google_follow', 'id': '101565492138867818989'},
+            {'service': 'linkedin', 'id': '3286103', 'usertype': 'company'},
+            {'service': 'youtube', 'id': 'AlphaStageStudios'}
+          ]
+        },
+        'whatsnext' : {},
+        'recommended' : {}
+      });
+    </script>
+    <!-- AddThis Smart Layers END -->
 
    <!-- Le javascript
     ================================================== -->
