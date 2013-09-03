@@ -63,13 +63,14 @@ video {
     margin: 5px 5px;
     background-color: transparent;
     font-weight: bold;
+    color:  rgb(86, 86, 109);
 }
 
 .nav-pills > li.active > a {
     border-bottom: 2px solid rgb(86, 86, 109);
     border-radius: 0px;
     background-color: transparent;
-    color:  rgb(86, 86, 109);
+    color: rgb(86, 86, 109);
 }
 
 .nav-pills > li > a:hover,
