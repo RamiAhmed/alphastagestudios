@@ -36,7 +36,7 @@ video {
 .tab-pane {
     display: block;
     padding: 10px;
-    margin: 10px 0px;
+    margin: 30px 20px;
     background-color: #eff8ff;
     border-radius: 10px;
     box-shadow: 3px 0px 15px 0px black, -3px 0px 15px 0px black;
@@ -84,7 +84,7 @@ video {
 
 @media (min-width: 1600px){
     #main-wrapper {
-        width: 50%;
+        width: 60%;
         margin: 105px auto;
     }
     #brandlogo {
@@ -130,7 +130,7 @@ video {
 @media (max-width: 450px) {
     #main-wrapper {
         width: 100%;
-        margin: 100px auto;
+        margin: 30px auto;
     }
     #brandlogo {
         display: none;
