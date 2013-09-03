@@ -55,16 +55,31 @@ video {
     position: relative;
     vertical-align: top;
 }
-
-@media screen {
-    .nav-pills > li > a {
-        height: 30px;
-        text-align: center;
-        vertical-align: center;
-        padding: 5px 10px;
-        margin: 5px 5px;
-    }
+.nav-pills > li > a {
+    height: 30px;
+    text-align: center;
+    vertical-align: center;
+    padding: 5px 10px;
+    margin: 5px 5px;
+    background-color: transparent;
+    font-weight: bold;
 }
+
+.nav-pills > li.active > a {
+    border-bottom: 2px solid rgb(86, 86, 109);
+    border-radius: 0px;
+    background-color: transparent;
+    color:  rgb(86, 86, 109);
+}
+
+.nav-pills > li > a:hover,
+.nav-pills > li > a:focus,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: black;
+    background-color: transparent;
+}
+
 
 @media (min-width: 1600px){
     #main-wrapper {
@@ -94,6 +109,9 @@ video {
     }
     .nav {
         margin-top: 10px;
+    }
+    .container {
+        max-width: 770px;
     }
 }
 
