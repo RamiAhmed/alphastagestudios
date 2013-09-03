@@ -77,7 +77,7 @@ video {
 .nav-pills > li > a:focus,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-    color: #657383;
+    color: #BCC6CC;
     background-color: transparent;
 }
 
