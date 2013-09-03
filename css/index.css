@@ -2,6 +2,8 @@ html, body {
     margin: 0px;
     color: rgb(86, 86, 109);
     background-color: rgb(245, 245, 245);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .content {
@@ -15,7 +17,7 @@ html, body {
     border: 1px solid rgb(238, 238, 238);
     border-radius: 10px;
     background-color: rgb(238, 238, 238);
-    padding-bottom: 5px;
+    padding: 20px 15px 5px;
 }
 .header {
     border-bottom: 1px solid rgb(238, 238, 238);
@@ -26,6 +28,7 @@ html, body {
     margin: 0px auto 0px;
     padding-top: 10px;
     background-color: #f4f4ff;
+    padding: 5px 10px 1px;
 }
 
 video {
@@ -119,7 +122,7 @@ video {
 @media (min-width: 450px) and (max-width: 800px) {
     #main-wrapper {
         width: 100%;
-        margin: 50px auto;
+        margin: 40px auto;
     }
     #brandlogo {
         width: 30%;
@@ -141,3 +144,10 @@ video {
         margin: 10px auto 5px;
     }
 }
+
+/* Fix issues in IE 10 on Windows Phone 8 */
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
