@@ -35,8 +35,8 @@ video {
 
 .tab-pane {
     display: block;
-    padding: 20px;
-    margin: 30px 20px;
+    padding: 10px 20px;
+    margin: 15px 20px;
     background-color: #eff8ff;
     border-radius: 10px;
     box-shadow: 3px 0px 15px 0px black, -3px 0px 15px 0px black;
