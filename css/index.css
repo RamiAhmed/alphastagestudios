@@ -97,14 +97,28 @@ video {
     }
 }
 
-@media (max-width: 800px) {
+@media (min-width: 450px) and (max-width: 800px) {
     #main-wrapper {
-        width: 80%;
+        width: 100%;
         margin: 50px auto;
     }
     #brandlogo {
         width: 30%;
         height: 30%;
     }
+}
 
+@media (max-width: 450px) {
+    #main-wrapper {
+        width: 100%;
+        margin: 100px auto;
+    }
+    #brandlogo {
+        display: none;
+    }
+    .nav-pills > li > a {
+        height: 25px;
+        padding: 5px 5px;
+        margin: 10px auto 5px;
+    }
 }
