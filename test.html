@@ -31,11 +31,12 @@
         html, body {
             height: 100%;
             margin: 0px;
+            color: rgb(86, 86, 109);
+            background-color: rgb(250, 250, 250);
         }
 
         .content {
             display: block;
-
             padding: 10px;
             margin: 10px 0px;
             height: 100%;
@@ -43,10 +44,25 @@
 
         .footer {
             text-align: center;
+            border: 1px solid rgb(238, 238, 238);
+            border-radius: 10px;
+            background-color: rgb(238, 238, 238);
+            padding-bottom: 5px;
+        }
+        .header {
+            border-bottom: 1px solid rgb(238, 238, 238);
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            margin: 0px auto 0px;
+            padding-top: 10px;
+            background-color: #f4f4ff;
         }
 
         video {
             padding: 5px;
+            margin: 0px auto;
         }
 
         .tab-pane {
@@ -55,31 +71,88 @@
             margin: 10px 0px;
             background-color: #eff8ff;
             border-radius: 10px;
-            box-shadow: 3px 0px 5px black, -3px 0px 5px black;
-            height: 100%;
+            box-shadow: 3px 0px 15px 0px black, -3px 0px 15px 0px black;
         }
 
-        .container {
+        #main-content {
+            background-color: #e5e5e5;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+
+        #brandlogo {
+            display: inline-block;
+            float: left;
+            margin-bottom: 5px;
+            position: relative;
+            vertical-align: top;
+        }
+
+        @media (min-width: 1600px){
+            #main-wrapper {
+                width: 50%;
+                margin: 105px auto;
+            }
+            #brandlogo {
+                width: 45%;
+                height: 45%;
+            }
+            .nav {
+                margin-top: 20px;
+            }
+            .container {
+                max-width: 1024px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 1600px) {
+            #main-wrapper {
+                width: 60%;
+                margin: 65px auto;
+            }
+            #brandlogo {
+                width: 45%;
+                height: 45%;
+            }
+            .nav {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            #main-wrapper {
+                width: 80%;
+                margin: 50px auto;
+            }
+            #brandlogo {
+                width: 30%;
+                height: 30%;
+            }
+
         }
     </style>
 
 </head>
 
 <body>
-      <div class="container">
-
       <header class="header">
-        <ul class="nav nav-pills pull-right">
-            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-            <li><a href="#portfolio" data-toggle="pill">Portfolio</a> </li>
-            <li><a href="#about" data-toggle="pill">About</a></li>
-            <li><a href="#blog" data-toggle="pill">Blog</a></li>
-            <li><a href="#games" data-toggle="pill">Games</a></li>
-        </ul>
-        <h3 class="text-muted">Alpha Stage Studios</h3>
+        <div class="container">
+            <img id="brandlogo" src="img/logo_placeholder.png">
+
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="#home" data-toggle="pill">Home</a></li>
+                    <li><a href="#portfolio" data-toggle="pill">Portfolio</a> </li>
+                    <li><a href="#about" data-toggle="pill">About</a></li>
+                    <li><a href="#blog" data-toggle="pill">Blog</a></li>
+                    <li><a href="#games" data-toggle="pill">Games</a></li>
+                </ul>
+            </nav>
+        </div>
       </header> <!-- /header -->
 
-      <section class="content tab-content">
+      <div id="main-wrapper" class="container-fluid">
+      <section id="main-content" class="content tab-content">
         <section id="home" class="tab-pane active">
             <h1>Alpha Stage Studios Website v2</h1>
             <p>
@@ -170,18 +243,17 @@
 
       <footer class="footer">
         <p>
-            &copy; Alpha Stage Studios 2013 | CVR: DK-35090142
+            &copy; Alpha Stage Studios I/S, 2013 | CVR: DK-35090142
         </p>
       </footer> <!-- /footer -->
 
     </div> <!-- /container -->
 
-
     <!-- Placed at the end of the document so the pages load faster -->
 
     <!-- AddThis Smart Layers BEGIN -->
     <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-    <script type="text/javascript" charset="utf-8" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-521f5a26519ca481"></script>
+    <script type="text/javascript" charset="utf-8" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-521f5a26519ca481"></script>
     <script type="text/javascript" charset="utf-8">
       addthis.layers({
         'theme' : 'transparent',
