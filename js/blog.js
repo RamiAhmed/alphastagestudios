@@ -15,18 +15,22 @@ $().ready(function() {
             var previewEnd = blogPost.indexOf("</p>");
 
             var blogPreview = blogPost.substring(0, previewEnd);
-            //console.log("blogPreview: " + blogPreview);
+            blogPreview += "</p>";
 
-            blogPreview += "</p></blockquote>";
-            blogPreview += "<p><a class='btn btn-default btn-lg' href='blogs/" + blogFileName + ".html' target='_blank' data-disqus-identifier='" + blogFileName.substring(0, 10) +"'>";
-            blogPreview += "Read the rest of this blog</a>.</p>";
-
-            if (i < blogFilesArray.length-1) {
-                blogPreview += "<hr>";
-            }
+            var blogButton = "<p><a class='btn btn-default btn-lg'";
+            blogButton += " href='blogs/" + blogFileName + ".html'";
+            blogButton += " target='_blank'";
+            blogButton += " data-disqus-identifier='" + blogFileName.substring(0, 10) +"'>";
+            blogButton += "Read the rest of this blog</a>.</p>";
 
             $("#blog-container").append("<blockquote>");
             $("#blog-container").append(blogPreview);
+            $("#blog-container").append("</blockquote");
+            $("#blog-container").append(blogButton);
+
+            if (i < blogFilesArray.length-1) {
+                $("#blog-container").append("<hr>";
+            }
         }
     };
 });
