@@ -15,8 +15,10 @@ $().ready(function() {
             var previewEnd = blogPost.indexOf("</p>");
 
             var blogPreview = blogPost.substring(0, previewEnd);
-            blogPreview += "...</p>";
-            blogPreview += "<p><a href='blogs/" + blogFileName + ".html'>Read this blog</a>.</p>";
+            console.log("blogPreview: " + blogPreview);
+
+            blogPreview += "</p>";
+            blogPreview += "<p><a href='blogs/" + blogFileName + ".html' target='_blank'>Read the rest of this blog</a>.</p>";
 
             if (i < blogFilesArray.length-1) {
                 blogPreview += "<hr>";
@@ -30,14 +32,21 @@ $().ready(function() {
 var loadBlogPost = function(filename) {
     var fullPath = 'blogs/' + filename + '.html';
     var result = null;
+
     $.ajax({
         url: fullPath,
         type: 'get',
         dataType: 'html',
         async: false,
         success: function(data) {
-            result = $(data).select(".blog-article").html();
+            result = data;
         }
     });
+
+    result = $($.parseHTML(result)).find(".blog-article").html();
+
+    console.log("load: " + fullPath);
+    console.log("result: " + result);
+
     return result;
 }
