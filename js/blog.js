@@ -29,7 +29,7 @@ $().ready(function() {
             $("#blog-container").append(blogButton);
 
             if (i < blogFilesArray.length-1) {
-                $("#blog-container").append("<hr>";
+                $("#blog-container").append("<hr>");
             }
         }
     };
