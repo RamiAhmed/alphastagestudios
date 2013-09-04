@@ -23,9 +23,7 @@ $().ready(function() {
             blogButton += " data-disqus-identifier='" + blogFileName.substring(0, 10) +"'>";
             blogButton += "Read the rest of this blog</a>.</p>";
 
-            $("#blog-container").append("<blockquote>");
             $("#blog-container").append(blogPreview);
-            $("#blog-container").append("</blockquote>");
             $("#blog-container").append(blogButton);
 
             if (i < blogFilesArray.length-1) {
