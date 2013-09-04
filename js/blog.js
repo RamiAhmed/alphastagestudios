@@ -17,14 +17,15 @@ $().ready(function() {
             var blogPreview = blogPost.substring(0, previewEnd);
             //console.log("blogPreview: " + blogPreview);
 
-            blogPreview += "</p>";
-            blogPreview += "<p><a href='blogs/" + blogFileName + ".html#disqus_thread' target='_blank' data-disqus-identifier='" + blogFileName.substring(0, 10) +"'>";
+            blogPreview += "</p></blockquote>";
+            blogPreview += "<p><a class='btn btn-default btn-lg' href='blogs/" + blogFileName + ".html#disqus_thread' target='_blank' data-disqus-identifier='" + blogFileName.substring(0, 10) +"'>";
             blogPreview += "Read the rest of this blog</a>.</p>";
 
             if (i < blogFilesArray.length-1) {
                 blogPreview += "<hr>";
             }
 
+            $("#blog-container").append("<blockquote>");
             $("#blog-container").append(blogPreview);
         }
     };
