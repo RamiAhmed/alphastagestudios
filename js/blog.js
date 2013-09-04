@@ -1,4 +1,4 @@
-var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening"];
+var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening", "05-09-2013_let-the-discussions-begin"];
 
 $().ready(function() {
 
