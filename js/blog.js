@@ -18,7 +18,7 @@ $().ready(function() {
             //console.log("blogPreview: " + blogPreview);
 
             blogPreview += "</p></blockquote>";
-            blogPreview += "<p><a class='btn btn-default btn-lg' href='blogs/" + blogFileName + ".html#disqus_thread' target='_blank' data-disqus-identifier='" + blogFileName.substring(0, 10) +"'>";
+            blogPreview += "<p><a class='btn btn-default btn-lg' href='blogs/" + blogFileName + ".html' target='_blank' data-disqus-identifier='" + blogFileName.substring(0, 10) +"'>";
             blogPreview += "Read the rest of this blog</a>.</p>";
 
             if (i < blogFilesArray.length-1) {
