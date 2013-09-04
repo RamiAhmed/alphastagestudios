@@ -45,8 +45,5 @@ var loadBlogPost = function(filename) {
 
     result = $($.parseHTML(result)).find(".blog-article").html();
 
-    console.log("load: " + fullPath);
-    console.log("result: " + result);
-
     return result;
 }
