@@ -25,7 +25,7 @@ $().ready(function() {
 
             $("#blog-container").append("<blockquote>");
             $("#blog-container").append(blogPreview);
-            $("#blog-container").append("</blockquote");
+            $("#blog-container").append("</blockquote>");
             $("#blog-container").append(blogButton);
 
             if (i < blogFilesArray.length-1) {
