@@ -15,10 +15,10 @@ $().ready(function() {
             var previewEnd = blogPost.indexOf("</p>");
 
             var blogPreview = blogPost.substring(0, previewEnd);
-            console.log("blogPreview: " + blogPreview);
+            //console.log("blogPreview: " + blogPreview);
 
             blogPreview += "</p>";
-            blogPreview += "<p><a href='blogs/" + blogFileName + ".html' target='_blank'>Read the rest of this blog</a>.</p>";
+            blogPreview += "<p><a href='blogs/" + blogFileName + ".html#disqus_thread' target='_blank'>Read the rest of this blog</a>.</p>";
 
             if (i < blogFilesArray.length-1) {
                 blogPreview += "<hr>";
