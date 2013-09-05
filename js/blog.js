@@ -43,11 +43,9 @@ var loadBlogPost = function(filename) {
         dataType: 'html',
         async: false,
         success: function(data) {
-            result = data;
+            result = $($.parseHTML(data)).find(".blog-article").html();
         }
     });
-
-    result = $($.parseHTML(result)).find(".blog-article").html();
 
     return result;
 }
