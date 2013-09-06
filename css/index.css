@@ -38,11 +38,13 @@ video {
 
 .panel-default {
     background-color: #eff8ff;
+/*    margin: 10px 15px;*/
     margin: 10px 15px;
     box-shadow: 3px 0px 15px 0px black, -3px 0px 15px 0px black;
 }
 
 .tab-pane {
+    margin: 10px 15px;
 /*
     background-color: #eff8ff;
     padding: 10px 20px;
