@@ -36,13 +36,20 @@ video {
     margin: 0px auto;
 }
 
+.panel-default {
+    background-color: #eff8ff;
+    margin: 10px 15px;
+    box-shadow: 3px 0px 15px 0px black, -3px 0px 15px 0px black;
+}
+
 .tab-pane {
-    display: block;
+/*
     padding: 10px 20px;
     margin: 15px 20px;
-    background-color: #eff8ff;
+    display: block;
     border-radius: 10px;
     box-shadow: 3px 0px 15px 0px black, -3px 0px 15px 0px black;
+*/
 }
 
 #main-content {
