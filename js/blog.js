@@ -24,11 +24,18 @@ $().ready(function() {
             blogButton += "Read the rest of this blog</a>.</p>";
 
             $("#blog-container").append(blogPreview);
+
+            var panels = $("#blog-container").find('*[class^="panel"]');
+            $.each(panels, function() {
+                $(this).children(":first").unwrap();
+            });
+
             $("#blog-container").append(blogButton);
 
             if (i < blogFilesArray.length-1) {
                 $("#blog-container").append("<hr>");
             }
+
         }
     };
 });

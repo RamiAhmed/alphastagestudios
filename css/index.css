@@ -14,7 +14,7 @@ html, body {
 
 .footer {
     text-align: center;
-    border: 1px solid rgb(238, 238, 238);
+    border: 0px;
     border-radius: 10px;
     background-color: rgb(238, 238, 238);
     padding: 20px 15px 5px;
@@ -34,6 +34,7 @@ html, body {
 video {
     padding: 5px;
     margin: 0px auto;
+    width: 100%;
 }
 
 .panel-default {
@@ -71,7 +72,6 @@ video {
 .nav-pills > li > a {
     height: 30px;
     text-align: center;
-    vertical-align: center;
     padding: 5px 10px;
     margin: 5px 5px;
     background-color: transparent;
@@ -154,10 +154,3 @@ video {
         margin: 10px auto 5px;
     }
 }
-
-/* Fix issues in IE 10 on Windows Phone 8 */
-@-webkit-viewport   { width: device-width; }
-@-moz-viewport      { width: device-width; }
-@-ms-viewport       { width: device-width; }
-@-o-viewport        { width: device-width; }
-@viewport           { width: device-width; }
