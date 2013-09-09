@@ -1,6 +1,5 @@
-var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening", "05-09-2013_let-the-discussions-begin"];
-
 $().ready(function() {
+    var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening", "05-09-2013_let-the-discussions-begin"];
 
     $("#blog-container").html("");
 
@@ -13,7 +12,6 @@ $().ready(function() {
         }
         else {
             var previewEnd = blogPost.indexOf("</p>");
-
             var blogPreview = blogPost.substring(0, previewEnd);
             blogPreview += "</p>";
 
