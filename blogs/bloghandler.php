@@ -48,13 +48,13 @@
 
     $new_blog_contents = "$new_header\n$new_body\n$new_footer";
 
-    file_put_contents($new_blog, $new_blog_contents);
-    $length = $strlen(utf8_decode(file_get_contents($new_blog)));
-    if ($length > 100) {
-        echo "success";
+    $result = file_put_contents($new_blog, $new_blog_contents)
+
+    if ($result === FALSE) {
+        echo "error";
     }
     else {
-        echo "error";
+       echo "success";
     }
 
 ?>
