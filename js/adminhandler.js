@@ -6,7 +6,7 @@ $().ready(function() {
         evt.preventDefault();
 
         var formData = JSON.parse(JSON.stringify($(this).serializeArray()));
-        console.log(formData);
+        //console.log(formData);
         createNewBlogPost(formData);
 
     });

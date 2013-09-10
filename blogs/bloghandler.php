@@ -48,7 +48,7 @@
 
     $new_blog_contents = "$new_header\n$new_body\n$new_footer";
 
-    $result = file_put_contents($new_blog, $new_blog_contents)
+    $result = file_put_contents($new_blog, $new_blog_contents);
 
     if ($result === FALSE) {
         echo "error";
