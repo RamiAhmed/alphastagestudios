@@ -17,7 +17,7 @@
     $day = $today['mday'];
     $month = $today['mon'];
     $year = $today['year'];*/
-    $today = date("dd-mm-yyyy");
+    $today = date("d-m-y", getdate());
 
     $blog_title = $_POST['blog-title'];
     $blog_author = $_POST['blog-author'];
