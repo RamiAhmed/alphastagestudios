@@ -49,6 +49,11 @@
     $new_blog_contents = "$new_header\n$new_body\n$new_footer";
 
     file_put_contents($new_blog, $new_blog_contents);
-    echo "file $new_blog added: \n" . file_get_contents($new_blog);
+    if ($strlen(file_get_contents($new_blog)) > 100) {
+        echo "success";
+    }
+    else {
+        echo "error";
+    }
 
 ?>

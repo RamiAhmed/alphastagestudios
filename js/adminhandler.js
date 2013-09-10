@@ -16,6 +16,13 @@ $().ready(function() {
 
 var createNewBlogPost = function(jsonFormData) {
     $.post('blogs/bloghandler.php', jsonFormData, function(response) {
-        console.log("Response: " + response);
+        var resultDiv = "";
+        if (response == "success") {
+            resultDiv = "<div class='alert alert-success'>Your post was successfully created.</div>";
+        }
+        else {
+            resultDiv = "<div class='alert alert-danger'>Your post was not created, an error occured.</div>";
+        }
+        $("new-blog-form").insertAfter(resultDiv);
     });
 }
