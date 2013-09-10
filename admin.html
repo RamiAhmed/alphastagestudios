@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Alpha Stage Studios</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="Alpha Stage Studios Official Website. We make websites, apps and specialize in games."/>
+    <meta name="author" content="Alpha Stage Studios"/>
+    <meta name="Keywords" content="games, websites, homepages, apps, applications, smartphones" />
+
+    <link rel="canonical" href="//www.alphastagestudios.com">
+
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="css/index.css" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="img/icon_placeholder.png">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+      <header class="header">
+        <div class="container">
+            <a class="brand" href="//www.alphastagestudios.com">
+                <img id="brandlogo" src="img/logo_placeholder.png" alt="Alpha Stage Logo">
+            </a>
+        </div>
+    </header>
+
+    <div id="main-wrapper" class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1>Admin Page</h1>
+            </div>
+            <div class="panel-body">
+                <h2>Add New Blog post</h2>
+                <form id="new-blog-form" role="form">
+                    <div class="form-group">
+
+                        <label for="blog-title">Blog Title</label>
+                        <input class="form-control"  id="blog-title" name="blog-title" type="text" placeholder="Blog Title" required autofocus>
+
+                        <label for="blog-author">Blog Author</label>
+                        <input class="form-control"  id="blog-author" name="blog-author" type="text" placeholder="Blog Author" required>
+
+                        <label for="blog-author-email">Blog Author Email</label>
+                        <input class="form-control"  id="blog-author-email" name="blog-author-email" type="email" placeholder="Blog author email" required>
+
+                        <label for="blog-body">Blog Body (Text)</label>
+                        <textarea class="form-control"  id="blog-body" name="blog-body" placeholder="Blog body text..." rows="12" required></textarea>
+
+                    </div>
+                    <button id="new-blog-button" type="submit" class="btn btn-default">Submit new blog post</button>
+                </form>
+            </div>
+        </div>
+
+      <footer class="footer">
+        <p class="text-muted">
+            &copy; Alpha Stage Studios I/S, 2013 | CVR: DK-35090142
+        </p>
+      </footer> <!-- /footer -->
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/json2/0.1/json2.min.js"></script>
+    <script type="text/javascript" src="js/adminhandler.js" charset="utf-8"></script>
+</body>
