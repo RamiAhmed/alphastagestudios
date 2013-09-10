@@ -13,11 +13,16 @@
 
     $blog_template = './blog-template.html';
 
-    /*$today = getdate();
+    $today = getdate();
     $day = $today['mday'];
+    if ($day < 10) {
+        $day = "0$day";
+    }
     $month = $today['mon'];
-    $year = $today['year'];*/
-    $today = date("d-m-y", getdate());
+    if ($month < 10) {
+        $month = "0$month";
+    }
+    $year = $today['year'];
 
     $blog_title = $_POST['blog-title'];
     $blog_author = $_POST['blog-author'];
@@ -25,7 +30,7 @@
     $blog_body = $_POST['blog-body'];
 
 
-    $new_blog = "$today" . "_" . seoURL($blog_title);
+    $new_blog = "$day-$month-$year" . "_" . seoURL($blog_title);
 
     echo $new_blog;
 
