@@ -39,40 +39,47 @@
     </header>
 
     <div id="main-wrapper" class="container-fluid">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h1>Admin Page</h1>
-            </div>
-            <div class="panel-body">
-                <h2>Add New Blog post</h2>
-                <form id="new-blog-form" role="form">
-                    <div class="form-group">
-
-                        <label for="blog-title">Blog Title</label>
-                        <input class="form-control"  id="blog-title" name="blog-title" type="text" placeholder="Blog Title" required autofocus>
-
-                        <label for="blog-author">Blog Author</label>
-                        <input class="form-control"  id="blog-author" name="blog-author" type="text" placeholder="Blog Author" required>
-
-                        <label for="blog-author-email">Blog Author Email</label>
-                        <input class="form-control"  id="blog-author-email" name="blog-author-email" type="email" placeholder="Blog author email" required>
-
-                        <label for="blog-body">Blog Body (Text)</label>
-                        <textarea class="form-control"  id="blog-body" name="blog-body" placeholder="Blog body text..." rows="12" required></textarea>
-
+        <section id="main-content" class="content tab-content">
+            <section id="admin" class="tab-pane active">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>Admin Page</h1>
                     </div>
-                    <button id="new-blog-button" type="submit" class="btn btn-default">Submit new blog post</button>
-                </form>
-            </div>
-        </div>
+                    <div class="panel-body">
+                        <h2>Add New Blog Post</h2>
+                        <form id="new-blog-form" role="form">
+                            <div class="form-group">
+                                <label for="blog-title">Blog Title</label>
+                                <input class="form-control"  id="blog-title" name="blog-title" type="text" placeholder="Blog Title" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="blog-author">Blog Author</label>
+                                <input class="form-control"  id="blog-author" name="blog-author" type="text" placeholder="Blog Author" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="blog-author-email">Blog Author Email</label>
+                                <input class="form-control"  id="blog-author-email" name="blog-author-email" type="email" placeholder="Blog author email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="blog-body">Blog Body (Text)</label>
+                                <textarea class="form-control"  id="blog-body" name="blog-body" placeholder="Blog body text..." rows="12" required></textarea>
+                            </div>
+                            <button id="new-blog-button" type="submit" class="btn btn-default">Submit new blog post</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
 
-      <footer class="footer">
-        <p class="text-muted">
-            &copy; Alpha Stage Studios I/S, 2013 | CVR: DK-35090142
-        </p>
-      </footer> <!-- /footer -->
+        </section> <!-- /main-content -->
 
-    </div>
+        <footer class="footer">
+            <p class="text-muted">
+                &copy; Alpha Stage Studios I/S, 2013 | CVR: DK-35090142
+            </p>
+        </footer> <!-- /footer -->
+
+
+    </div> <!-- /main-wrapper -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
