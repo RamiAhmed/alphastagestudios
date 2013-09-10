@@ -13,10 +13,11 @@
 
     $blog_template = './blog-template.html';
 
-    $today = getdate();
+    /*$today = getdate();
     $day = $today['mday'];
     $month = $today['mon'];
-    $year = $today['year'];
+    $year = $today['year'];*/
+    $today = date("dd-mm-yyyy");
 
     $blog_title = $_POST['blog-title'];
     $blog_author = $_POST['blog-author'];
@@ -24,7 +25,7 @@
     $blog_body = $_POST['blog-body'];
 
 
-    $new_blog = "$day-$month-$year" . "_" . seoURL($blog_title);
+    $new_blog = "$today" . "_" . seoURL($blog_title);
 
     echo $new_blog;
 
