@@ -1,35 +1,35 @@
 <?php
-    function seoUrl($string) {
+    function seoUrl($url="") {
         //lower case everything
-        $string = strtolower($string);
+        $url = strtolower($url);
         //make alphaunermic
-        $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
+        $url = preg_replace("/[^a-z0-9_\s-]/", "", $url);
         //Clean multiple dashes or whitespaces
-        $string = preg_replace("/[\s-]+/", " ", $string);
+        $url = preg_replace("/[\s-]+/", " ", $url);
         //Convert whitespaces and underscore to dash
-        $string = preg_replace("/[\s_]/", "-", $string);
-        return $string;
+        $url = preg_replace("/[\s_]/", "-", $url);
+        return $url;
     }
 
     $today = getdate();
     $day = $today['mday'];
-    if ($day < 10) {
+    if ((int)$day < 10) {
         $day = "0$day";
     }
     $month = $today['mon'];
-    if ($month < 10) {
+    if ((int)$month < 10) {
         $month = "0$month";
     }
     $year = $today['year'];
     $formatted_date = "$day-$month-$year";
-    $blog_date = "" . $today['weekday'] . ", " . $today['month'] . " $day";
+    $blog_date = "" . (string)$today['weekday'] . ", " . (string)$today['month'] . " $day";
 
     $blog_title = $_POST['blog-title'];
     $blog_author = $_POST['blog-author'];
     $blog_email = $_POST['blog-author-email'];
     $blog_body = $_POST['blog-body'];
 
-    $new_blog = "./$formatted_date" . "_" . seoURL($blog_title) . ".html";
+    $new_blog = "./$formatted_date" . "_" . seoUrl((string)$blog_title) . ".html";
 
     $new_header = file_get_contents("./blog-header.html");
     $new_body = "<h2>$blog_title</h2></div>\n".
@@ -54,7 +54,7 @@
         echo "error";
     }
     else {
-       echo "success";
+        echo "success";
     }
 
 ?>
