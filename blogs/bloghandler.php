@@ -23,15 +23,27 @@
         $month = "0$month";
     }
     $year = $today['year'];
+    $formatted_date = "$day-$month-$year";
 
     $blog_title = $_POST['blog-title'];
     $blog_author = $_POST['blog-author'];
     $blog_email = $_POST['blog-author-email'];
     $blog_body = $_POST['blog-body'];
 
+    $new_blog = "./$formatted_date" . "_" . seoURL($blog_title) . ".html";
+    if (!copy($blog_template, $new_blog)) {
+        echo "Failed to copy $blog_template\n";
+        return;
+    }
 
-    $new_blog = "$day-$month-$year" . "_" . seoURL($blog_title);
+    $html = file_get_html($new_file);
+    $html->find('.panel-heading')->innertext = "<h2>$blog_title</h2>";
+    $html->find('.panel-body')->innertext = "<p>$formatted_date</p> <p>$blog_body</p> <p>$blog_author - $blog_email</p>";
+//    $new_file = fopen($new_blog, "w");
 
-    echo $new_blog;
+
+//    fclose($new_file);
+
+    echo "$new_blog\n $html";
 
 ?>
