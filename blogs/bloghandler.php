@@ -38,10 +38,10 @@
                 "<p>$blog_body</p>\n".
                 "<p><em>Written by $blog_author - $blog_email.</em></p>\n".
                 "<div id='disqus_thread'></div>\n".
-                "<script type='text/javascript'>".
-                "var disqus_shortname = 'alphastage';".
-                "var disqus_identifier = '$formatted_date';".
-                "var disqus_title = '$blog_title';".
+                "<script type='text/javascript'>\n".
+                "var disqus_shortname = 'alphastage';\n".
+                "var disqus_identifier = '$formatted_date';\n".
+                "var disqus_title = '$blog_title';\n".
                 "var disqus_url = document.URL;";
 
     $new_footer = file_get_contents("./blog-footer.html");
@@ -49,21 +49,6 @@
     $new_blog_contents = "$new_header\n$new_body\n$new_footer";
 
     file_put_contents($new_blog, $new_blog_contents);
-    echo "file: \n" . file_get_contents($new_blog);
-
-
-    //echo $new_file->saveHTMLFile($new_blog);
-
-/*
-    $html = file_get_html($new_file);
-    $html->find('.panel-heading')->innertext = "<h2>$blog_title</h2>";
-    $html->find('.panel-body')->innertext = "<p>$formatted_date</p> <p>$blog_body</p> <p>$blog_author - $blog_email</p>";
-    */
-//    $new_file = fopen($new_blog, "w");
-
-
-//    fclose($new_file);
-
-//    echo "$new_blog\n $html";
+    echo "file $new_blog added: \n" . file_get_contents($new_blog);
 
 ?>
