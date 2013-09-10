@@ -17,13 +17,13 @@ $().ready(function() {
 var createNewBlogPost = function(jsonFormData) {
     $.post('blogs/bloghandler.php', jsonFormData, function(response) {
         var resultDiv = "";
-        if (!response || response.length === 0) { // is response echo empty?
-            resultDiv = "<div class='alert alert-danger'>Your post was not created, an error occured.</div>";
-        }
-        else {
+        if (response == "success") {
             resultDiv = "<div class='alert alert-success'>Your post was successfully created.</div>";
         }
-        $("#panel-body").append(resultDiv);
+        else {
+            resultDiv = "<div class='alert alert-danger'>Your post was not created, an error occured.</div>";
+        }
+        $(".panel-body").append(resultDiv);
         console.log("response: " + response);
     });
 }
