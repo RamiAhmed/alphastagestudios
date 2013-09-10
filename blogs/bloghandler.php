@@ -51,7 +51,7 @@
     $result = file_put_contents($new_blog, $new_blog_contents);
 
     if ($result === FALSE) {
-        echo "error";
+        //echo "error";
     }
     else {
         echo "success";
