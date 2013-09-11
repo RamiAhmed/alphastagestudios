@@ -29,7 +29,7 @@
     $blog_email = $_POST['blog-author-email'];
     $blog_body = $_POST['blog-body'];
 
-    $new_blog = "./$formatted_date" . "_" . seoUrl((string)$blog_title) . ".html";
+    $new_blog = "." . DIRECTORY_SEPARATOR . "$formatted_date" . "_" . seoUrl((string)$blog_title) . ".html";
 
     $new_header = file_get_contents("./blog-header.html");
     $new_body = "<h2>$blog_title</h2></div>\n".
@@ -44,14 +44,14 @@
                 "var disqus_title = '$blog_title';\n".
                 "var disqus_url = document.URL;";
 
-    $new_footer = file_get_contents("./blog-footer.html");
+    $new_footer = file_get_contents("." . DIRECTORY_SEPARATOR . "blog-footer.html");
 
     $new_blog_contents = "$new_header\n$new_body\n$new_footer";
 
     $result = file_put_contents($new_blog, $new_blog_contents);
 
     if ($result === FALSE) {
-        //echo "error";
+        echo "error";
     }
     else {
         echo "success";
