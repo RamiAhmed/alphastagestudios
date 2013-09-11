@@ -22,7 +22,7 @@
     }
     $year = $today['year'];
     $formatted_date = "$day-$month-$year";
-    $blog_date = "" . (string)$today['weekday'] . ", " . (string)$today['month'] . " $day";
+    $blog_date = (string)$today['weekday'] . ", " . (string)$today['month'] . " $day";
 
     $blog_title = $_POST['blog-title'];
     $blog_author = $_POST['blog-author'];

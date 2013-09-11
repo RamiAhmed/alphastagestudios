@@ -9,6 +9,8 @@ $().ready(function() {
         //console.log(formData);
         createNewBlogPost(formData);
 
+        $(this)[0].reset();
+
     });
 
 
