@@ -25,7 +25,7 @@ $().ready(function() {
             var blogButton = "<p><a class='btn btn-default btn-lg'";
             blogButton += " href='blogs/" + blogFileName + ".html'";
             blogButton += " target='_blank'";
-            blogButton += " data-disqus-identifier='" + blogFileName.substring(0, 10) + "'";
+            blogButton += " data-disqus-identifier='" + blogFileName + "'";
             blogButton += ">Read the rest of this blog</a></p>";
 
             $("#blog-container").append(blogButton);

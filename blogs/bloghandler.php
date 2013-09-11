@@ -30,6 +30,7 @@
     $blog_body = $_POST['blog-body'];
 
     $new_blog = "." . DIRECTORY_SEPARATOR . "$formatted_date" . "_" . seoUrl((string)$blog_title) . ".html";
+    $disqus_identifier = "$formatted_date" . "_" . seoUrl((string)$blog_title);
 
     $new_header = file_get_contents("./blog-header.html");
     $new_body = "<h2>$blog_title</h2></div>\n".
@@ -40,7 +41,7 @@
                 "<div id='disqus_thread'></div>\n".
                 "<script type='text/javascript'>\n".
                 "var disqus_shortname = 'alphastage';\n".
-                "var disqus_identifier = '$formatted_date';\n".
+                "var disqus_identifier = '$disqus_identifier';\n".
                 "var disqus_title = '$blog_title';\n".
                 "var disqus_url = document.URL;";
 
