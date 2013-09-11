@@ -1,0 +1,8 @@
+{
+    "name":"Alpha Stage Studios",
+    "version":"0.0.1",
+    "dependencies": {
+        "pg": "0.6.15",
+        "express": "latest"
+    }
+}
