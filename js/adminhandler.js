@@ -23,7 +23,7 @@ var createNewBlogPost = function(jsonFormData) {
             resultDiv = "<div class='alert alert-success'>Your post was successfully created.</div>";
         }
         else {
-            resultDiv = "<div class='alert alert-danger'>Your post was not created, an error occured.</div>";
+            resultDiv = "<div class='alert alert-danger'>Your post was not created, an error occured: " + response + " </div>";
         }
         $("#new-blog-form").after("<p>" + resultDiv + "</p>");
         //console.log("response: " + response);

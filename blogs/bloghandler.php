@@ -50,12 +50,44 @@
     $new_blog_contents = "$new_header\n$new_body\n$new_footer";
 
     $result = file_put_contents($new_blog, $new_blog_contents);
-
     if ($result === FALSE) {
-        echo "error";
+        echo "Error with creating file: " . $new_blog;
+        return;
     }
-    else {
-        echo "success";
+    /* --------------- DATABASE STUFF --------------- */
+
+    $cleardb_url = "mysql://b0d5b904e022b1:286643ff@us-cdbr-east-04.cleardb.com/heroku_0909e11fa9260bb?reconnect=true"
+    $url = parse_url(getenv($cleardb_url));
+
+    $server = $url["us-cdbr-east-04.cleardb.com"];
+    $username = $url["b0d5b904e022b1"];
+    $password = $url["286643ff"];
+    $db_name = substr($url["heroku_0909e11fa9260bb"], 1);
+
+    $path_to_ssl = ".." . DIRECTORY_SEPARATOR . "certs" . DIRECTORY_SEPARATOR;
+    $ssl_key_file = $path_to_ssl . "b0d5b904e022b1-key.pem";
+    $ssl_client_cert_file = $path_to_ssl . "b0d5b904e022b1-cert.pem";
+    $ssl_server_cert_file = $path_to_ssl . "cleardb-ca.pem";
+
+    $db = mysqli_init();
+    $db->ssl_set($ssl_key_file, $ssl_client_cert_file, $ssl_server_cert_file, null, null);
+    $db->real_connect($server, $username, $password, $db_name);
+
+    if (mysqli_connect_errno()) {
+        echo "Error with database: %s\n", mysqli_connect_error();
+        return;
     }
+
+    $values = "'$blog_id', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
+    $table = "'heroku_0909e11fa9260bb'.'blogs_table'";
+    $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
+    $sql = "INSERT INTO $table ($cols) VALUES ($values)";
+
+    if ($db->query($sql) == FALSE) {
+        echo "Error with SQL: %s\n", mysqli_error();
+    }
+    $db->close();
+
+    echo "success";
 
 ?>
