@@ -56,8 +56,8 @@
     }
     /* --------------- DATABASE STUFF --------------- */
 
-    $cleardb_url = "mysql://b0d5b904e022b1:286643ff@us-cdbr-east-04.cleardb.com/heroku_0909e11fa9260bb?reconnect=true";
-    $url = parse_url(getenv($cleardb_url));
+    //$cleardb_url = "mysql://b0d5b904e022b1:286643ff@us-cdbr-east-04.cleardb.com/heroku_0909e11fa9260bb?reconnect=true";
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
     $server = $url["us-cdbr-east-04.cleardb.com"];
     $username = $url["b0d5b904e022b1"];
@@ -86,37 +86,6 @@
     }
 
     mysql_free_result($result);
-
-
-/*
-    $db = mysqli_init();
-    if (!$db) {
-        echo "Error with mysqli_init.";
-        return;
-    }
-*/
-
-    //$db->ssl_set($ssl_key_file, $ssl_client_cert_file, $ssl_server_cert_file, null, null);
-
-/*
-    if (!$db->real_connect($server, $username, $password, $db_name)) {
-        echo "Error with database: %s\n" . mysqli_connect_error();
-        return;
-    }
-    */
-
-/*
-    $values = "'$blog_id', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
-    $table = "'heroku_0909e11fa9260bb'.'blogs_table'";
-    $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
-    $sql = "INSERT INTO $table ($cols) VALUES ($values)";
-
-    if (!$db->query($sql)) {
-        echo "Error with SQL: %s\n" . mysqli_error();
-    }
-*/
-
-//    $db->close();
 
     echo "success";
 
