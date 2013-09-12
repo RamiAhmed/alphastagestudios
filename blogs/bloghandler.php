@@ -59,7 +59,7 @@
     //$cleardb_url = "mysql://b0d5b904e022b1:286643ff@us-cdbr-east-04.cleardb.com/heroku_0909e11fa9260bb?reconnect=true";
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-    $server = $url["us-cdbr-east-04.cleardb.com"] . ":/var/lib/mysql/mysql.sock";
+    $server = $url["us-cdbr-east-04.cleardb.com"];// . ":/var/lib/mysql/mysql.sock";
     $username = $url["b0d5b904e022b1"];
     $password = $url["286643ff"];
     $db_name = substr($url["heroku_0909e11fa9260bb"], 1);
