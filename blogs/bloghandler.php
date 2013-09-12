@@ -63,14 +63,31 @@
     $username = $url["b0d5b904e022b1"];
     $password = $url["286643ff"];
     $db_name = substr($url["heroku_0909e11fa9260bb"], 1);
-
+/*
+// SSL currently not supported by Heroku for ClearDB (because of no mysqli)
     $path_to_ssl = ".." . DIRECTORY_SEPARATOR . "certs" . DIRECTORY_SEPARATOR;
     $ssl_key_file = $path_to_ssl . "b0d5b904e022b1-key.pem";
     $ssl_client_cert_file = $path_to_ssl . "b0d5b904e022b1-cert.pem";
     $ssl_server_cert_file = $path_to_ssl . "cleardb-ca.pem";
-
+*/
     mysql_connect($server, $username, $password);
     mysql_select_db($db_name);
+
+    $values = "'$blog_id', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
+    $table = "'heroku_0909e11fa9260bb'.'blogs_table'";
+    $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
+    $sql = "INSERT INTO $table ($cols) VALUES ($values)";
+
+    $result = mysql_query($sql);
+
+    if (!$result) {
+        echo "Error with mysql query: " . mysql_error();
+        return;
+    }
+
+    mysql_free_result($result);
+
+
 /*
     $db = mysqli_init();
     if (!$db) {
