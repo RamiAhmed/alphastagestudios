@@ -69,12 +69,15 @@
     $ssl_client_cert_file = $path_to_ssl . "b0d5b904e022b1-cert.pem";
     $ssl_server_cert_file = $path_to_ssl . "cleardb-ca.pem";
 
+    mysql_connect($server, $username, $password);
+    mysql_select_db($db_name);
+/*
     $db = mysqli_init();
     if (!$db) {
         echo "Error with mysqli_init.";
         return;
     }
-
+*/
 
     //$db->ssl_set($ssl_key_file, $ssl_client_cert_file, $ssl_server_cert_file, null, null);
 
