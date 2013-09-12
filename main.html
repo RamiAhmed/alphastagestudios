@@ -138,6 +138,29 @@
                         <p>Bachelor of Science (Medialogy)</p>
                         <p><a href="mailto:rami@alphastagestudios.com">rami@alphastagestudios.com</a></p>
                     </article>
+
+                    <article>
+                        <h2>Contact Us</h2>
+                        <form id="contact-form" role="form">
+                            <div class="form-group">
+                                <label for="contact-subject">Contact Subject</label>
+                                <input class="form-control" id="contact-subject" name="contact-subject" type="text" placeholder="Contact Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-sender-name">Sender Name</label>
+                                <input class="form-control" id="contact-sender-name" name="contact-sender-name" placeholder="Sender Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-sender-email">Sender Email</label>
+                                <input class="form-control" id="contact-sender-email" name="contact-sender-email" placeholder="Sender Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-body">Contact Message</label>
+                                <textarea class="form-control" id="contact-body" name="contact-body" rows="6" placeholder="Message Text" required></textarea>
+                            </div>
+                            <button id="contact-send-button" type="submit" class="btn btn-default">Send Message</button>
+                        </form>
+                    </article>
                 </div>
             </div>
         </section>
@@ -222,6 +245,9 @@
 
     <!-- Custom blog framework -->
     <script type="text/javascript" src="js/blog.js"></script>
+
+    <!-- Send email from About page -->
+    <script type="text/javascript" src="js/contact.js"></script>
 
 </body>
 
