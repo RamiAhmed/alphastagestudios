@@ -77,7 +77,7 @@
         echo "Error with database: %s\n", mysqli_connect_error();
         return;
     }
-
+/*
     $values = "'$blog_id', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
     $table = "'heroku_0909e11fa9260bb'.'blogs_table'";
     $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
@@ -86,6 +86,8 @@
     if ($db->query($sql) == FALSE) {
         echo "Error with SQL: %s\n", mysqli_error();
     }
+*/
+
     $db->close();
 
     echo "success";
