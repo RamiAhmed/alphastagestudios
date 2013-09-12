@@ -57,7 +57,7 @@
     /* --------------- DATABASE STUFF --------------- */
 
     //$cleardb_url = "mysql://b0d5b904e022b1:286643ff@us-cdbr-east-04.cleardb.com/heroku_0909e11fa9260bb?reconnect=true";
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    $url = parse_url(getenv(CLEARDB_DATABASE_URL));
 
     $server = $url["us-cdbr-east-04.cleardb.com"];
     $username = $url["b0d5b904e022b1"];
