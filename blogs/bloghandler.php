@@ -57,7 +57,7 @@
     /* --------------- DATABASE STUFF --------------- */
 
     //$cleardb_url = "mysql://b0d5b904e022b1:286643ff@us-cdbr-east-04.cleardb.com/heroku_0909e11fa9260bb?reconnect=true";
-    $url = parse_url(getenv(CLEARDB_DATABASE_URL));
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
     $server = $url["us-cdbr-east-04.cleardb.com:/var/lib/mysql/"];
     $username = $url["b0d5b904e022b1"];
@@ -70,7 +70,12 @@
     $ssl_client_cert_file = $path_to_ssl . "b0d5b904e022b1-cert.pem";
     $ssl_server_cert_file = $path_to_ssl . "cleardb-ca.pem";
 */
-    mysql_connect($server, $username, $password);
+    $db_link = mysql_connect($server, $username, $password);
+    if (!$db_link) {
+        echo "Error with database connection: " . mysql_error();
+        return;
+    }
+
     mysql_select_db($db_name);
 
     $values = "'$blog_id', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
@@ -85,8 +90,9 @@
         return;
     }
 
-    mysql_free_result($result);
-
     echo "success";
+
+    mysql_free_result($result);
+    mysql_close($db_link);
 
 ?>
