@@ -62,6 +62,11 @@
     $blog_ids_sql = "SELECT blog_id FROM $table";
     $blog_ids_result = pg_query($pg_conn, $blog_ids_sql);
 
+    if (!$blog_ids_result) {
+        echo "Error with getting all blog ids, executing SQL: $blog_ids_sql";
+        return;
+    }
+
     echo json_encode(pg_fetch_all($blog_ids_result));
 
     pg_close($pg_conn);

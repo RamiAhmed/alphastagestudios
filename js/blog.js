@@ -1,7 +1,7 @@
 $().ready(function() {
-    var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening", "05-09-2013_let-the-discussions-begin"];
+    //var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening", "05-09-2013_let-the-discussions-begin"];
 
-    initializeBlogPosts();
+    var blogFilesArray = initializeBlogPosts();
     $("#blog-container").html("");
 
     for (var i = 0; i < blogFilesArray.length; i++) {
@@ -41,11 +41,13 @@ $().ready(function() {
 
 var initializeBlogPosts = function() {
     $.post("blogs/bloggetter.php", null, function(response) {
-        if (JSON.parse(response) != null) {
-            console.log("Success! Received: " + JSON.parse(response));
+        var jsonResponse = JSON.parse(response);
+        if (jsonResponse != null) {
+            console.log("Success! Received: " + jsonResponse);
+            return jsonResponse;
         }
         else {
-            console.log("Error. Received: " + response);
+            console.log("Error. Received: " + jsonResponse + ", raw: " + response);
         }
     });
 }
