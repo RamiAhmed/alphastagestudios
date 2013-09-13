@@ -36,7 +36,7 @@
         echo "success";
     }
 */
-    require '/libs/sendgrid-php/SendGrid_loader.php';
+    require './libs/sendgrid-php/SendGrid_loader.php';
 
     $sendgrid = new SendGrid(getenv("SENDGRID_USERNAME"), getenv("SENDGRID_PASSWORD"));
 
