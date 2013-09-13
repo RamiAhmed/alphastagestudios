@@ -84,7 +84,7 @@
     }
 
     $values = "'$disqus_identifier', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$formatted_date'";
-    $table = "dblf1r6mp2sv03.blogTable";
+    $table = "blogTable";
     $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
     $sql = "INSERT INTO $table ($cols) VALUES ($values)";
 
