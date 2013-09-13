@@ -35,7 +35,7 @@
     $new_header = file_get_contents("./blog-header.html");
     $new_body = "<h2>$blog_title</h2></div>\n".
                 "<div class='panel-body'>\n".
-                "<p><em><time datetime='$year-$month-$day'>$blog_date</time></em></p>\n".
+                "<p><em><time datetime='$formatted_date'>$blog_date</time></em></p>\n".
                 "<p>$blog_body</p>\n".
                 "<p><em>Written by $blog_author - $blog_email.</em></p>\n".
                 "<div id='disqus_thread'></div>\n".
