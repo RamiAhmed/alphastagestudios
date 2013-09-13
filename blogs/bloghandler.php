@@ -69,7 +69,8 @@
         return;
     }
 
-    $create_table = "CREATE TABLE IF NOT EXISTS blogTable (
+    $table = "blogTable";
+    $create_table = "CREATE TABLE IF NOT EXISTS $table (
         blog_id VARCHAR(255) PRIMARY KEY NOT NULL,
         blog_title TEXT NOT NULL,
         blog_author TEXT NOT NULL,
@@ -84,7 +85,6 @@
     }
 
     $values = "'$disqus_identifier', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$formatted_date'";
-    $table = "blogTable";
     $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
     $sql = "INSERT INTO $table ($cols) VALUES ($values)";
 
