@@ -65,7 +65,7 @@
 
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     if (!$pg_conn) {
-        echo "Error with pg connection";
+        echo "Error with pg connection: " . pg_last_error();
         return;
     }
 
@@ -80,7 +80,7 @@
         )";
 
     if (!pg_query($pg_conn, $create_table)) {
-        echo "Error with creating table using SQL: $create_table";
+        echo "Error with creating table using SQL: " . pg_last_error();
         return;
     }
 
