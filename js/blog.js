@@ -45,7 +45,7 @@ var initializeBlogPosts = function() {
         if (response!= "" && response != null) {
             console.log("Success! Received: " + response);
             for (var blog_id in response) {
-                result.push(blog_id);
+                result.push(JSON.parse(blog_id));
             }
         }
         else {
