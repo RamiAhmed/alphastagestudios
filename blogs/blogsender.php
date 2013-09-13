@@ -95,7 +95,7 @@
     $sql = "INSERT INTO $table ($cols) VALUES ($values)";
 
     if (!pg_query($pg_conn, $sql)) {
-        echo "Error with pg query executing: $sql";
+        echo "Error with pg query executing: " . pg_last_error();
         return;
     }
 
