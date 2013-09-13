@@ -13,6 +13,12 @@ $().ready(function() {
         }
         else {
             var previewEnd = blogPost.indexOf("</p>");
+            if (!previewEnd || previewEnd == 0) {
+                previewEnd = 500;
+                if (previewEnd > blogPost.length) {
+                    previewEnd = blogPost.length;
+                }
+            }
             var blogPreview = blogPost.substring(0, previewEnd);
             blogPreview += "</p>";
 
