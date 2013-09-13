@@ -42,12 +42,12 @@ $().ready(function() {
 var initializeBlogPosts = function() {
     var result = [];
     $.post("blogs/bloggetter.php", null, function(response) {
-        if (response != "") {
-            console.log("Success! Received: " + response);
-            result = response;
+        if (response[0] != "" && response != null) {
+            console.log("Success! Received: " + response[0]);
+            result = response[0];
         }
         else {
-            console.log("Error. Received: " + response);
+            console.log("Error. Received: " + response[0]);
         }
     });
     return result;
