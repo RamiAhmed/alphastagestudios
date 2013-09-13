@@ -29,7 +29,7 @@
     $mail = $smtp->send($to, $headers, $body);
 
     if (PEAR::isError($mail)) {
-        echo "Error with sending mail: " . $mail->getMessage();
+        echo "Error sending mail: " . $mail->getMessage();
     }
     else {
         echo "success";
