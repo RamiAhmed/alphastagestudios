@@ -49,7 +49,7 @@
     }
 
     for ($i=0; $i < pg_num_rows($result); $i++) {
-        $row = pg_fetch_array($result, $i, PGSQL_ASSOC);
+        $row = pg_fetch_array($result, $i, 'PGSQL_ASSOC');
         create_blog_post(
                         $row["blog_id"],
                         $row["blog_title"],
