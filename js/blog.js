@@ -40,13 +40,11 @@ $().ready(function() {
 });
 
 var initializeBlogPosts = function() {
-    var result = [];
+    var result;
     $.post("blogs/bloggetter.php", null, function(response) {
         if (response!= "" && response != null) {
             console.log("Success! Received: " + response);
-            for (var blog_id in response) {
-                result.push(JSON.parse(blog_id));
-            }
+            result = response;
         }
         else {
             console.log("Error. Received: " + response);
