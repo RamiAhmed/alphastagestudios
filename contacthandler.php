@@ -36,7 +36,7 @@
         echo "success";
     }
 */
-    require './libs/sendgrid-php/SendGrid_loader.php';
+    require '/libs/sendgrid-php/SendGrid_loader.php';
 
     $sendgrid = new SendGrid(getenv("SENDGRID_USERNAME"), getenv("SENDGRID_PASSWORD"));
 
@@ -56,10 +56,11 @@
     $body = $mail_body;
 
     $mail = new SendGrid\Mail();
-    $mail->addTo($to)->
-           setFrom($from)->
-           setSubject($subject)->
-           setText($body);
+    $mail->
+        addTo($to)->
+        setFrom($from)->
+        setSubject($subject)->
+        setText($body);
 
     $sendgrid->web->send($mail);
 
