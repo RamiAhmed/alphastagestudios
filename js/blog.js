@@ -42,14 +42,17 @@ $().ready(function() {
 var initializeBlogPosts = function() {
     var result = [];
     $.post("blogs/bloggetter.php", null, function(response) {
-        if (response[0] != "" && response != null) {
-            console.log("Success! Received: " + response[0]);
-            result = response[0];
+        if (response!= "" && response != null) {
+            console.log("Success! Received: " + response);
+            for (var blog_id in response) {
+                result.push(blog_id);
+            }
         }
         else {
-            console.log("Error. Received: " + response[0]);
+            console.log("Error. Received: " + response);
         }
     });
+    console.log("returning: " + result);
     return result;
 }
 
