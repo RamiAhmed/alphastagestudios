@@ -50,8 +50,8 @@
     $mail_from_email = $_POST['contact-sender-email'];
     $mail_body = $_POST['contact-body'];
 
-    $from = "$mail_from_name <$mail_from_email>";
-    $to = "Rami Ahmed Bock <rami@alphastagestudios.com>";
+    $from = "$mail_from_email";
+    $to = "rami@alphastagestudios.com";
     $subject = $mail_subject;
     $body = $mail_body;
 
