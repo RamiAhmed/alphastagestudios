@@ -56,48 +56,6 @@
     }
     /* --------------- DATABASE STUFF --------------- */
 
-    //$cleardb_url = "mysql://b0d5b904e022b1:286643ff@us-cdbr-east-04.cleardb.com/heroku_0909e11fa9260bb?reconnect=true";
-   /*
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-    $server = $url["us-cdbr-east-04.cleardb.com"];// . ":/var/lib/mysql/mysql.sock";
-    $username = $url["b0d5b904e022b1"];
-    $password = $url["286643ff"];
-    $db_name = substr($url["heroku_0909e11fa9260bb"], 1);
-    */
-/*
-// SSL currently not supported by Heroku for ClearDB (because of no mysqli)
-    $path_to_ssl = ".." . DIRECTORY_SEPARATOR . "certs" . DIRECTORY_SEPARATOR;
-    $ssl_key_file = $path_to_ssl . "b0d5b904e022b1-key.pem";
-    $ssl_client_cert_file = $path_to_ssl . "b0d5b904e022b1-cert.pem";
-    $ssl_server_cert_file = $path_to_ssl . "cleardb-ca.pem";
-*/
-    /*
-    $db_link = mysql_connect($server, $username, $password);
-    if (!$db_link) {
-        echo "Error with database connection: " . mysql_error();
-        return;
-    }
-
-    mysql_select_db($db_name);
-
-    $values = "'$blog_id', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
-    $table = "'heroku_0909e11fa9260bb'.'blogs_table'";
-    $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
-    $sql = "INSERT INTO $table ($cols) VALUES ($values)";
-
-    $result = mysql_query($sql);
-
-    if (!$result) {
-        echo "Error with mysql query: " . mysql_error();
-        return;
-    }
-
-    echo "success";
-
-    mysql_free_result($result);
-    mysql_close($db_link);
-*/
     # This function reads your DATABASE_URL config var and returns a connection
     # string suitable for pg_connect. Put this in your app.
     function pg_connection_string_from_database_url() {
