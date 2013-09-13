@@ -40,8 +40,8 @@ $().ready(function() {
 });
 
 var initializeBlogPosts = function() {
-    var result;
-    $.post("blogs/bloggetter.php", null, function(response) {
+    var result = null;
+    /*$.post("blogs/bloggetter.php", null, function(response) {
         if (response!= "" && response != null) {
             console.log("Success! Received: " + response);
             result = response;
@@ -49,7 +49,18 @@ var initializeBlogPosts = function() {
         else {
             console.log("Error. Received: " + response);
         }
+    });*/
+
+    $.ajax({
+        url: "blogs/bloggetter.php",
+        type: 'get',
+        dataType: 'json',
+        async: false
+    }).done(function(msg) {
+        console.log("Received: " + msg);
+        result = msg;
     });
+
     console.log("returning: " + result);
     return result;
 }
