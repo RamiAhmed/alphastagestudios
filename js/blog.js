@@ -1,7 +1,7 @@
 $().ready(function() {
-    //var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening", "05-09-2013_let-the-discussions-begin"];
+    var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening", "05-09-2013_let-the-discussions-begin"];
 
-    var blogFilesArray = initializeBlogPosts();
+    //var blogFilesArray = initializeBlogPosts();
     $("#blog-container").html("");
 
     for (var i = 0; i < blogFilesArray.length; i++) {
