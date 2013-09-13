@@ -69,13 +69,26 @@
         return;
     }
 
-    $values = "'$blog_id', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
-    $table = "heroku_0909e11fa9260bb.blogs_table";
+    $create_table = "CREATE TABLE IF NOT EXISTS blogTable (
+        blog_id VARCHAR(255) PRIMARY KEY NOT NULL,
+        blog_title TEXT NOT NULL,
+        blog_author TEXT NOT NULL,
+        blog_email TEXT NOT NULL,
+        blog_body TEXT NOT NULL,
+        blog_date TEXT NOT NULL
+        )";
+
+    if (!pg_query($pg_conn, $create_table)) {
+        echo "Error with creating table using SQL: $create_table";
+        return;
+    }
+
+    $values = "'$disqus_identifier', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$formatted_date'";
+    $table = "dblf1r6mp2sv03.blogTable";
     $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
     $sql = "INSERT INTO $table ($cols) VALUES ($values)";
 
-    $result = pg_query($pg_conn, $sql);
-    if (!$result) {
+    if (!pg_query($pg_conn, $sql)) {
         echo "Error with pg query executing: $sql";
         return;
     }

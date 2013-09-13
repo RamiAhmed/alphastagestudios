@@ -62,6 +62,13 @@
         setSubject($subject)->
         setText($body);
 
+    if (!$mail) {
+        echo "Error with SendGrid\Mail() object";
+        return;
+    }
+
     $sendgrid->web->send($mail);
+
+    echo "success";
 
 ?>
