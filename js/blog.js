@@ -43,7 +43,7 @@ var initializeBlogPosts = function() {
     $.post("blogs/bloggetter.php", null, function(response) {
         var jsonResponse = JSON.parse(response);
         if (jsonResponse != null) {
-            console.log("Success! Received: " + jsonResponse);
+            console.log("Success! Received: " + jsonResponse + ", raw: " + response);
             return jsonResponse;
         }
         else {

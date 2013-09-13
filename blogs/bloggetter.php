@@ -1,11 +1,11 @@
 <?php
-    # This function reads your DATABASE_URL config var and returns a connection
-    # string suitable for pg_connect. Put this in your app.
+    # Establish a postgreSQL connection from a database environment string
     function pg_connection_string_from_database_url() {
       extract(parse_url(getenv("HEROKU_POSTGRESQL_COBALT_URL")));
       return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
     }
 
+    # Function to create a blog post
     function create_blog_post($blog_id, $blog_title, $blog_author, $blog_email, $blog_body, $blog_date) {
 
         $new_blog = "." . DIRECTORY_SEPARATOR . $blog_id . ".html";
@@ -33,21 +33,23 @@
         }
     }
 
+    # Establish database connection
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     if (!$pg_conn) {
         echo "Error with pg connection";
         return;
     }
 
+    # Get everything in the table
     $table = "blogTable";
     $sql = "SELECT * FROM $table";
-
     $result = pg_query($pg_conn, $sql);
     if (!$result) {
         echo "Error with pg query executing SQL: $sql";
         return;
     }
 
+    # Create one blog post per row received
     for ($i=0; $i < pg_num_rows($result); $i++) {
         $row = pg_fetch_array($result, $i, "PGSQL_ASSOC");
         create_blog_post(
@@ -59,16 +61,24 @@
                         $row["blog_date"]);
     }
 
+    # Get all blog ids from table
     $blog_ids_sql = "SELECT blog_id FROM $table";
     $blog_ids_result = pg_query($pg_conn, $blog_ids_sql);
-
     if (!$blog_ids_result) {
         echo "Error with getting all blog ids, executing SQL: $blog_ids_sql";
         return;
     }
 
-    echo json_encode(pg_fetch_all($blog_ids_result));
+    # Convert blog ids to an array
+    $resultArray = array();
+    while ($row = pg_fetch_row($blog_ids_result)) {
+        $resultArray[] = $row;
+    }
 
+    # Send blog ids as json
+    echo json_encode($resultArray);
+
+    # Close database connection (just for good practice)
     pg_close($pg_conn);
 
 ?>
