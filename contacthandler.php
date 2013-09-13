@@ -55,7 +55,7 @@
     $subject = $mail_subject;
     $body = $mail_body;
 
-    $mail = new SendGrid/Mail();
+    $mail = new SendGrid\Mail();
     $mail->addTo($to)->
            setFrom($from)->
            setSubject($subject)->
