@@ -70,7 +70,7 @@
     }
 
     $values = "'$blog_id', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
-    $table = "'heroku_0909e11fa9260bb'.'blogs_table'";
+    $table = "heroku_0909e11fa9260bb.blogs_table";
     $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
     $sql = "INSERT INTO $table ($cols) VALUES ($values)";
 
@@ -81,4 +81,6 @@
     }
 
     echo "success";
+
+    pg_close($pg_conn);
 ?>
