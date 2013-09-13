@@ -1,15 +1,16 @@
 <?php
+/*
     require_once  'Mail.php';
 
     $mail_subject = $_POST['contact-subject'];
     $mail_from_name = $_POST['contact-sender-name'];
     $mail_from_email = $_POST['contact-sender-email'];
-    $maiL_body = $_POST['contact-body'];
+    $mail_body = $_POST['contact-body'];
 
     $from = "$mail_from_name <$mail_from_email>";
     $to = "Rami Ahmed Bock <rami@alphastagestudios.com>";
     $subject = $mail_subject;
-    $body = $maiL_body;
+    $body = $mail_body;
 
     $headers = array('From' => $from,
                      'To' => $to,
@@ -34,6 +35,32 @@
     else {
         echo "success";
     }
+*/
+    require './libs/sendgrid-php/SendGrid_loader.php';
 
+    $sendgrid = new SendGrid(getenv("SENDGRID_USERNAME"), getenv("SENDGRID_PASSWORD"));
+
+    if (!$sendgrid) {
+        echo "Error with starting sendgrid";
+        return;
+    }
+
+    $mail_subject = $_POST['contact-subject'];
+    $mail_from_name = $_POST['contact-sender-name'];
+    $mail_from_email = $_POST['contact-sender-email'];
+    $mail_body = $_POST['contact-body'];
+
+    $from = "$mail_from_name <$mail_from_email>";
+    $to = "Rami Ahmed Bock <rami@alphastagestudios.com>";
+    $subject = $mail_subject;
+    $body = $mail_body;
+
+    $mail = new SendGrid/Mail();
+    $mail->addTo($to)->
+           setFrom($from)->
+           setSubject($subject)->
+           setText($body);
+
+    $sendgrid->web->send($mail);
 
 ?>
