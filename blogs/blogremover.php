@@ -10,15 +10,21 @@
     }
 
     $table = getTableName();
-    $sql = "DELETE FROM $table WHERE blog_id = '$blog_id'";
+    $result = pg_delete($pg_conn, $table, ['blog_id'=>$blog_id]);
+    if (!$result) {
+        echo "Error with pg_delete: " . pg_last_error();
+        return;
+    }
+    /*$sql = "DELETE FROM $table WHERE blog_id = '$blog_id'";
     $result = pg_query($pg_conn, $sql);
     if (!$result) {
         echo "Error with pg query executing SQL: $sql, error: " . pg_last_error();
         return;
     }
-
+*/
     echo "success " . pg_affected_rows($result);
 
     # Close database connection (just for good practice)
+    pg_free_result($result);
     pg_close($pg_conn);
 ?>
