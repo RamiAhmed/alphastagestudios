@@ -103,21 +103,50 @@ var setupBlogButtons = function() {
         var selected = $("#blogsm-container").children(".active").attr('id');
         console.log("selected id: " + selected);
 
-        var alertBlock = "<div class='alert alert-block alert-danger fade in'>\n";
+        var alertBlock = "<p><div class='alert alert-block alert-danger fade in'>\n";
         alertBlock += "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>x</button>\n";
         alertBlock += "<h4>Confirmation</h4>\n";
         alertBlock += "<p>Are you sure you want to remove the selected blog permanently?</p>\n";
         alertBlock += "<p><button id='blog-confirm-delete' type='button' class='btn btn-danger'>Confirm Removal</button></p>\n";
-        alertBlock += "</div>\n";
+        alertBlock += "</div></p>\n";
 
         $(this).parent().children('.alert').remove();
-        $(this).after(alertBlock);
+        $(this).parent().append(alertBlock);
 
         $("#blog-confirm-delete").click(function(evt) {
             evt.preventDefault();
 
+            requestDeleteBlog(selected);
             console.log("confirmed delete blog");
         });
 
     });
+}
+
+var requestDeleteBlog = function(blog_id) {
+    $.post('../blogs/blogremover.php', blog_id, function(response) {
+        if (response == "success") {
+            console.log("Blog deleted successfully");
+            location.reload();
+        }
+        else {
+            console.log("Error in blog deletion: " + response);
+        }
+    });
+
+/*
+    $.ajax({
+        url: '../blogs/blogremover.php',
+        type: 'post',
+        async: true,
+        data: blog_id
+    }).done(function(msg) {
+        if (msg == "success") {
+            console.log("Blog deleted successfully");
+        }
+        else {
+            console.log("Error in blog deletion: " + msg);
+        }
+    });
+*/
 }

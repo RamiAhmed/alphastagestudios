@@ -26,5 +26,7 @@
     # Send blogs as json
     echo json_encode($resultArray);
 
+    # Close database connection (just for good practice)
+    pg_close($pg_conn);
 
 ?>
