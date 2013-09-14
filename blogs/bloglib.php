@@ -2,7 +2,7 @@
     # Establish a postgreSQL connection from a database environment string
     function pg_connection_string_from_database_url() {
       extract(parse_url(getenv("HEROKU_POSTGRESQL_COBALT_URL")));
-      return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+      return "user=$user password=$pass host=$host dbname=" . substr($path, 1);
     }
 
     function seoUrl($url="") {
@@ -17,7 +17,7 @@
         return $url;
     }
 
-    # Function to create a blog post
+    # Function to create a blog post file
     function create_blog_post($blog_id, $blog_title, $blog_author, $blog_email, $blog_body, $blog_date) {
 
         $new_blog = "." . DIRECTORY_SEPARATOR . $blog_id . ".html";

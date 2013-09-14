@@ -47,8 +47,6 @@ var initializeBlogManagementContainer = function() {
 
         console.log("result: " + result);
         console.log("result type: " + (typeof result));
-        console.log("result.d: " + result.d);
-        console.log("result.tags: " + result.tags);
         console.log("result.length: " + result.length);
         console.log("result[0]: " + result[0]);
         console.log("result[0].length: " + result[0].length);
@@ -56,23 +54,8 @@ var initializeBlogManagementContainer = function() {
         console.log("result parsed: " + JSON.parse(result));
         console.log("result stringified and parsed: " + JSON.parse(JSON.stringify(result)));
 
-/*
-        if (result.length && result.length > 0) {
-            for (var i = 0; i < result.length; i+4) {
-                addNewBlogEntry(result[i], result[i+1], result[i+2], result[i+3]);
-            };
-        }
-*/
+
     });
-
-
-
-/*
-    for (var row in result) {
-        console.log("adding row with id: " + row);
-        addNewBlogEntry(row[1], row[2], row[3], row[5]);
-    }
-*/
 
 }
 
