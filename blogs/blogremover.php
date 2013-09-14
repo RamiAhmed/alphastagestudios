@@ -16,7 +16,7 @@
     $table = getTableName();
     $result = pg_delete($pg_conn, $table, $blogIdArray);
     if (!$result) {
-        echo "Error with pg_delete: " . pg_last_error();
+        echo "Error with pg_delete: " . pg_last_error() . ", executing: " . pg_delete($pg_conn, $table, $blogIdArray, PGSQL_DML_STRING);
         return;
     }
     /*$sql = "DELETE FROM $table WHERE blog_id = '$blog_id'";
@@ -26,7 +26,7 @@
         return;
     }
 */
-    echo "success " . pg_affected_rows($result);
+    echo "success " . pg_delete($pg_conn, $table, $blogIdArray, PGSQL_DML_STRING);
 
     # Close database connection (just for good practice)
     pg_free_result($result);
