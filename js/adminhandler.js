@@ -120,7 +120,7 @@ var setupBlogButtons = function() {
 
             requestDeleteBlog(selected);
 
-            $(this).parent().parent().find('.alert').remove();
+            $(this).parents().find('.alert').remove();
         });
 
     });
@@ -133,7 +133,7 @@ var requestDeleteBlog = function(blog_id) {
 
             setTimeout(function() {
                 initializeBlogManagementContainer();
-            }, 1000);
+            }, 500);
         }
         else {
             console.log("Error in blog deletion: " + response);
