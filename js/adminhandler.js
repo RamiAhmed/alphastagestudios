@@ -58,6 +58,9 @@ var initializeBlogManagementContainer = function() {
 
 var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_date) {
 
+    blog_title = blog_title.substring(1, blog_title.length-1);
+    blog_author = blog_author.substring(1, blog_author.length-1);
+
     var entry = "Author: <em>" + blog_author + "</em> | ";
     entry += "Email: <em>" + blog_email + "</em> | ";
     entry += "Date: <em>" + blog_date + "</em>";

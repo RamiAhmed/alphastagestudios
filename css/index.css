@@ -29,6 +29,7 @@ html, body {
     padding-top: 10px;
     background-color: #f4f4ff;
     padding: 5px 10px 1px;
+    z-index: 1000;
 }
 
 video {
