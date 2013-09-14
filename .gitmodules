@@ -1,3 +1,6 @@
 [submodule "sendgrid-php"]
 	path = sendgrid-php
 	url = https://github.com/sendgrid/sendgrid-php
+[submodule "swiftmailer"]
+	path = swiftmailer
+	url = https://github.com/swiftmailer/swiftmailer
