@@ -88,7 +88,7 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
     $("#" + aID).click(function(evt) {
         evt.preventDefault();
 
-        $(this).parent().parent().children('.alert').remove();
+        $(this).parent().parent().find('.alert').remove();
         $(this).parent().children(".active").removeClass('active');
 
         $(this).addClass('active');
@@ -124,7 +124,7 @@ var setupBlogButtons = function() {
 }
 
 var requestDeleteBlog = function(blog_id) {
-    $.post('../blogs/blogremover.php', blog_id, function(response) {
+    $.post('../blogs/blogremover.php', {'blog-id': blog_id}, function(response) {
         if (response == "success") {
             console.log("Blog deleted successfully");
             location.reload();

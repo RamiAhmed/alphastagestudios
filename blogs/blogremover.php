@@ -10,7 +10,7 @@
     }
 
     $table = "blogTable";
-    $result = pg_delete($pg_conn, $table, {'blog_id':$blog_id});
+    $result = pg_delete($pg_conn, $table, $blog_id);
     if (!$result) {
         echo "Error with pg delete, deleting: $blog_id, error: " . pg_last_error();
         return;
