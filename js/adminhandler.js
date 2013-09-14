@@ -34,7 +34,7 @@ var createNewBlogPost = function(jsonFormData) {
 
 var initializeBlogManagementContainer = function() {
     //var blogContainer = $("blogsm-container");
-    var result = null;
+    var result = [];
 
     $.ajax({
         url: "blogs/blogmanager.php",
