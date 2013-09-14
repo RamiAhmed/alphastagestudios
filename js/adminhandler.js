@@ -2,6 +2,8 @@
 
 $().ready(function() {
 
+    initializeBlogManagementContainer();
+
     $("#new-blog-form").on("submit", function(evt) {
         evt.preventDefault();
 
@@ -28,4 +30,37 @@ var createNewBlogPost = function(jsonFormData) {
         $("#new-blog-form").after("<p>" + resultDiv + "</p>");
         //console.log("response: " + response);
     });
+}
+
+var initializeBlogManagementContainer = function() {
+    //var blogContainer = $("blogsm-container");
+    var result = null;
+
+    $.ajax({
+        url: "blogs/blogmanager.php",
+        type: 'get',
+        dataType: 'json',
+        async: false
+    }).done(function(msg) {
+        console.log("Received: " + msg);
+        result = msg;
+    });
+
+    for (var row in result) {
+        console.log("adding row: " + row);
+        addNewBlogEntry(row[1], row[2], row[3], row[5]);
+    }
+}
+
+var addNewBlogEntry = function(blog_title, blog_author, blog_email, blog_date) {
+
+    var entry = "Title: " + blog_title + " | ";
+    entry += "Author: " + blog_author + " | ";
+    entry += "Email: " + blog_email + " | ";
+    entry += "Date: " + blog_date;
+
+    entry = "<p>" + entry + "</p>";
+    entry += "<hr>";
+
+    $("blogsm-container").append(entry);
 }
