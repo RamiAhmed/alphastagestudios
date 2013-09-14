@@ -54,22 +54,12 @@ var initializeBlogManagementContainer = function() {
         console.log("result stringify: " + stringifiedResult);
         console.log("result stringified and parsed: " + JSON.parse(stringifiedResult));
 
-        var blogOneArray = [];
-        blogOneArray.push(result[0])
-        var oneBlog = blogOneArray[0];
-        console.log("blogOneArray: " + blogOneArray);
-        console.log("oneBlog: " + oneBlog);
-        console.log("oneBlog[0]: " + oneBlog[0]);
-        console.log("oneBlog[0][0]: " + oneBlog[0][0]);
-        console.log("oneBlog.length: " + oneBlog.length);
-
-        var blogTwoArray = $.makeArray(result[1]);
-        var blogTwo = blogTwoArray[0];
-        console.log("blogTwoArray: " + blogTwoArray);
-        console.log("blogTwo: " + blogTwo);
-        console.log("blogTwo[0]: " + blogTwo[0]);
-        console.log("blogTwo[0][0]: " + blogTwo[0][0]);
-        console.log("blogTwo.length: " + blogTwo.length);
+        var blogOneNoParentheses = result[0].substring(1, result[0].toString().length-1);
+        var blogOne = blogOneNoParentheses.split(",");
+        console.log("blogOneNoParentheses: " + blogOneNoParentheses);
+        console.log("blogOne: " + blogOne);
+        console.log("blogOne[0]: " + blogOne[0]);
+        console.log("blogOne.length: " + blogOne.length);
 
     });
 
