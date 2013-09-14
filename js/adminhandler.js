@@ -54,7 +54,7 @@ var initializeBlogManagementContainer = function() {
         console.log("result stringify: " + stringifiedResult);
         console.log("result stringified and parsed: " + JSON.parse(stringifiedResult));
 
-        var blogOneNoParentheses = result[0].substring(1, result[0].toString().length-1);
+        var blogOneNoParentheses = result[0].toString().substring(1, result[0].toString().length-1);
         var blogOne = blogOneNoParentheses.split(",");
         console.log("blogOneNoParentheses: " + blogOneNoParentheses);
         console.log("blogOne: " + blogOne);
