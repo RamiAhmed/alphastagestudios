@@ -10,7 +10,7 @@
 
     # Get everything in the table
     $table = "blogTable";
-    $sql = "SELECT * FROM $table";
+    $sql = "SELECT (blog_title, blog_author, blog_email, blog_date) FROM $table";
     $result = pg_query($pg_conn, $sql);
     if (!$result) {
         echo "Error with pg query executing SQL: " . pg_last_error();

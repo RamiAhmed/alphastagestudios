@@ -46,9 +46,8 @@ var initializeBlogManagementContainer = function() {
         result = msg;
     });
 
-    for (var i = 0; i < result.length; i+5) {
-        addNewBlogEntry(result[i+1], result[i+2], result[i+3], result[i+5]);
-
+    for (var i = 0; i < result.length; i+4) {
+        addNewBlogEntry(result[i], result[i+1], result[i+2], result[i+3]);
     };
 
 /*
