@@ -10,7 +10,7 @@
     }
 
     $blogIdArray = array(
-        'blog_id' => $blog_id,
+        'blog_id' => "$blog_id",
     );
 
     $table = getTableName();
