@@ -16,7 +16,7 @@
         return;
     }*/
 
-    $sql = "DELETE FROM $table WHERE blog_id = $blog_id";
+    $sql = "DELETE FROM $table WHERE 'blog_id' = '$blog_id'";
     if (!pg_query($pg_conn, $sql)) {
         echo "Error with pg query executing SQL: $sql, error: " . pg_last_error();
         return;
