@@ -9,7 +9,7 @@
     }
 
     # Get everything in the table
-    $table = "blogTable";
+    $table = getTableName();
     $sql = "SELECT (blog_title, blog_author, blog_email, blog_date) FROM $table";
     $result = pg_query($pg_conn, $sql);
     if (!$result) {

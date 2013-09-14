@@ -10,7 +10,7 @@
     }
 
     # Get everything in the table
-    $table = "blogTable";
+    $table = getTableName();
     $sql = "SELECT * FROM $table";
     $result = pg_query($pg_conn, $sql);
     if (!$result) {

@@ -60,4 +60,9 @@
         return "$day-$month-$year";
     }
 
+    # Returns a string with the blog table name
+    function getTableName() {
+        return "blogtable";
+    }
+
 ?>
