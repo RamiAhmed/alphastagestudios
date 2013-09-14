@@ -9,8 +9,12 @@
         return;
     }
 
+    $blogIdArray = array(
+        'blog_id' => $blog_id,
+    );
+
     $table = getTableName();
-    $result = pg_delete($pg_conn, $table, ['blog_id'=>$blog_id]);
+    $result = pg_delete($pg_conn, $table, $blogIdArray);
     if (!$result) {
         echo "Error with pg_delete: " . pg_last_error();
         return;
