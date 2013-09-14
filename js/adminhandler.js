@@ -88,6 +88,7 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
     $("#" + aID).click(function(evt) {
         evt.preventDefault();
 
+        $(this).parent().children('.alert').remove();
         $(this).parent().children(".active").removeClass('active');
 
         $(this).addClass('active');
