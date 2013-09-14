@@ -63,5 +63,5 @@ var addNewBlogEntry = function(blog_title, blog_author, blog_email, blog_date) {
     entry += "<hr>";
 
     console.log("adding entry: " + entry);
-    $("blogsm-container :last").after(entry);
+    $("blogsm-container").children(":last").after(entry);
 }
