@@ -52,12 +52,13 @@ var initializeBlogManagementContainer = function() {
         console.log("result[0]: " + result[0]);
         console.log("result[0].length: " + result[0].length);
 
-
+/*
         if (result.length && result.length > 0) {
             for (var i = 0; i < result.length; i+4) {
                 addNewBlogEntry(result[i], result[i+1], result[i+2], result[i+3]);
             };
         }
+*/
     });
 
 
