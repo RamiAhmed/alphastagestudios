@@ -20,13 +20,33 @@
     $subject = "SENT FROM WEB: $mail_subject";
     $body = "$mail_body";
 
+    if(empty($from)) {
+        echo "Error with from: $from";
+        return;
+    }
+
+    if (empty($to)) {
+        echo "Error with to: $to";
+        return;
+    }
+
+    if (empty($subject)) {
+        echo "Error with subject: $subject";
+        return;
+    }
+
+    if (empty($body)) {
+        echo "Error with body: $body";
+        return;
+    }
+
     $mail = new SendGrid\Mail();
     $mail->
         addTo($to)->
+        setFromName($mail_from_name)->
         setFrom($from)->
         setSubject($subject)->
-        setText($body)->
-        setHTML("<p>Hello World Test!</p>");
+        setText($body);
 
     if (!$mail) {
         echo "Error with SendGrid\Mail() object";
