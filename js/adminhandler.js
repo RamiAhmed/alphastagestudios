@@ -67,14 +67,15 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
 
     var entryHeading = "<h4 class='list-group-item-heading'>" + blog_title + "</h4>";
 
-    var pClass = 'list-group-item-text';
-    if (index == 0) {
-        pClass += ' active';
-    }
-    entry = "<p class='" + pClass + "'>" + entry + "</p>";
+    entry = "<p class='list-group-item-text'>" + entry + "</p>";
     entry = entryHeading + "\n" + entry;
 
-    entry = "<a href='#' class='list-group-item'>" + entry + "</a>";
+    var aClass = 'list-group-item';
+    if (index <= 0) {
+        aClass += ' active';
+    }
+
+    entry = "<a href='#' class='" + aClass + "'>" + entry + "</a>";
 
     //console.log("adding entry: " + entry);
     $("#blogsm-container").append(entry);
