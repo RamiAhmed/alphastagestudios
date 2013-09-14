@@ -127,26 +127,9 @@ var requestDeleteBlog = function(blog_id) {
     $.post('../blogs/blogremover.php', {'blog-id': blog_id}, function(response) {
         if (response == "success") {
             console.log("Blog deleted successfully");
-            location.reload();
         }
         else {
             console.log("Error in blog deletion: " + response);
         }
     });
-
-/*
-    $.ajax({
-        url: '../blogs/blogremover.php',
-        type: 'post',
-        async: true,
-        data: blog_id
-    }).done(function(msg) {
-        if (msg == "success") {
-            console.log("Blog deleted successfully");
-        }
-        else {
-            console.log("Error in blog deletion: " + msg);
-        }
-    });
-*/
 }
