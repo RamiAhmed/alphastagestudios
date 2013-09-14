@@ -49,6 +49,7 @@ var initializeBlogManagementContainer = function() {
         console.log("result type: " + (typeof result));
         console.log("result.d: " + result.d);
         console.log("result.tags: " + result.tags);
+        console.log("result.length: " + result.length);
         console.log("result[0]: " + result[0]);
         console.log("result[0].length: " + result[0].length);
         console.log("result stringify: " + JSON.stringify(result));
