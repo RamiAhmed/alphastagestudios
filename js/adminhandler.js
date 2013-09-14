@@ -42,24 +42,16 @@ var initializeBlogManagementContainer = function() {
         dataType: 'json',
         async: true
     }).done(function(msg) {
-        console.log("Received: " + msg);
+        //console.log("Received: " + msg);
         result = msg;
 
-        console.log("result type: " + (typeof result));
-        console.log("result.length: " + result.length);
-        console.log("result[0]: " + result[0]);
-        console.log("result[0].length: " + result[0].length);
-        console.log("result[0][0]: " + result[0][0]);
-        var stringifiedResult = JSON.stringify(result);
-        console.log("result stringify: " + stringifiedResult);
-        console.log("result stringified and parsed: " + JSON.parse(stringifiedResult));
+        for (var i=0; i < result.length; i++) {
+            var blog = result[i].toString();
+            blog = blog.substring(1, blog.length-1);
+            blog = blog.split(",");
+            addNewBlogEntry(blog[0], blog[1], blog[2], blog[3]);
 
-        var blogOneNoParentheses = result[0].toString().substring(1, result[0].toString().length-1);
-        var blogOne = blogOneNoParentheses.split(",");
-        console.log("blogOneNoParentheses: " + blogOneNoParentheses);
-        console.log("blogOne: " + blogOne);
-        console.log("blogOne[0]: " + blogOne[0]);
-        console.log("blogOne.length: " + blogOne.length);
+        }
 
     });
 
