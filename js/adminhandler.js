@@ -2,6 +2,8 @@
 
 $().ready(function() {
 
+    $().alert();
+
     initializeBlogManagementContainer();
 
     $("#new-blog-form").on("submit", function(evt) {
@@ -15,6 +17,7 @@ $().ready(function() {
 
     });
 
+    setupBlogButtons();
 
 });
 
@@ -90,4 +93,30 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
         $(this).addClass('active');
 
     })
+}
+
+var setupBlogButtons = function() {
+    $("#btn-remove-blog").click(function(evt) {
+        evt.preventDefault();
+
+        var selected = $("#blogsm-container").children(".active").attr('id');
+        console.log("selected id: " + selected);
+
+        var alertBlock = "<div class='alert alert-block alert-danger fade in'>\n";
+        alertBlock += "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>x</button>\n";
+        alertBlock += "<h4>Confirmation</h4>\n";
+        alertBlock += "<p>Are you sure you want to remove the selected blog permanently?</p>\n";
+        alertBlock += "<p><button id='blog-confirm-delete' type='button' class='btn btn-danger'>Confirm Removal</button></p>\n";
+        alertBlock += "</div>\n";
+
+        $(this).parent().children('.alert').remove();
+        $(this).after(alertBlock);
+
+        $("#blog-confirm-delete").click(function(evt) {
+            evt.preventDefault();
+
+            console.log("confirmed delete blog");
+        });
+
+    });
 }
