@@ -46,11 +46,14 @@ var initializeBlogManagementContainer = function() {
         result = msg;
 
         console.log("result: " + result);
-        console.log("result type: " + (typeof result === 'string'));
+        console.log("result type: " + (typeof result));
         console.log("result.d: " + result.d);
         console.log("result.tags: " + result.tags);
         console.log("result[0]: " + result[0]);
         console.log("result[0].length: " + result[0].length);
+        console.log("result stringify: " + JSON.stringify(result));
+        console.log("result parsed: " + JSON.parse(result));
+        console.log("result stringified and parsed: " + JSON.parse(JSON.stringify(result)));
 
 /*
         if (result.length && result.length > 0) {
