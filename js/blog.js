@@ -79,10 +79,9 @@ var loadBlogPost = function(filename) {
         url: fullPath,
         type: 'get',
         dataType: 'html',
-        async: false,
-        success: function(data) {
-            result = $($.parseHTML(data)).find(".blog-article").html();
-        }
+        async: false
+    }).done(function(msg) {
+        result = $($.parseHTML(msg)).find(".blog-article").html();
     });
 
     return result;
