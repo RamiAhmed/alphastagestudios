@@ -47,7 +47,7 @@ var initializeBlogManagementContainer = function() {
     });
 
     for (var row in result) {
-        console.log("adding row: " + row);
+        console.log("adding row with id: " + row[0]);
         addNewBlogEntry(row[1], row[2], row[3], row[5]);
     }
 }
@@ -62,5 +62,6 @@ var addNewBlogEntry = function(blog_title, blog_author, blog_email, blog_date) {
     entry = "<p>" + entry + "</p>";
     entry += "<hr>";
 
-    $("blogsm-container").append(entry);
+    console.log("adding entry: " + entry);
+    $("blogsm-container :last").after(entry);
 }
