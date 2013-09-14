@@ -50,12 +50,10 @@ var initializeBlogManagementContainer = function() {
         console.log("result.length: " + result.length);
         console.log("result[0]: " + result[0]);
         console.log("result[0].length: " + result[0].length);
-        var parsedResult = JSON.parse(result);
-        console.log("result parsed: " + parsedResult);
+        console.log("result[0][0]: " + result[0][0]);
         var stringifiedResult = JSON.stringify(result);
         console.log("result stringify: " + stringifiedResult);
         console.log("result stringified and parsed: " + JSON.parse(stringifiedResult));
-        console.log("result parsed and stringified: " + JSON.stringify(parsedResult));
 
 
     });
