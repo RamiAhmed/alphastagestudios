@@ -46,18 +46,26 @@ var initializeBlogManagementContainer = function() {
         result = msg;
     });
 
+    for (var i = 0; i < result.length; i+6) {
+        addNewBlogEntry(result[i+1], result[i+2], result[i+3], result[i+5]);
+
+    };
+
+/*
     for (var row in result) {
-        console.log("adding row with id: " + row[0]);
+        console.log("adding row with id: " + row);
         addNewBlogEntry(row[1], row[2], row[3], row[5]);
     }
+*/
+
 }
 
 var addNewBlogEntry = function(blog_title, blog_author, blog_email, blog_date) {
 
-    var entry = "Title: " + blog_title + " | ";
-    entry += "Author: " + blog_author + " | ";
-    entry += "Email: " + blog_email + " | ";
-    entry += "Date: " + blog_date;
+    var entry = "Title: <em>" + blog_title + "</em> | ";
+    entry += "Author: <em>" + blog_author + "</em> | ";
+    entry += "Email: <em>" + blog_email + "</em> | ";
+    entry += "Date: <em>" + blog_date + "</em>";
 
     entry = "<p>" + entry + "</p>";
     entry += "<hr>";
