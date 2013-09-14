@@ -75,8 +75,17 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
         aClass += ' active';
     }
 
-    entry = "<a href='#' class='" + aClass + "'>" + entry + "</a>";
+    var formattedTitle = blog_title.replace(/\s+/g, '-').toLowerCase();
+    var aID = formattedTitle + "_" + blog_date;
+    entry = "<a id='" + aID + "' href='#' class='" + aClass + "'>" + entry + "</a>";
 
     //console.log("adding entry: " + entry);
     $("#blogsm-container").append(entry);
+
+    $("#" + aID).click(function(evt) {
+        evt.preventDefault();
+
+        $(this).addClass('active');
+
+    })
 }
