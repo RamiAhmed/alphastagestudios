@@ -46,9 +46,16 @@ var initializeBlogManagementContainer = function() {
         result = msg;
     });
 
-    for (var i = 0; i < result.length; i+4) {
-        addNewBlogEntry(result[i], result[i+1], result[i+2], result[i+3]);
-    };
+    console.log("result[0]: " + result[0]);
+    console.log("result[0].length: " + result[0].length);
+    console.log("result.d: " + result.d);
+    console.log("result.tags: " + result.tags);
+
+    if (result.length && result.length > 0) {
+        for (var i = 0; i < result.length; i+4) {
+            addNewBlogEntry(result[i], result[i+1], result[i+2], result[i+3]);
+        };
+    }
 
 /*
     for (var row in result) {
