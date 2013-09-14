@@ -48,7 +48,7 @@ var initializeBlogManagementContainer = function() {
             var blog = result[i].toString();
             blog = blog.substring(1, blog.length-1);
             blog = blog.split(",");
-            addNewBlogEntry(blog[0], blog[1], blog[2], blog[3]);
+            addNewBlogEntry(i, blog[0], blog[1], blog[2], blog[3]);
 
         }
 
@@ -56,7 +56,7 @@ var initializeBlogManagementContainer = function() {
 
 }
 
-var addNewBlogEntry = function(blog_title, blog_author, blog_email, blog_date) {
+var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_date) {
 
     var entry = "Author: <em>" + blog_author + "</em> | ";
     entry += "Email: <em>" + blog_email + "</em> | ";
@@ -64,7 +64,11 @@ var addNewBlogEntry = function(blog_title, blog_author, blog_email, blog_date) {
 
     var entryHeading = "<h4 class='list-group-item-heading'>" + blog_title + "</h4>";
 
-    entry = "<p class='list-group-item-text'>" + entry + "</p>";
+    var pClass = 'list-group-item-text';
+    if (index == 0) {
+        pClass += ' active';
+    }
+    entry = "<p class='" + pClass + "'>" + entry + "</p>";
     entry = entryHeading + "\n" + entry;
 
     entry = "<a href='#' class='list-group-item'>" + entry + "</a>";
