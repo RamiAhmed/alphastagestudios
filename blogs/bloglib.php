@@ -45,4 +45,19 @@
         }
     }
 
+    # Get a nicely formatted date
+    function getFormattedDate() {
+        $today = getdate();
+        $day = $today['mday'];
+        if ((int)$day < 10) {
+            $day = "0$day";
+        }
+        $month = $today['mon'];
+        if ((int)$month < 10) {
+            $month = "0$month";
+        }
+        $year = $today['year'];
+        return "$day-$month-$year";
+    }
+
 ?>

@@ -3,23 +3,12 @@
     require './bloglib.php';
 
 
-    $today = getdate();
-    $day = $today['mday'];
-    if ((int)$day < 10) {
-        $day = "0$day";
-    }
-    $month = $today['mon'];
-    if ((int)$month < 10) {
-        $month = "0$month";
-    }
-    $year = $today['year'];
-    $blog_date = "$day-$month-$year";
-
     $blog_title = $_POST['blog-title'];
     $blog_author = $_POST['blog-author'];
     $blog_email = $_POST['blog-author-email'];
     $blog_body = $_POST['blog-body'];
 
+    $blog_date = getFormattedDate();
     $disqus_identifier = "$blog_date" . "_" . seoUrl((string)$blog_title);
 
     create_blog_post($disqus_identifier, $blog_title, $blog_author, $blog_email, $blog_body, $blog_date);
