@@ -38,6 +38,8 @@ var createNewBlogPost = function(jsonFormData) {
 var initializeBlogManagementContainer = function() {
     var result = [];
 
+    $("#blogsm-container").html("");
+
     $.ajax({
         url: "blogs/blogmanager.php",
         type: 'get',
@@ -118,7 +120,7 @@ var setupBlogButtons = function() {
 
             requestDeleteBlog(selected);
 
-            $(this).parent().children('.alert').remove();
+            $(this).parent().parent().find('.alert').remove();
         });
 
     });
@@ -128,6 +130,10 @@ var requestDeleteBlog = function(blog_id) {
     $.post('../blogs/blogremover.php', {'blog-id': blog_id}, function(response) {
         if (response.indexOf("success") >= 0) {
             console.log("Blog deleted successfully. response: " + response);
+
+            setTimeout(function() {
+                initializeBlogManagementContainer();
+            }, 1000);
         }
         else {
             console.log("Error in blog deletion: " + response);
