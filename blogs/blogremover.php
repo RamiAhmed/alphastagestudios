@@ -9,7 +9,7 @@
         return;
     }
 
-    $table = "blogTable";
+    $table = "blogtable";
     $sql = "DELETE FROM $table WHERE blog_id = '$blog_id'";
     $result = pg_query($pg_conn, $sql);
     if (!$result) {

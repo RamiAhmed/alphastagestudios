@@ -84,7 +84,6 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
     var aID = formattedTitle + "_" + blog_date;
     entry = "<a id='" + aID + "' href='#' class='" + aClass + "'>" + entry + "</a>";
 
-    //console.log("adding entry: " + entry);
     $("#blogsm-container").append(entry);
 
     $("#" + aID).click(function(evt) {
@@ -95,7 +94,7 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
 
         $(this).addClass('active');
 
-    })
+    });
 }
 
 var setupBlogButtons = function() {
@@ -133,7 +132,7 @@ var requestDeleteBlog = function(blog_id) {
 
             setTimeout(function() {
                 initializeBlogManagementContainer();
-            }, 500);
+            }, 50);
         }
         else {
             console.log("Error in blog deletion: " + response);
