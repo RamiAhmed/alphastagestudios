@@ -17,7 +17,7 @@
         return;
     }
 
-    echo "success " + pg_affected_rows($result);
+    echo "success " . pg_affected_rows($result);
 
     # Close database connection (just for good practice)
     pg_close($pg_conn);
