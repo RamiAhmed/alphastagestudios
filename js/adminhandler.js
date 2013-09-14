@@ -40,7 +40,7 @@ var initializeBlogManagementContainer = function() {
         url: "blogs/blogmanager.php",
         type: 'get',
         dataType: 'json',
-        async: false
+        async: true
     }).done(function(msg) {
         console.log("Received: " + msg);
         result = msg;
