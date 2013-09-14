@@ -1,0 +1,48 @@
+<?php
+    # Establish a postgreSQL connection from a database environment string
+    function pg_connection_string_from_database_url() {
+      extract(parse_url(getenv("HEROKU_POSTGRESQL_COBALT_URL")));
+      return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+    }
+
+    function seoUrl($url="") {
+        //lower case everything
+        $url = strtolower($url);
+        //make alphaunermic
+        $url = preg_replace("/[^a-z0-9_\s-]/", "", $url);
+        //Clean multiple dashes or whitespaces
+        $url = preg_replace("/[\s-]+/", " ", $url);
+        //Convert whitespaces and underscore to dash
+        $url = preg_replace("/[\s_]/", "-", $url);
+        return $url;
+    }
+
+    # Function to create a blog post
+    function create_blog_post($blog_id, $blog_title, $blog_author, $blog_email, $blog_body, $blog_date) {
+
+        $new_blog = "." . DIRECTORY_SEPARATOR . $blog_id . ".html";
+
+        $new_header = file_get_contents("./blog-header.html");
+        $new_body = "<h2>$blog_title</h2></div>\n".
+                    "\t\t\t\t\t\t<div class='panel-body'>\n".
+                    "\t\t\t\t\t\t<p><em><time datetime='$blog_date'>$blog_date</time></em></p>\n".
+                    "\t\t\t\t\t\t<p>$blog_body</p>\n".
+                    "\t\t\t\t\t\t<p><em>Written by $blog_author - $blog_email.</em></p>\n".
+                    "\t\t\t\t\t\t<div id='disqus_thread'></div>\n".
+                    "\t\t\t\t\t\t<script type='text/javascript'>\n".
+                    "\t\t\t\t\t\tvar disqus_shortname = 'alphastage';\n".
+                    "\t\t\t\t\t\tvar disqus_identifier = '$disqus_identifier';\n".
+                    "\t\t\t\t\t\tvar disqus_title = '$blog_title';\n".
+                    "\t\t\t\t\t\tvar disqus_url = document.URL;";
+        $new_footer = file_get_contents("." . DIRECTORY_SEPARATOR . "blog-footer.html");
+
+        $new_blog_contents = "$new_header\n$new_body\n$new_footer";
+
+        $result = file_put_contents($new_blog, $new_blog_contents);
+        if ($result === FALSE) {
+            echo "Error with creating file: " . $new_blog;
+            return;
+        }
+    }
+
+?>

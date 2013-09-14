@@ -47,15 +47,6 @@ $().ready(function() {
 
 var initializeBlogPosts = function() {
     var result = null;
-    /*$.post("blogs/bloggetter.php", null, function(response) {
-        if (response!= "" && response != null) {
-            console.log("Success! Received: " + response);
-            result = response;
-        }
-        else {
-            console.log("Error. Received: " + response);
-        }
-    });*/
 
     $.ajax({
         url: "blogs/bloggetter.php",
