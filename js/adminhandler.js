@@ -57,9 +57,19 @@ var initializeBlogManagementContainer = function() {
         var blogOneArray = [];
         blogOneArray.push(result[0])
         var oneBlog = blogOneArray[0];
+        console.log("blogOneArray: " + blogOneArray);
+        console.log("oneBlog: " + oneBlog);
         console.log("oneBlog[0]: " + oneBlog[0]);
         console.log("oneBlog[0][0]: " + oneBlog[0][0]);
         console.log("oneBlog.length: " + oneBlog.length);
+
+        var blogTwoArray = $.makeArray(result[1]);
+        var blogTwo = blogTwoArray[0];
+        console.log("blogTwoArray: " + blogTwoArray);
+        console.log("blogTwo: " + blogTwo);
+        console.log("blogTwo[0]: " + blogTwo[0]);
+        console.log("blogTwo[0][0]: " + blogTwo[0][0]);
+        console.log("blogTwo.length: " + blogTwo.length);
 
     });
 
