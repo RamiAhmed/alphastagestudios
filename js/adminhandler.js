@@ -33,7 +33,6 @@ var createNewBlogPost = function(jsonFormData) {
 }
 
 var initializeBlogManagementContainer = function() {
-    //var blogContainer = $("blogsm-container");
     var result = [];
 
     $.ajax({
@@ -59,14 +58,17 @@ var initializeBlogManagementContainer = function() {
 
 var addNewBlogEntry = function(blog_title, blog_author, blog_email, blog_date) {
 
-    var entry = "Title: <em>" + blog_title + "</em> | ";
-    entry += "Author: <em>" + blog_author + "</em> | ";
+    var entry = "Author: <em>" + blog_author + "</em> | ";
     entry += "Email: <em>" + blog_email + "</em> | ";
     entry += "Date: <em>" + blog_date + "</em>";
 
-    entry = "<p>" + entry + "</p>";
-    entry += "<hr>";
+    var entryHeading = "<h4 class='list-group-item-heading'>" + blog_title + "</h4>";
 
-    console.log("adding entry: " + entry);
+    entry = "<p class='list-group-item-text'>" + entry + "</p>";
+    entry = entryHeading + "\n" + entry;
+
+    entry = "<a href='#' class='list-group-item'>" + entry + "</a>";
+
+    //console.log("adding entry: " + entry);
     $("#blogsm-container").append(entry);
 }
