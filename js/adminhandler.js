@@ -45,7 +45,6 @@ var initializeBlogManagementContainer = function() {
         console.log("Received: " + msg);
         result = msg;
 
-        console.log("result: " + result);
         console.log("result type: " + (typeof result));
         console.log("result.length: " + result.length);
         console.log("result[0]: " + result[0]);
@@ -55,6 +54,9 @@ var initializeBlogManagementContainer = function() {
         console.log("result stringify: " + stringifiedResult);
         console.log("result stringified and parsed: " + JSON.parse(stringifiedResult));
 
+        var oneBlog = result[0];
+        console.log("oneBlog[0] : " + oneBlog[0]);
+        console.log("oneBlog.length: " + oneBlog.length);
 
     });
 
