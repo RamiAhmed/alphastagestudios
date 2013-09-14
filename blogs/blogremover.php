@@ -11,12 +11,13 @@
 
     $table = "blogTable";
     $sql = "DELETE FROM $table WHERE blog_id = '$blog_id'";
-    if (!pg_query($pg_conn, $sql)) {
+    $result = pg_query($pg_conn, $sql);
+    if (!$result) {
         echo "Error with pg query executing SQL: $sql, error: " . pg_last_error();
         return;
     }
 
-    echo "success";
+    echo "success " + pg_affected_rows($result);
 
     # Close database connection (just for good practice)
     pg_close($pg_conn);

@@ -126,8 +126,8 @@ var setupBlogButtons = function() {
 
 var requestDeleteBlog = function(blog_id) {
     $.post('../blogs/blogremover.php', {'blog-id': blog_id}, function(response) {
-        if (response == "success") {
-            console.log("Blog deleted successfully");
+        if (response.indexOf("success") >= 0) {
+            console.log("Blog deleted successfully. response: " + response);
         }
         else {
             console.log("Error in blog deletion: " + response);
