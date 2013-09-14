@@ -117,7 +117,8 @@ var setupBlogButtons = function() {
             evt.preventDefault();
 
             requestDeleteBlog(selected);
-            console.log("confirmed delete blog");
+
+            $(this).parent().children('.alert').remove();
         });
 
     });
