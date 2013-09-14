@@ -75,7 +75,7 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
         aClass += ' active';
     }
 
-    var formattedTitle = blog_title.replace(/\s+/g, '-').toLowerCase();
+    var formattedTitle = blog_title.replace(/\s+/g, '-').toLowerCase().replace(/[\])}[{(]/g,'');
     var aID = formattedTitle + "_" + blog_date;
     entry = "<a id='" + aID + "' href='#' class='" + aClass + "'>" + entry + "</a>";
 
@@ -84,6 +84,8 @@ var addNewBlogEntry = function(index, blog_title, blog_author, blog_email, blog_
 
     $("#" + aID).click(function(evt) {
         evt.preventDefault();
+
+        $(this).parent().children(".active").removeClass('active');
 
         $(this).addClass('active');
 
