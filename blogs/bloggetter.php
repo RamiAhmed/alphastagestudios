@@ -27,15 +27,13 @@
         }
 
         $blog_full_body = pg_unescape_bytea($row["blog_body"]);
-        else {
-            create_blog_post(
-                        $row["blog_id"],
-                        $row["blog_title"],
-                        $row["blog_author"],
-                        $row["blog_email"],
-                        $blog_full_body,
-                        $row["blog_date"]);
-        }
+        create_blog_post(
+                    $row["blog_id"],
+                    $row["blog_title"],
+                    $row["blog_author"],
+                    $row["blog_email"],
+                    $blog_full_body,
+                    $row["blog_date"]);
     }
 
     # Get all blog ids from table

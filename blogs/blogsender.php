@@ -2,7 +2,6 @@
 
     require './bloglib.php';
 
-
     $blog_title = $_POST['blog-title'];
     $blog_author = $_POST['blog-author'];
     $blog_email = $_POST['blog-author-email'];
