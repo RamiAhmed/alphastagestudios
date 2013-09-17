@@ -66,7 +66,6 @@
     }
 
     function setupBlogTable($table, $connection) {
-
         $create_table = "CREATE TABLE IF NOT EXISTS $table (
             blog_id VARCHAR(255) PRIMARY KEY NOT NULL,
             blog_title TEXT NOT NULL,
@@ -100,7 +99,7 @@
     }
 
     function readFromLargeObject($large_object) {
-        return pg_lo_read_all($large_object)
+        return pg_lo_read_all($large_object);
     }
 
     function closeLargeObject($large_object) {
