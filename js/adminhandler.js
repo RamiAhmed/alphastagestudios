@@ -13,8 +13,6 @@ $().ready(function() {
         //console.log(formData);
         createNewBlogPost(formData);
 
-        location.reload();
-
         $(this)[0].reset();
 
     });
