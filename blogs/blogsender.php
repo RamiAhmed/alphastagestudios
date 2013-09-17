@@ -33,7 +33,7 @@
         echo "Error with starting large object connection";
         return;
     }
-    $bodyID = createLargeObjectFromID($pg_conn);
+    $bodyID = createLargeObject($pg_conn);
     if (!$bodyID) {
         echo "Error with creating large object";
         return;
