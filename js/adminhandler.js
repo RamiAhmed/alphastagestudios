@@ -107,7 +107,7 @@ var setupBlogButtons = function() {
         var alertBlock = "<p><div class='alert alert-block alert-danger fade in'>\n";
         alertBlock += "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>x</button>\n";
         alertBlock += "<h4>Confirmation</h4>\n";
-        alertBlock += "<p>Are you sure you want to remove the selected blog permanently?</p>\n";
+        alertBlock += "<p>Are you sure you want to remove the selected blog <strong>permanently</strong>?</p>\n";
         alertBlock += "<p><button id='blog-confirm-delete' type='button' class='btn btn-danger'>Confirm Removal</button></p>\n";
         alertBlock += "</div></p>\n";
 
