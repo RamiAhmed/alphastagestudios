@@ -13,7 +13,7 @@ $().ready(function() {
         //console.log(formData);
         createNewBlogPost(formData);
 
-        initializeBlogManagementContainer();
+        location.reload();
 
         $(this)[0].reset();
 
