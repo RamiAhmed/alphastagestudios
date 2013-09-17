@@ -13,6 +13,8 @@ $().ready(function() {
         //console.log(formData);
         createNewBlogPost(formData);
 
+        initializeBlogManagementContainer();
+
         $(this)[0].reset();
 
     });
