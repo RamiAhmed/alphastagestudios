@@ -22,6 +22,8 @@ $().ready(function() {
             var blogPreview = blogPost.substring(0, previewEnd);
             blogPreview += "</p>";
 
+            console.log("blogPreview defined: " + blogPreview);
+
             $("#blog-container").append(blogPreview);
 
             var panels = $("#blog-container").find('*[class^="panel"]');
@@ -74,6 +76,7 @@ var loadBlogPost = function(filename) {
         result = $($.parseHTML(msg)).find(".blog-article").html();
     });
 
+    console.log("loadBlogPost returning: " + result);
     return result;
 }
 
