@@ -117,7 +117,8 @@ var setupBlogButtons = function() {
         $("#blog-confirm-delete").click(function(evt) {
             evt.preventDefault();
 
-            requestDeleteBlog(selected);
+            var selectedId = selected.substring(4);
+            requestDeleteBlog(selectedId);
 
             $(this).parents().find('.alert').remove();
         });
