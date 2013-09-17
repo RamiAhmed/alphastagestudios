@@ -104,7 +104,7 @@ var setupBlogButtons = function() {
         evt.preventDefault();
 
         var selected = $("#blogsm-container").children(".active").attr('id');
-        console.log("selected id: " + selected);
+        //console.log("selected id: " + selected);
 
         var alertBlock = "<p><div class='alert alert-block alert-danger fade in'>\n";
         alertBlock += "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>x</button>\n";
@@ -131,14 +131,14 @@ var setupBlogButtons = function() {
 var requestDeleteBlog = function(blog_id) {
     $.post('../blogs/blogremover.php', {'blog-id': blog_id}, function(response) {
         if (response.indexOf("success") >= 0) {
-            console.log("Blog deleted successfully. response: " + response);
+            //console.log("Blog deleted successfully. response: " + response);
 
             setTimeout(function() {
                 initializeBlogManagementContainer();
             }, 50);
         }
         else {
-            console.log("Error in blog deletion: " + response);
+            //console.log("Error in blog deletion: " + response);
         }
     });
 }
