@@ -25,13 +25,19 @@
             echo "Error with pg_fetch_array: " . pg_last_error();
             break;
         }
-        create_blog_post(
+        $blog_full_body = getBlogBodyByID($row["blog_body"], $pg_conn);
+        if (!$blog_full_body) {
+            echo "Error with getting blog body by ID in row: $row.";
+        }
+        else {
+            create_blog_post(
                         $row["blog_id"],
                         $row["blog_title"],
                         $row["blog_author"],
                         $row["blog_email"],
-                        $row["blog_body"],
+                        $blog_full_body,
                         $row["blog_date"]);
+        }
     }
 
     # Get all blog ids from table

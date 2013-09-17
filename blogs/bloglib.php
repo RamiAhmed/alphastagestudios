@@ -65,4 +65,81 @@
         return "blogtable";
     }
 
+    function setupBlogTable($table, $connection) {
+
+        $create_table = "CREATE TABLE IF NOT EXISTS $table (
+            blog_id VARCHAR(255) PRIMARY KEY NOT NULL,
+            blog_title TEXT NOT NULL,
+            blog_author TEXT NOT NULL,
+            blog_email TEXT NOT NULL,
+            blog_body TEXT NOT NULL,
+            blog_date TEXT NOT NULL
+            )";
+
+        return pg_query($connection, $table;
+    }
+
+    function startLargeObjectConnection($connection) {
+        return pg_query($connection, "begin");
+    }
+
+    function endLargeObjectConnection($connection) {
+        return pg_query($connection, "commit");
+    }
+
+    function createLargeObject($connection) {
+        return pg_lo_create($connection);
+    }
+
+    function openLargeObject($connection, $objId) {
+        return pg_lo_open($connection, $objId, "rw");
+    }
+
+    function writeToLargeObject($large_object, $data) {
+        return pg_lo_write($large_object, $data);
+    }
+
+    function readFromLargeObject($large_object) {
+        return pg_lo_read_all($large_object)
+    }
+
+    function closeLargeObject($large_object) {
+        return pg_lo_close($large_object);
+    }
+
+    function deleteLargeObject($connection, $object_id) {
+        return pg_lo_unlink($connection, $object_id);
+    }
+
+    # Get blog body by using a large object ID
+    function getBlogBodyByID($bodyID, $connection) {
+        if (!startLargeObjectConnection($connection)) {
+            echo "Error with starting large object";
+            return;
+        }
+
+        $large_body = openLargeObject($connection, $bodyID);
+        if (!$large_body) {
+            echo "Error with opening large object by id: $bodyID";
+            return;
+        }
+
+        $blog_full_body = readFromLargeObject($large_body);
+        if (!$blog_full_body) {
+            echo "Error with reading from large object: $large_body, with ID: $bodyID";
+            return;
+        }
+
+        if (!closeLargeObject($large_body)) {
+            echo "Error with closing large object: $large_body, with ID: $bodyID";
+            return;
+        }
+
+        if (!endLargeObjectConnection($connection)) {
+            echo "Error with ending large object connection.";
+            return;
+        }
+
+        return $blog_full_body;
+    }
 ?>

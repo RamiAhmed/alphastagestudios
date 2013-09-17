@@ -22,21 +22,45 @@
     }
 
     $table = getTableName();
-    $create_table = "CREATE TABLE IF NOT EXISTS $table (
-        blog_id VARCHAR(255) PRIMARY KEY NOT NULL,
-        blog_title TEXT NOT NULL,
-        blog_author TEXT NOT NULL,
-        blog_email TEXT NOT NULL,
-        blog_body TEXT NOT NULL,
-        blog_date TEXT NOT NULL
-        )";
-
-    if (!pg_query($pg_conn, $create_table)) {
+    if (!setupBlogTable($table, $pg_conn)) {
         echo "Error with creating table using SQL: " . pg_last_error();
         return;
     }
 
-    $values = "'$disqus_identifier', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";
+
+    ### LARGE OBJECTS ###
+    if (!startLargeObjectConnection($pg_conn)) {
+        echo "Error with starting large object connection";
+        return;
+    }
+    $bodyID = createLargeObjectFromID($pg_conn);
+    if (!$bodyID) {
+        echo "Error with creating large object";
+        return;
+    }
+
+    $large_body = openLargeObject($pg_conn, $bodyID);
+    if (!$large_body) {
+        echo "Error with opening large object with id: $bodyID";
+        return;
+    }
+
+    if (!writeToLargeObject($large_body, $blog_body)) {
+        echo "Error with writing to large object: $large_body, with id: $bodyID";
+        return;
+    }
+
+    if (!closeLargeObject($large_body)) {
+        echo "Error with closing large object: $large_body, with id: $bodyID";
+        return;
+    }
+    if (!endLargeObjectConnection($pg_conn)) {
+        echo "Error with ending large object connection";
+        return;
+    }
+
+    ### WRITE TO DATABASE
+    $values = "'$disqus_identifier', '$blog_title', '$blog_author', '$blog_email', '$bodyID', '$blog_date'";
     $cols = "blog_id, blog_title, blog_author, blog_email, blog_body, blog_date";
     $sql = "INSERT INTO $table ($cols) VALUES ($values)";
 
@@ -45,6 +69,7 @@
         return;
     }
 
+    ### END
     echo "success";
 
     pg_close($pg_conn);
