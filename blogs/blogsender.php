@@ -17,13 +17,13 @@
 
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     if (!$pg_conn) {
-        echo "Error with pg connection: " . pg_last_error();
+        echo "Error with pg connection: " . pg_last_error($pg_conn);
         return;
     }
 
     $table = getTableName();
     if (!setupBlogTable($table, $pg_conn)) {
-        echo "Error with creating table using SQL: " . pg_last_error();
+        echo "Error with creating table using SQL: " . pg_last_error($pg_conn);
         return;
     }
 
@@ -45,9 +45,9 @@
         return;
     }
 
-    $bytes_written = writeToLargeObject($large_body, $blog_body);
+    $bytes_written = writeToLargeObject($large_body, "$blog_body");
     if (!$bytes_written) {
-        echo "Error with writing to large object: $large_body, with id: $bodyID";
+        echo "Error with writing to large object: $large_body, with id: $bodyID, error: " . pg_last_error($pg_conn);
         return;
     }
 
@@ -66,7 +66,7 @@
     $sql = "INSERT INTO $table ($cols) VALUES ($values)";
 
     if (!pg_query($pg_conn, $sql)) {
-        echo "Error with pg query executing: " . pg_last_error();
+        echo "Error with pg query executing: " . pg_last_error($pg_conn);
         return;
     }
 

@@ -5,7 +5,7 @@
 
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     if (!$pg_conn) {
-        echo "Error with pg connection: " . pg_last_error();
+        echo "Error with pg connection: " . pg_last_error($pg_conn);
         return;
     }
 
@@ -16,7 +16,7 @@
     $table = getTableName();
     $result = pg_delete($pg_conn, $table, $blogIdArray);
     if (!$result) {
-        echo "Error with pg_delete: " . pg_last_error() . ", executing: " . pg_delete($pg_conn, $table, $blogIdArray, PGSQL_DML_STRING);
+        echo "Error with pg_delete: " . pg_last_error($pg_conn) . ", executing: " . pg_delete($pg_conn, $table, $blogIdArray, PGSQL_DML_STRING);
         return;
     }
 

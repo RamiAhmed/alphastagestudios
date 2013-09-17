@@ -4,7 +4,7 @@
     # Establish database connection
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     if (!$pg_conn) {
-        echo "Error with pg connection: " . pg_last_error();
+        echo "Error with pg connection: " . pg_last_error($pg_conn);
         return;
     }
 
@@ -13,7 +13,7 @@
     $sql = "SELECT (blog_title, blog_author, blog_email, blog_date) FROM $table";
     $result = pg_query($pg_conn, $sql);
     if (!$result) {
-        echo "Error with pg query executing SQL: " . pg_last_error();
+        echo "Error with pg query executing SQL: " . pg_last_error($pg_conn);
         return;
     }
 

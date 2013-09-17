@@ -5,7 +5,7 @@
     # Establish database connection
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     if (!$pg_conn) {
-        echo "Error with pg connection: " . pg_last_error();
+        echo "Error with pg connection: " . pg_last_error($pg_conn);
         return;
     }
 
@@ -14,7 +14,7 @@
     $sql = "SELECT * FROM $table";
     $result = pg_query($pg_conn, $sql);
     if (!$result) {
-        echo "Error with pg query executing SQL: " . pg_last_error();
+        echo "Error with pg query executing SQL: " . pg_last_error($pg_conn);
         return;
     }
 
@@ -22,7 +22,7 @@
     for ($i=0; $i < pg_num_rows($result); $i++) {
         $row = pg_fetch_array($result, $i, PGSQL_ASSOC);
         if (!$row) {
-            echo "Error with pg_fetch_array: " . pg_last_error();
+            echo "Error with pg_fetch_array: " . pg_last_error($pg_conn);
             break;
         }
         $blog_full_body = getBlogBodyByID($row["blog_body"], $pg_conn);
@@ -44,7 +44,7 @@
     $blog_ids_sql = "SELECT blog_id FROM $table";
     $blog_ids_result = pg_query($pg_conn, $blog_ids_sql);
     if (!$blog_ids_result) {
-        echo "Error with getting all blog ids, executing SQL: " . pg_last_error();
+        echo "Error with getting all blog ids, executing SQL: " . pg_last_error($pg_conn);
         return;
     }
 
