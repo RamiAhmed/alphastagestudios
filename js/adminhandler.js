@@ -10,7 +10,6 @@ $().ready(function() {
         evt.preventDefault();
 
         var formData = JSON.parse(JSON.stringify($(this).serializeArray()));
-        //console.log(formData);
         createNewBlogPost(formData);
 
         $(this)[0].reset();
@@ -31,7 +30,6 @@ var createNewBlogPost = function(jsonFormData) {
             resultDiv = "<div class='alert alert-danger'>Your post was not created, an error occured: " + response + ". </div>";
         }
         $("#new-blog-form").after("<p>" + resultDiv + "</p>");
-        //console.log("response: " + response);
     });
 }
 
@@ -46,7 +44,6 @@ var initializeBlogManagementContainer = function() {
         dataType: 'json',
         async: true
     }).done(function(msg) {
-        //console.log("Received: " + msg);
         result = msg;
 
         for (var i=0; i < result.length; i++) {
@@ -102,7 +99,6 @@ var setupBlogButtons = function() {
         evt.preventDefault();
 
         var selected = $("#blogsm-container").children(".active").attr('id');
-        //console.log("selected id: " + selected);
 
         var alertBlock = "<p><div class='alert alert-block alert-danger fade in'>\n";
         alertBlock += "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>x</button>\n";
@@ -129,7 +125,6 @@ var setupBlogButtons = function() {
 var requestDeleteBlog = function(blog_id) {
     $.post('../blogs/blogremover.php', {'blog-id': blog_id}, function(response) {
         if (response.indexOf("success") >= 0) {
-            //console.log("Blog deleted successfully. response: " + response);
 
             setTimeout(function() {
                 initializeBlogManagementContainer();

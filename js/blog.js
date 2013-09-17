@@ -1,6 +1,4 @@
 $().ready(function() {
-    //var blogFilesArray = ["03-09-2013_website-version-2", "30-08-2013_things-are-happening", "05-09-2013_let-the-discussions-begin"];
-
     var blogFilesArray = initializeBlogPosts();
     $("#blog-container").html("");
 
@@ -21,8 +19,6 @@ $().ready(function() {
             }
             var blogPreview = blogPost.substring(0, previewEnd);
             blogPreview += "</p>";
-
-            //console.log("blogPreview defined: " + blogPreview);
 
             $("#blog-container").append(blogPreview);
 
@@ -59,7 +55,6 @@ var initializeBlogPosts = function() {
         result = msg;
     });
 
-    //console.log("returning: " + result);
     return result;
 }
 
@@ -74,10 +69,8 @@ var loadBlogPost = function(filename) {
         async: false
     }).done(function(msg) {
         result = $($.parseHTML(msg)).find(".blog-article").html();
-        //result = $($.parseHTML(msg)).find("#blog-body-content").html();
     });
 
-    //console.log("loadBlogPost returning: " + result);
     return result;
 }
 
