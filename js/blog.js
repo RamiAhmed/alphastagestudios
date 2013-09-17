@@ -22,7 +22,7 @@ $().ready(function() {
             var blogPreview = blogPost.substring(0, previewEnd);
             blogPreview += "</p>";
 
-            console.log("blogPreview defined: " + blogPreview);
+            //console.log("blogPreview defined: " + blogPreview);
 
             $("#blog-container").append(blogPreview);
 
@@ -73,11 +73,11 @@ var loadBlogPost = function(filename) {
         dataType: 'html',
         async: false
     }).done(function(msg) {
-        //result = $($.parseHTML(msg)).find(".blog-article").html();
-        result = $($.parseHTML(msg)).find("#blog-body-content").html();
+        result = $($.parseHTML(msg)).find(".blog-article").html();
+        //result = $($.parseHTML(msg)).find("#blog-body-content").html();
     });
 
-    console.log("loadBlogPost returning: " + result);
+    //console.log("loadBlogPost returning: " + result);
     return result;
 }
 
