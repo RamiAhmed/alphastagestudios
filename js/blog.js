@@ -54,11 +54,10 @@ var initializeBlogPosts = function() {
         dataType: 'json',
         async: false
     }).done(function(msg) {
-        console.log("Received: " + msg);
         result = msg;
     });
 
-    console.log("returning: " + result);
+    //console.log("returning: " + result);
     return result;
 }
 
