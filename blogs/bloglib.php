@@ -25,7 +25,7 @@
         $new_header = file_get_contents("./blog-header.html");
         $new_body = "<h2>$blog_title</h2></div>\n".
                     "\t\t\t\t\t\t<div class='panel-body'>\n".
-                    "\t\t\t\t\t\t<p><em><time datetime='$blog_date'>Submitted on $blog_date</time></em></p>\n".
+                    "\t\t\t\t\t\t<em><time datetime='$blog_date'>Submitted on $blog_date</time></em>\n".
                     "\t\t\t\t\t\t<p>$blog_body</p>\n".
                     "\t\t\t\t\t\t<p><em>Written by $blog_author - $blog_email.</em></p>\n".
                     "\t\t\t\t\t\t<div id='disqus_thread'></div>\n".
