@@ -76,7 +76,7 @@
             blog_date TEXT NOT NULL
             )";
 
-        return pg_query($connection, $table;
+        return pg_query($connection, $table);
     }
 
     function startLargeObjectConnection($connection) {
