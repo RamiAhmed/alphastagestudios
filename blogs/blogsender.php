@@ -45,7 +45,8 @@
         return;
     }
 
-    if (!writeToLargeObject($large_body, $blog_body)) {
+    $bytes_written = writeToLargeObject($large_body, $blog_body);
+    if (!$bytes_written) {
         echo "Error with writing to large object: $large_body, with id: $bodyID";
         return;
     }
