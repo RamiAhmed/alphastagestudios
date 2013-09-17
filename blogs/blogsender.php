@@ -27,39 +27,6 @@
         return;
     }
 
-
-    ### LARGE OBJECTS ###
-/*    if (!startLargeObjectConnection($pg_conn)) {
-        echo "Error with starting large object connection, error: " . pg_last_error($pg_conn);
-        return;
-    }
-    $bodyID = createLargeObject($pg_conn);
-    if (!$bodyID) {
-        echo "Error with creating large object, error: " . pg_last_error($pg_conn);
-        return;
-    }
-
-    $large_body = openLargeObject($pg_conn, $bodyID, "w");
-    if (!$large_body) {
-        echo "Error with opening large object with id: $bodyID, error: " . pg_last_error($pg_conn);
-        return;
-    }
-
-    $bytes_written = writeToLargeObject($large_body, "$blog_body");
-    if (!$bytes_written) {
-        echo "Error with writing to large object: $large_body, with id: $bodyID, error: " . pg_last_error($pg_conn);
-        return;
-    }
-
-    if (!closeLargeObject($large_body)) {
-        echo "Error with closing large object: $large_body, with id: $bodyID, error: " . pg_last_error($pg_conn);
-        return;
-    }
-    if (!endLargeObjectConnection($pg_conn)) {
-        echo "Error with ending large object connection: " . pg_last_error($pg_conn);
-        return;
-    }
-*/
     ### WRITE TO DATABASE
     $blog_body = pg_escape_bytea($blog_body);
     $values = "'$disqus_identifier', '$blog_title', '$blog_author', '$blog_email', '$blog_body', '$blog_date'";

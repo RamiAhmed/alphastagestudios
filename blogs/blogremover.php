@@ -19,29 +19,6 @@
         echo "Error with pg_delete: " . pg_last_error($pg_conn) . ", executing: " . pg_delete($pg_conn, $table, $blogIdArray, PGSQL_DML_STRING);
         return;
     }
-/*
-    $sql = "SELECT blog_body FROM $table WHERE blog_id='$blog_id'";
-    $bodyID = pg_query($pg_conn, $sql);
-    if (!$bodyID) {
-        echo "Error could not retrieve large object (blog body) by ID: $blog_id";
-        return;
-    }
-
-    if (!startLargeObjectConnection($pg_conn)) {
-        echo "Error with starting large object connection";
-        return;
-    }
-
-    if (!deleteLargeObject($pg_conn, $bodyID)) {
-        echo "Error with unlinking large object by ID: $bodyID";
-        return;
-    }
-
-    if (!endLargeObjectConnection($pg_conn)) {
-        echo "Error with ending large object connection";
-        return;
-    }
-*/
 
     echo "success";
 

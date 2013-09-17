@@ -25,12 +25,7 @@
             echo "Error with pg_fetch_array: " . pg_last_error($pg_conn);
             break;
         }
-        /*
-        $blog_full_body = getBlogBodyByID($row["blog_body"], $pg_conn);
-        if (!$blog_full_body) {
-            echo "Error with getting blog body by ID in row: $row.";
-        }
-        */
+
         $blog_full_body = pg_unescape_bytea($row["blog_body"]);
         else {
             create_blog_post(
