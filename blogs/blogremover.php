@@ -19,7 +19,7 @@
         echo "Error with pg_delete: " . pg_last_error($pg_conn) . ", executing: " . pg_delete($pg_conn, $table, $blogIdArray, PGSQL_DML_STRING);
         return;
     }
-
+/*
     $sql = "SELECT blog_body FROM $table WHERE blog_id='$blog_id'";
     $bodyID = pg_query($pg_conn, $sql);
     if (!$bodyID) {
@@ -41,7 +41,7 @@
         echo "Error with ending large object connection";
         return;
     }
-
+*/
 
     echo "success";
 

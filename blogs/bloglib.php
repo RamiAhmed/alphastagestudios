@@ -71,7 +71,7 @@
             blog_title TEXT NOT NULL,
             blog_author TEXT NOT NULL,
             blog_email TEXT NOT NULL,
-            blog_body TEXT NOT NULL,
+            blog_body BYTEA NOT NULL,
             blog_date TEXT NOT NULL
             )";
 
@@ -90,8 +90,8 @@
         return pg_lo_create($connection);
     }
 
-    function openLargeObject($connection, $objId) {
-        return pg_lo_open($connection, $objId, "rw");
+    function openLargeObject($connection, $objId, $mode="rw") {
+        return pg_lo_open($connection, $objId, $mode);
     }
 
     function writeToLargeObject($large_object, $data) {
