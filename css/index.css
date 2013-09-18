@@ -7,7 +7,7 @@ html, body {
 }
 
 hr {
-    border-top: 1px solid rgb(200, 200, 200);
+    border-top: 1px solid rgb(150, 150, 170);
 }
 
 .content {
@@ -19,14 +19,12 @@ hr {
 .footer {
     text-align: center;
     border: 0px;
-/*    border-radius: 10px;
-    background-color: rgb(238, 238, 238);*/
-    border-top: 1px solid rgb(200, 200, 200);
+    border-top: 1px solid rgb(150, 150, 170);
     background-color: transparent;
     padding: 20px 15px 5px;
 }
 .header {
-    border-bottom: 1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid rgb(150, 150, 170);
     width: 100%;
     position: fixed;
     top: 0px;
@@ -45,28 +43,16 @@ video {
 }
 
 .panel-default {
- /*   background-color: #eff8ff;*/
-/*    margin: 10px 15px;*/
     margin: 10px 15px;
     background-color: rgb(240, 240, 240);
-/*    box-shadow: 1px 0px 10px 0px black, -1px 0px 10px 0px black;*/
 }
 
 .tab-pane {
     margin: 10px 15px;
     background-color: transparent;
-/*
-    background-color: #eff8ff;
-    padding: 10px 20px;
-    margin: 15px 20px;
-    display: block;
-    border-radius: 10px;
-    box-shadow: 3px 0px 15px 0px black, -3px 0px 15px 0px black;
-*/
 }
 
 #main-content {
-/*    background-color: #e5e5e5;*/
     border-radius: 5px;
     padding: 10px 20px;
     background-color: transparent;
@@ -78,6 +64,7 @@ video {
     margin-bottom: 5px;
     position: relative;
     vertical-align: top;
+    height: auto;
 }
 .nav-pills > li > a {
     height: 30px;
@@ -112,7 +99,6 @@ video {
     }
     #brandlogo {
         width: 45%;
-/*        height: 45%;*/
     }
     .nav {
         margin-top: 20px;
@@ -129,7 +115,6 @@ video {
     }
     #brandlogo {
         width: 45%;
-/*        height: 45%;*/
     }
     .nav {
         margin-top: 10px;
@@ -146,7 +131,6 @@ video {
     }
     #brandlogo {
         width: 30%;
-/*        height: 30%;*/
     }
 }
 
