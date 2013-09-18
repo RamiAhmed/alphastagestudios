@@ -32,7 +32,7 @@ $().ready(function() {
                 $(this).children(":first").unwrap();
             });
 
-            var blogButton = "<p><a class='btn btn-info btn-lg'";
+            var blogButton = "<p><a class='btn btn-info'";
             blogButton += " href='blogs/" + blogFileName + ".html'";
             blogButton += " target='_blank'";
             blogButton += " data-disqus-identifier='" + blogFileName + "'";
