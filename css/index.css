@@ -36,6 +36,18 @@ hr {
     z-index: 1000;
 }
 
+.image-container {
+    margin: 10px auto;
+    padding: 5px;
+    width: 100%;
+}
+
+.quarter-image {
+    width: 20%;
+    display: inline-block;
+    margin: 10px;
+}
+
 video {
     padding: 5px;
     margin: 0px auto;
@@ -44,7 +56,11 @@ video {
 
 .panel-default {
     margin: 10px 15px;
-    background-color: rgb(240, 240, 240);
+    background-color: #fffdfa;
+}
+
+.panel-default > .panel-heading {
+    background-color: #f4f4ff;
 }
 
 .tab-pane {
