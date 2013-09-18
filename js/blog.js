@@ -2,6 +2,11 @@ $().ready(function() {
     var blogFilesArray = initializeBlogPosts();
     $("#blog-container").html("");
 
+    if (blogFilesArray == null) {
+        console.log("Could not find blog files");
+        return;
+    }
+
     for (var i = 0; i < blogFilesArray.length; i++) {
         var blogFileName = blogFilesArray[i];
         var blogPost = '' + loadBlogPost(blogFileName) + '';
