@@ -20,7 +20,7 @@ var loadBlogPost = function(filename, callback) {
         url: fullPath,
         type: 'get',
         dataType: 'html',
-        async: false
+        async: true
     }).done(function(msg) {
         result = $($.parseHTML(msg)).find(".blog-article").html();
         callback(result);
