@@ -27,7 +27,7 @@ var loadBlogPost = function(filename, callback) {
     });
 };
 
-var createBlogPostLink = function(blogPost, index, blogFileName, blogFilesArray) {
+var createBlogPostLink = function(blogPost, blogFileName) {
     var previewEnd = blogPost.indexOf("</p>");
     if (!previewEnd || previewEnd === 0) {
         previewEnd = 500;
@@ -52,10 +52,6 @@ var createBlogPostLink = function(blogPost, index, blogFileName, blogFilesArray)
     blogButton += ">Read the rest of this blog</a></p>";
 
     $("#blog-container").append(blogButton);
-
-    if (index < blogFilesArray.length-1) {
-        $("#blog-container").append("<hr>");
-    }
 };
 
 
@@ -67,7 +63,10 @@ $().ready(function() {
         for (var i = 0; i < blogFilesArray.length; i++) {
             var blogFileName = blogFilesArray[i];
             loadBlogPost(blogFileName, function(blogPost) {
-                createBlogPostLink(blogPost, i, blogFileName, blogFilesArray);
+                createBlogPostLink(blogPost, blogFileName);
+                if (i < blogFilesArray.length-1) {
+                    $("#blog-container").append("<hr>");
+                }
             });
         }
     });
