@@ -66,12 +66,11 @@ $().ready(function() {
             loadBlogPost(blogFilesArray, i, function(blogPost, blogFilesArray, index) {
 
                 createBlogPostLink(blogPost, blogFilesArray[index]);
-                console.log(index + " < " + blogFilesArray.length-1 + " ? ");
-                if (index < blogFilesArray.length-1) {
-                    $("#blog-container").append("<hr>");
-                }
-
             });
+
+            if (i < blogFilesArray.length-1) {
+                $("#blog-container").append("<hr>");
+            }
         }
 
     });
