@@ -60,7 +60,17 @@ $().ready(function() {
     $("#blog-container").html("");
 
     initializeBlogPosts(function(result) {
-        var blogFilesArray = result.sort();
+        var blogFilesArray = result.split(',');
+        blogFilesArray.map(function(val, idx) {
+            var date = val.split('_')[0].replace(/-/g,' ');
+            var day = date.substring(0, 2);
+            var month = date.substring(3, 5);
+            var year = date.substring(6, 10);
+
+            var newDate = year + ' ' + month + ' ' + day + ' 12:00:00';
+            return new Date(newDate);
+        }).sort();
+
         for (var i = 0; i < blogFilesArray.length; i++) {
 
             loadBlogPost(blogFilesArray, i, function(blogPost, blogFilesArray, index) {
