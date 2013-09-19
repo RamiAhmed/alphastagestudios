@@ -68,12 +68,8 @@ $().ready(function() {
 
                 createBlogPostLink(blogPost, blogFilesArray[index]);
             });
-/*
-            if (i < blogFilesArray.length-1) {
-                $("#blog-container").append("<hr>");
-            }
-*/
-        }
+        };
+
         setTimeout(function() {
             $("#blog-container hr").last().remove();
         }, 500);
