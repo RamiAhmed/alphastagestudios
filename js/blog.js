@@ -12,7 +12,8 @@ var initializeBlogPosts = function(callback) {
     });
 };
 
-var loadBlogPost = function(filename, callback) {
+var loadBlogPost = function(blogFilesArray, index, callback) {
+    var blogFileName = blogFilesArray[index];
     var fullPath = 'blogs/' + filename + '.html';
     var result = null;
 
@@ -23,16 +24,16 @@ var loadBlogPost = function(filename, callback) {
         async: true
     }).done(function(msg) {
         result = $($.parseHTML(msg)).find(".blog-article").html();
-        callback(result);
+        callback(result, blogFilesArray, index);
     });
 };
 
 var createBlogPostLink = function(blogPost, blogFileName) {
     var previewEnd = blogPost.indexOf("</p>");
-    if (!previewEnd || previewEnd === 0) {
+    if (!previewEnd || previewEnd === 0 || previewEnd == null) {
         previewEnd = 500;
         if (previewEnd > blogPost.length) {
-            previewEnd = blogPost.length;
+            previewEnd = blogPost.length-1;
         }
     }
     var blogPreview = blogPost.substring(0, previewEnd);
@@ -61,15 +62,18 @@ $().ready(function() {
     initializeBlogPosts(function(result) {
         var blogFilesArray = result;
         for (var i = 0; i < blogFilesArray.length; i++) {
-            var blogFileName = blogFilesArray[i];
-            loadBlogPost(blogFileName, function(blogPost) {
-                createBlogPostLink(blogPost, blogFileName);
-                console.log(i + " < " + blogFilesArray.length-1 + " ? ");
-                if (i < blogFilesArray.length-1) {
+
+            loadBlogPost(blogFilesArray, i, function(blogPost, blogFilesArray, index) {
+
+                createBlogPostLink(blogPost, blogFilesArray[index]);
+                console.log(index + " < " + blogFilesArray.length-1 + " ? ");
+                if (index < blogFilesArray.length-1) {
                     console.log("append hr");
                     $("#blog-container").append("<hr>");
                 }
+
             });
         }
+
     });
 });
