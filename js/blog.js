@@ -27,7 +27,7 @@ var loadBlogPost = function(filename, callback) {
     });
 };
 
-var createBlogPostLink = function(blogPost, index) {
+var createBlogPostLink = function(blogPost, index, blogFileName, blogFilesArray) {
     var previewEnd = blogPost.indexOf("</p>");
     if (!previewEnd || previewEnd === 0) {
         previewEnd = 500;
@@ -67,7 +67,7 @@ $().ready(function() {
         for (var i = 0; i < blogFilesArray.length; i++) {
             var blogFileName = blogFilesArray[i];
             loadBlogPost(blogFileName, function(blogPost) {
-                createBlogPostLink(blogPost, i);
+                createBlogPostLink(blogPost, i, blogFileName, blogFilesArray);
             });
         }
     });
