@@ -53,7 +53,7 @@ var createBlogPostLink = function(blogPost, index) {
 
     $("#blog-container").append(blogButton);
 
-    if (i < blogFilesArray.length-1) {
+    if (index < blogFilesArray.length-1) {
         $("#blog-container").append("<hr>");
     }
 };
