@@ -14,7 +14,7 @@ var initializeBlogPosts = function(callback) {
 
 var loadBlogPost = function(blogFilesArray, index, callback) {
     var blogFileName = blogFilesArray[index];
-    var fullPath = 'blogs/' + filename + '.html';
+    var fullPath = 'blogs/' + blogFileName + '.html';
     var result = null;
 
     $.ajax({
@@ -30,7 +30,7 @@ var loadBlogPost = function(blogFilesArray, index, callback) {
 
 var createBlogPostLink = function(blogPost, blogFileName) {
     var previewEnd = blogPost.indexOf("</p>");
-    if (!previewEnd || previewEnd === 0 || previewEnd == null) {
+    if (!previewEnd || previewEnd === 0 || previewEnd === null) {
         previewEnd = 500;
         if (previewEnd > blogPost.length) {
             previewEnd = blogPost.length-1;
@@ -66,9 +66,8 @@ $().ready(function() {
             loadBlogPost(blogFilesArray, i, function(blogPost, blogFilesArray, index) {
 
                 createBlogPostLink(blogPost, blogFilesArray[index]);
-                console.log(index + " < " + blogFilesArray.length-1 + " ? ");
+
                 if (index < blogFilesArray.length-1) {
-                    console.log("append hr");
                     $("#blog-container").append("<hr>");
                 }
 
