@@ -7,7 +7,7 @@ html, body {
 }
 
 hr {
-    border-top: 1px solid rgb(150, 150, 170);
+    border-top: 1px solid rgb(150, 150, 175);
 }
 
 .content {
@@ -40,12 +40,19 @@ hr {
     margin: 10px auto;
     padding: 5px;
     width: 100%;
+    display: block;
+}
+
+.full-image {
+    width: 95%;
+    margin: 10px auto;
+    display: block;
 }
 
 .quarter-image {
     width: 20%;
     display: inline-block;
-    margin: 10px;
+    margin: 10px 15px;
 }
 
 video {
