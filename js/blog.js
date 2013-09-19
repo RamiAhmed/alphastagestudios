@@ -53,6 +53,7 @@ var createBlogPostLink = function(blogPost, blogFileName) {
     blogButton += ">Read the rest of this blog</a></p>";
 
     $("#blog-container").append(blogButton);
+    $("#blog-container").append("<hr>");
 };
 
 
@@ -67,11 +68,14 @@ $().ready(function() {
 
                 createBlogPostLink(blogPost, blogFilesArray[index]);
             });
-
+/*
             if (i < blogFilesArray.length-1) {
                 $("#blog-container").append("<hr>");
             }
+*/
         }
+
+        $("#blog-container").find('hr:last').remove();
 
     });
 });
