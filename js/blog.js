@@ -60,7 +60,7 @@ $().ready(function() {
     $("#blog-container").html("");
 
     initializeBlogPosts(function(result) {
-        var blogFilesArray = result;
+        var blogFilesArray = result.sort();
         for (var i = 0; i < blogFilesArray.length; i++) {
 
             loadBlogPost(blogFilesArray, i, function(blogPost, blogFilesArray, index) {
