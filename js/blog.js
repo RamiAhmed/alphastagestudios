@@ -74,8 +74,10 @@ $().ready(function() {
             }
 */
         }
+        setTimeout(function() {
+            $("#blog-container hr").last().remove();
+        }, 500);
 
-        $("#blog-container").find('hr:last').remove();
 
     });
 });
