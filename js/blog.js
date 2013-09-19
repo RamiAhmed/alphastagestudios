@@ -65,6 +65,7 @@ $().ready(function() {
             loadBlogPost(blogFileName, function(blogPost) {
                 createBlogPostLink(blogPost, blogFileName);
                 if (i < blogFilesArray.length-1) {
+                    console.log("append hr");
                     $("#blog-container").append("<hr>");
                 }
             });
