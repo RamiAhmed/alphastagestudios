@@ -59,25 +59,9 @@
     <!-- AddThis Smart Layers END -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-        $().ready(function() {
-            // Javascript to enable link to tab
-            var hash = document.location.hash;
-            var prefix = "tab_";
-            if (hash) {
-                $('.nav-pills a[href='+hash.replace(prefix,"")+']').tab('show');
-            }
-
-            // Change hash for page-reload
-            $('.nav-pills a').on('shown', function (e) {
-                window.location.hash = e.target.hash.replace("#", "#" + prefix);
-            });
-        });
-    </script>
 
 </body>
 
