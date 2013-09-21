@@ -46,7 +46,7 @@ var createBlogPostLink = function(blogPost, blogFileName) {
         $(this).children(":first").unwrap();
     });
 
-    var blogButton = "<p><a class='btn btn-info'";
+    var blogButton = "<p><a class='btn btn-info blog-link-btn'";
     blogButton += " href='blogs/" + blogFileName + ".html'";
     blogButton += " target='_blank'";
     blogButton += " data-disqus-identifier='" + blogFileName + "'";

@@ -27,7 +27,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics Initialization -->
     <script type="text/javascript">
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
@@ -36,6 +36,7 @@
         ga('send', 'pageview');
     </script>
 
+    <!-- Pingdom Real User Monitoring -->
     <script type="text/javascript">
         var _prum = [['id', '523dfdc6abe53d9938000000'],
                      ['mark', 'firstbyte', (new Date()).getTime()]];
@@ -292,15 +293,27 @@
     <!-- AddThis Smart Layers END -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+
+    <!-- Outbound Analtics Jquery Google Analytics Plugin -->
+    <script type="text/javascript" src="//raw.github.com/gmurphey/jquery.outbound-analytics/master/dist/jquery.outbound-analytics.min.js" charset="utf-8"></script>
 
     <!-- Custom blog framework -->
-    <script type="text/javascript" src="js/blog.js"></script>
+    <script type="text/javascript" src="js/blog.js" charset="utf-8"></script>
 
     <!-- Send email from About page -->
-    <script type="text/javascript" src="js/contact.js"></script>
+    <script type="text/javascript" src="js/contact.js" charset="utf-8"></script>
+
+    <!-- Setup google analytics link tracking -->
+    <script type="text/javascript">
+        $().ready(function() {
+            $.outboundAnalytics();
+            $('.header').outboundAnalytics({'category': 'Tab Links'});
+            $('.blog-link-btn').outboundAnalytics({'category': 'Blog Links'});
+        });
+    </script>
 
 </body>
 
