@@ -309,8 +309,8 @@
     <!-- Setup google analytics link tracking -->
     <script type="text/javascript">
         $().ready(function() {
-            $.outboundAnalytics();
-            $('.header').outboundAnalytics({'category': 'Tab Links'});
+            $('p').outboundAnalytics({'category': 'In-Text Links'});
+            $('header').outboundAnalytics({'category': 'Tab Links'});
             $('.blog-link-btn').outboundAnalytics({'category': 'Blog Links'});
         });
     </script>
