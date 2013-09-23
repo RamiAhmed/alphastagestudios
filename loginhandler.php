@@ -32,12 +32,14 @@
         return;
     }
 
-    if (pg_fetch_row($user_result) == $password) {
-        echo "success";
-    }
-    else {
-        echo "Error: Wrong password." . pg_last_error($pg_conn);
+    $fetched_pass = pg_fetch_row($user_result)[1];
+
+    if (!$fetched_pass) {
+        echo "Incorrect password";
         return;
+    }
+    else if ($fetched_pass == $password) {
+        echo "success";
     }
 
 ?>
