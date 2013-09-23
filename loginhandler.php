@@ -34,14 +34,14 @@
 
     $fetched_pass = pg_fetch_assoc($user_result);
     if (!$fetched_pass) {
-        echo "Incorrect password";
+        echo "Username incorrect";
         return;
     }
-    else if ($fetched_pass['password'] == $password) {
-        echo "success";
+    else if ($fetched_pass['password'] != $password) {
+        echo "Password incorrect";
     }
     else {
-        echo "Username or password incorrect";
+        echo "success";
     }
 
 ?>
