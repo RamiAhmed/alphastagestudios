@@ -40,7 +40,7 @@
     else if ($fetched_pass['password'] != $password) {
         echo "Password incorrect";
     }
-    else {
+    else if ($fetched_pass['password'] == $password) {
         echo "success";
     }
 
