@@ -40,5 +40,8 @@
     else if ($fetched_pass['password'] == $password) {
         echo "success";
     }
+    else {
+        echo "Username or password incorrect";
+    }
 
 ?>
