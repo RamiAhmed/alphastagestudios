@@ -10,6 +10,10 @@ hr {
     border-top: 1px solid rgb(150, 150, 175);
 }
 
+.alert {
+    margin-top: 10px;
+}
+
 .content {
     display: block;
     padding: 10px;
