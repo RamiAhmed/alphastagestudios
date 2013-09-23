@@ -29,7 +29,7 @@ var addNewAdmin = function() {
 
         $.post('newadminhandler.php', newAdminData, function(response) {
             var resultDiv = "";
-            if (response == "success") {
+            if (response.indexOf("success") >= 0) {
                 resultDiv = "<div class='alert alert-success'>Successfully added new admin. </div>";
             }
             else {
