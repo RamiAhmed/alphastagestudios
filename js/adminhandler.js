@@ -1,7 +1,6 @@
 /**/
 
 var checkLogin = function() {
-
     $("nav").hide();
 
     $("#login-form").on("submit", function(evt) {
@@ -19,9 +18,7 @@ var checkLogin = function() {
                 $("#login-form").after("<p>" + failure + "</p>");
             }
         });
-
     });
-
 }
 
 var addNewAdmin = function() {
@@ -33,7 +30,7 @@ var addNewAdmin = function() {
         $.post('newadminhandler.php', newAdminData, function(response) {
             var resultDiv = "";
             if (response == "success") {
-                resultDiv = "<div class='alert alert-success'>Successfully added new admin.</div>";
+                resultDiv = "<div class='alert alert-success'>Successfully added new admin. </div>";
             }
             else {
                 resultDiv = "<div class='alert alert-danger'>New admin adding failed: " + response + ". </div>";
@@ -47,7 +44,7 @@ var createNewBlogPost = function(jsonFormData) {
     $.post('blogs/blogsender.php', jsonFormData, function(response) {
         var resultDiv = "";
         if (response == "success") {
-            resultDiv = "<div class='alert alert-success'>Your post was successfully created.</div>";
+            resultDiv = "<div class='alert alert-success'>Your post was successfully created. </div>";
         }
         else {
             resultDiv = "<div class='alert alert-danger'>Your post was not created, an error occured: " + response + ". </div>";
