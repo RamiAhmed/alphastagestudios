@@ -21,7 +21,7 @@
     $check_existing_query = pg_query($pg_conn, $check_existing);
     $check_existing_row = pg_fetch_assoc($check_existing_query);
     if ($check_existing_row['password'] || $check_existing_row['username']) {
-        echo "Admin already exists with username: $username.";
+        echo "Admin already exists with username: $username";
         return;
     }
 
