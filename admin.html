@@ -40,6 +40,7 @@
                 <ul id="admin-nav" class="nav nav-pills pull-right" role="navigation">
                     <li><a href="#newblog" data-toggle="pill">New Blog</a></li>
                     <li><a href="#manageblogs" data-toggle="pill">Manage Blogs</a></li>
+                    <li><a href="#addadmins" data-toggle="pill">Add Admin</a></li>
                 </ul>
             </nav>
         </div>
@@ -51,7 +52,7 @@
             <section id="log-in" class="tab-pane active">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2>Log in as admin to manage blogs</h4>
+                        <h1>Log in as admin to manage blogs</h1>
                     </div>
                     <div class="panel-body">
                         <form id="login-form" role="form">
@@ -74,6 +75,26 @@
                     </div>
                 </div>
             </section>
+
+            <sectionid="addadmins" class="tab-pane">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>Add New Admins</h1>
+                    </div>
+                    <div class="panel-body">
+                        <form id="new-admin-form" role="form">
+                            <div class="form-group">
+                                <label for="new-username">Username (Email)</label>
+                                <input class="form-control" id="new-username" name="new-username" type="text" placeholder="Username (Email)" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">Password</label>
+                                <input class="form-control" id="new-password" name="new-password" type="password" placeholder="Password" required>
+                            </div>
+                            <button id="new-admin-button" type="submit" class="btn btn-primary">Add New Admin</button>
+                        </form>
+                    </div>
+                </div>
 
             <section id="manageblogs" class="tab-pane">
                 <div class="panel panel-default">

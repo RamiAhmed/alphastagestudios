@@ -16,12 +16,31 @@ var checkLogin = function() {
             }
             else {
                 var failure = "<div class='alert alert-danger'>Login failed: " + response + ". </div>";
-                $("#login-form").after("<p> " + failure + "</p>");
+                $("#login-form").after("<p>" + failure + "</p>");
             }
         });
 
     });
 
+}
+
+var addNewAdmin = function() {
+    $("#new-admin-form").on("submit", function(evt) {
+        evt.preventDefault();
+
+        var newAdminData = JSON.parse(JSON.stringify($(this).serializeArray()));
+
+        $.post('newadminhandler.php', newAdminData, function(response) {
+            var resultDiv = "";
+            if (response == "success") {
+                resultDiv = "<div class='alert alert-success'>Successfully added new admin.</div>";
+            }
+            else {
+                resultDiv = "<div class='alert alert-danger'>New admin adding failed: " + response + ". </div>";
+            }
+            $("#new-admin-form").after("<p>" + resultDiv + "</p>");
+        });
+    });
 }
 
 var createNewBlogPost = function(jsonFormData) {
@@ -160,5 +179,7 @@ $().ready(function() {
     });
 
     setupBlogButtons();
+
+    addNewAdmin();
 
 });
