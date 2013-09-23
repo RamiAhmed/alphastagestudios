@@ -1,24 +1,28 @@
 /**/
 
-$().ready(function() {
+var checkLogin = function() {
 
-    $().alert();
+    $("nav").hide();
 
-    initializeBlogManagementContainer();
-
-    $("#new-blog-form").on("submit", function(evt) {
+    $("#login-form").on("submit", function(evt) {
         evt.preventDefault();
 
-        var formData = JSON.parse(JSON.stringify($(this).serializeArray()));
-        createNewBlogPost(formData);
+        var loginData = JSON.parse(JSON.stringify($(this).serializeArray()));
 
-        $(this)[0].reset();
+        $.post('loginhandler.php', loginData, function(response) {
+            if (response == "success") {
+                $("nav").show();
+                $("#admin-nav a:first").tab('show');
+            }
+            else {
+                var failure = "<div class='alert alert-danger'>Login failed: " + response + ". </div>";
+                $("#login-form").after("<p> " + failure + "</p>");
+            }
+        });
 
     });
 
-    setupBlogButtons();
-
-});
+}
 
 var createNewBlogPost = function(jsonFormData) {
     $.post('blogs/blogsender.php', jsonFormData, function(response) {
@@ -101,7 +105,7 @@ var setupBlogButtons = function() {
         var selected = $("#blogsm-container").children(".active").attr('id');
 
         var alertBlock = "<p><div class='alert alert-block alert-danger fade in'>\n";
-        alertBlock += "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>x</button>\n";
+        alertBlock += "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>\n";
         alertBlock += "<h4>Confirmation</h4>\n";
         alertBlock += "<p>Are you sure you want to remove the selected blog <strong>permanently</strong>?</p>\n";
         alertBlock += "<p><button id='blog-confirm-delete' type='button' class='btn btn-danger'>Confirm Removal</button></p>\n";
@@ -135,3 +139,26 @@ var requestDeleteBlog = function(blog_id) {
         }
     });
 }
+
+
+$().ready(function() {
+
+    $().alert();
+
+    checkLogin();
+
+    initializeBlogManagementContainer();
+
+    $("#new-blog-form").on("submit", function(evt) {
+        evt.preventDefault();
+
+        var formData = JSON.parse(JSON.stringify($(this).serializeArray()));
+        createNewBlogPost(formData);
+
+        $(this)[0].reset();
+
+    });
+
+    setupBlogButtons();
+
+});
