@@ -32,7 +32,7 @@
         return;
     }
 
-    $fetched_pass = pg_fetch_row($user_result)[1];
+    $fetched_pass = pg_fetch_assoc($user_result)['password'];
 
     if (!$fetched_pass) {
         echo "Incorrect password";
