@@ -1,7 +1,7 @@
 html, body {
     margin: 0px;
     color: rgb(86, 86, 109);
-    background-color: white;
+    background-color: #CCCBC4;
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -75,7 +75,7 @@ video {
 
 .panel-default {
     margin: 10px 15px;
-    background-color: #fffdfa;
+    background-color: #F7F5F3;
     border-color: rgb(75, 75, 75);
 }
 
@@ -98,8 +98,7 @@ video {
     display: inline-block;
     float: left;
     margin-bottom: 5px;
-    position: relative;
-    vertical-align: top;
+
     height: auto;
 }
 .nav-pills > li > a {
