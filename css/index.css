@@ -93,6 +93,10 @@ video {
     margin: 10px 15px;
     background-color: #F7F5F3;
     border-color: rgb(75, 75, 75);
+
+    min-height: 400px;
+    height: auto !important;
+    height: 400px;
 }
 
 .panel-default > .panel-heading {
