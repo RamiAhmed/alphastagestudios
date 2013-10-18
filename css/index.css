@@ -1,12 +1,28 @@
 html, body {
     margin: 0px;
     color: rgb(86, 86, 109);
-    background-color: #CCCBC4;
+    background-color: #807F7B;
+    background-repeat: repeat-x;
     padding-top: 20px;
     padding-bottom: 20px;
 
     font-family: "Cabin", sans-serif;
     font-weight: normal;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#807F7B));
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #ffffff, #807F7B);
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #ffffff, #807F7B);
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #ffffff, #807F7B);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #ffffff, #807F7B);
 }
 
 hr {
