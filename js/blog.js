@@ -53,7 +53,7 @@ var createBlogPostLink = function(blogPost, blogFileName) {
     blogButton += ">Read the rest of this blog</a></p>";
 
     $("#blog-container").append(blogButton);
-    $("#blog-container").append("<hr>");
+    $("#blog-container").append("<div class='hr'> <hr /> </div>");
 };
 
 

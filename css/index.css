@@ -25,8 +25,23 @@ html, body {
     background: -o-linear-gradient(top, #ffffff, #807F7B);
 }
 
-hr {
-    border-top: 1px solid rgb(150, 150, 175);
+div.hr {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+
+    overflow:hidden;
+
+    background-image: url(img/sep.png);
+    background-size: 100% auto;
+
+    width: 100%;
+    min-height: 7px;
+    height: auto;
+}
+
+div.hr hr {
+    display: none;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -47,7 +62,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .footer {
     text-align: center;
     border: 0px;
-    border-top: 1px solid rgb(150, 150, 170);
+  /*  border-top: 1px solid rgb(150, 150, 170);*/
     background-color: transparent;
     padding: 20px 15px 5px;
 }
