@@ -71,7 +71,7 @@ $().ready(function() {
         };
 
         setTimeout(function() {
-            $("#blog-container hr").last().remove();
+            $("#blog-container div.hr").last().remove();
         }, 1000);
 
 
