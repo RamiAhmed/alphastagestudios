@@ -33,7 +33,7 @@
 
     $returnString = "Returning: \n";
     foreach (json_decode($_POST) as $key => $value) {
-        $returnString .= htmlspecialchars($key) . " = " . htmlspecialchars($value) . "\n";
+        $returnString .= $key . " = " . $value . "\n";
 
     }
 
