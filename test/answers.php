@@ -27,7 +27,10 @@
     }
 
 
-    $time = getdate();
+    //$time = getdate();
+    $time = new DateTime(getdate());
+    $time->format("d-m-Y H:i:s");
+
     $cols = "time,";
     $values = "$time,";
 
