@@ -27,35 +27,18 @@
         return;
     }
 
-
-//    $time = getdate();
-//    $gender = $_POST['']
-/*
-    $returnString = '';
-    foreach ($_POST as $key => $value) {
-        $returnString .= $key . " = " . $value . "\n";
-    }
-*/
     $time = getdate();
     $cols = "time,";
     $values = "$time,";
 
-//    $i = 0;
     foreach ($_POST as $key => $value) {
         $cols .= "$key,";
         $values .= "'$value',";
-
-//        if ($i > 0) {
-//            $cols .= ",";
-//            $values = ",";
-//        }
-
-    // $_SERVER['CONTENT_LENGTH']
-
-
-//        $i = $i + 1;
     }
 
-    echo $cols . "\n\n" . $values;
+    $cols = substr($cols, 0, -1);
+    $values = substr($values, 0, -1);
+
+    echo $cols . "\n" . $values;
 
 ?>
