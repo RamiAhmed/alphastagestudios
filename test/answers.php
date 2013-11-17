@@ -36,7 +36,25 @@
             after_reasons TEXT NOT NULL,
             after_comments TEXT,
             raw_time_played INTEGER NOT NULL,
-            raw_wave_count INTEGER NOT NULL
+            raw_time_spent INTEGER NOT NULL,
+            raw_wave_count INTEGER NOT NULL,
+            raw_total_tactics_changes INTEGER NOT NULL,
+            raw_tactics_changes INTEGER NOT NULL,
+            raw_targets_changes INTEGER NOT NULL,
+            raw_condition_changes INTEGER NOT NULL,
+            raw_gold_spent INTEGER NOT NULL,
+            raw_gold_earned INTEGER NOT NULL,
+            raw_units_died INTEGER NOT NULL,
+            raw_enemies_killed INTEGER NOT NULL,
+            raw_gold_deposit_left INTEGER NOT NULL,
+            raw_units_bought INTEGER NOT NULL,
+            raw_unit_upgrades INTEGER NOT NULL,
+            raw_units_sold INTEGER NOT NULL,
+            raw_units_moved INTEGER NOT NULL,
+            raw_total_selections INTEGER NOT NULL,
+            raw_units_selected INTEGER NOT NULL,
+            raw_enemies_selected INTEGER NOT NULL,
+            raw_force_spawns INTEGER NOT NULL
         )";
     if (!pg_query($pg_conn, $create_table)) {
         echo "Error with creating table $table: " . pg_last_error($pg_conn);
