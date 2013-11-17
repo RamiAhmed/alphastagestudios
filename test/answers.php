@@ -21,11 +21,11 @@
             playing_amount TEXT NOT NULL,
             favourite TEXT NOT NULL
         )";
-
     if (!pg_query($pg_conn, $create_table)) {
         echo "Error with creating table $table: " . pg_last_error($pg_conn);
         return;
     }
+
 
     $time = getdate();
     $cols = "time,";
@@ -39,6 +39,14 @@
     $cols = substr($cols, 0, -1);
     $values = substr($values, 0, -1);
 
+
+    $sql = "INSERT INTO $table ($cols) VALUES ($values)";
+    if (!pg_query($pg_conn, $sql)) {
+        echo "Error with pg query executing SQL: " . $sql . ", error: " . pg_last_error($pg_conn);
+        return;
+    }
+
     echo $cols . "\n" . $values;
 
+    pg_close($pg_conn);
 ?>
