@@ -36,7 +36,7 @@
         $returnString .= $key . " = " . $value . "\n";
     }
 
-    if ($returnString === '')
+    if ($returnString === '') {
         $returnString = "Gender: " . $_POST["Gender"] .
                         "\nAge: " . $_POST["Age"] .
                         "\nPlayingFrequency: " . $_POST["PlayingFrequency"] .
