@@ -61,7 +61,7 @@
         return;
     }
 
-    $time = date("d-m-y H:i:s");
+    $time = date("d-m-y H:i:s P");
 
     $cols = "time,";
     $values = "'$time',";
