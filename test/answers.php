@@ -31,7 +31,7 @@
 //    $time = getdate();
 //    $gender = $_POST['']
 
-    $returnString = "";
+    $returnString = "Returning: \n";
     foreach ($_POST as $key => $value) {
         $returnString .= htmlspecialchars($key) . " = " . htmlspecialchars($value) . "\n";
 
