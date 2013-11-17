@@ -30,18 +30,19 @@
 
 //    $time = getdate();
 //    $gender = $_POST['']
-/*
-    $returnString = "Returning: \n";
-    foreach (json_decode($_POST) as $key => $value) {
-        $returnString .= $key . " = " . $value . "\n";
 
+    $returnString = '';
+    foreach ($_POST as $key => $value) {
+        $returnString .= $key . " = " . $value . "\n";
     }
-*/
-    $returnString = "Gender: " . $_POST["Gender"] .
-                    "\nAge: " . $_POST["Age"] .
-                    "\nPlayingFrequency: " . $_POST["PlayingFrequency"] .
-                    "\nPlayingAmount: " . $_POST["PlayingAmount"] .
-                    "\nFavourite: " . $_POST["Favourite"];
+
+    if ($returnString === '')
+        $returnString = "Gender: " . $_POST["Gender"] .
+                        "\nAge: " . $_POST["Age"] .
+                        "\nPlayingFrequency: " . $_POST["PlayingFrequency"] .
+                        "\nPlayingAmount: " . $_POST["PlayingAmount"] .
+                        "\nFavourite: " . $_POST["Favourite"];
+    }
 
     echo $returnString;
 
