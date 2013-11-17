@@ -33,7 +33,7 @@
     $time = date("d-m-y H:i:s");
 
     $cols = "time,";
-    $values = "$time,";
+    $values = "'$time',";
 
     foreach ($_POST as $key => $value) {
         $cols .= "$key,";
