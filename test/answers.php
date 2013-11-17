@@ -28,8 +28,9 @@
 
 
     //$time = getdate();
-    $time = new DateTime(getdate());
-    $time->format("d-m-Y H:i:s");
+    //$time = new DateTime(getdate());
+    //$time->format("d-m-Y H:i:s");
+    $time = date("d-m-y H:i:s");
 
     $cols = "time,";
     $values = "$time,";
