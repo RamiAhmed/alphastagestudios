@@ -19,25 +19,40 @@
             age TEXT NOT NULL,
             playing_freq TEXT NOT NULL,
             playing_amount TEXT NOT NULL,
-            favourite TEXT NOT NULL
+            favourite TEXT NOT NULL,
+            starting_desire INTEGER NOT NULL,
+            starting_reasons TEXT NOT NULL,
+            starting_comments TEXT,
+            during_desire_1 INTEGER NOT NULL,
+            during_reasons_1 TEXT NOT NULL,
+            during_comments_1 TEXT,
+            during_desire_2 INTEGER,
+            during_reasons_2 TEXT,
+            during_comments_2 TEXT,
+            during_desire_3 INTEGER,
+            during_reasons_3 TEXT,
+            during_comments_3 TEXT,
+            after_desire INTEGER NOT NULL,
+            after_reasons TEXT NOT NULL,
+            after_comments TEXT,
+            raw_time_played,
+            raw_wave_count
         )";
     if (!pg_query($pg_conn, $create_table)) {
         echo "Error with creating table $table: " . pg_last_error($pg_conn);
         return;
     }
 
-
-    //$time = getdate();
-    //$time = new DateTime(getdate());
-    //$time->format("d-m-Y H:i:s");
     $time = date("d-m-y H:i:s");
 
     $cols = "time,";
     $values = "'$time',";
 
     foreach ($_POST as $key => $value) {
-        $cols .= "$key,";
-        $values .= "'$value',";
+        if ($key !== "" && $value !== "") {
+            $cols .= "$key,";
+            $values .= "'$value',";
+        }
     }
 
     $cols = substr($cols, 0, -1);

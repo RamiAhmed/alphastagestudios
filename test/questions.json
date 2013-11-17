@@ -1,31 +1,81 @@
 {
-    "Demographics": {
-        "Questions": [
-            {
-                "Question": "Gender",
-                "Options": ["Male", "Female"],
-                "HelperText": "Choose your gender."
-            },
-            {
-                "Question": "Age",
-                "Options": ["Under 15", "16-20", "21-25", "26-30", "31-36", "Above 36"],
-                "HelperText": "Choose your age interval."
-            },
-            {
-                "Question": "Frequency of Playing",
-                "Options" : ["Daily", "Weekly", "Monthly", "Yearly"],
-                "HelperText" : "Choose how frequently you play games."
-            },
-            {
-                "Question": "Amount of Playing",
-                "Options": [ "1 hour or less", "2 hours", "3 hours", "4 hours", "5 hours", "6 hours or more"],
-                "HelperText" : "Choose how long you play per gaming session."
-            },
-            {
-                "Question": "Favourite game or game genre",
-                "Options": [],
-                "HelperText" : "Write down 3 examples of games or game genres that you like (you may mix)."
-            }
-        ]
-    }
+    "Demographics": [
+        {
+            "Question": "Gender",
+            "Options": ["Male", "Female"],
+            "HelperText": "Choose your gender."
+        },
+        {
+            "Question": "Age",
+            "Options": ["Under 15", "16-20", "21-25", "26-30", "31-36", "Above 36"],
+            "HelperText": "Choose your age interval."
+        },
+        {
+            "Question": "Frequency of Playing",
+            "Options" : ["Daily", "Weekly", "Monthly", "Yearly"],
+            "HelperText" : "Choose how frequently you play games."
+        },
+        {
+            "Question": "Amount of Playing",
+            "Options": [ "1 hour or less", "2 hours", "3 hours", "4 hours", "5 hours", "6 hours or more"],
+            "HelperText" : "Choose how long you play per gaming session."
+        },
+        {
+            "Question": "Favourite game or game genre",
+            "Options": [],
+            "HelperText" : "Write down 3 examples of games or game genres that you like (you may mix)."
+        }
+    ],
+    "Starting": [
+        {
+            "Question": "Please indicate the extent to which you agree or disagree with this sentence: 'I want to start the game'",
+            "Options": [-3, -2, -1, 0, 1, 2, 3],
+            "HelperText": "Choose how much you agree with the sentence on a scale from -3 (Disagree Strongly) to +3 (Agree Strongly)."
+        },
+        {
+            "Question": "What makes you want/not want to start?",
+            "Options": [],
+            "HelperText": "Write down any reasons you have for wanting to or not wanting to start."
+        },
+        {
+            "Question": "Any other comments? (Optional)",
+            "Options": [],
+            "HelperText": "Here you may write down any additional comments, about anything, that you wish to add. The question is optional."
+        }
+    ],
+    "During": [
+        {
+            "Question": "Please indicate the extent to which you agree or disagree with this sentence: 'I want to continue playing'",
+            "Options": [-3, -2, -1, 0, 1, 2, 3],
+            "HelperText": "Choose how much you agree with the sentence on a scale from -3 (Disagree Strongly) to +3 (Agree Strongly)."
+        },
+        {
+            "Question": "What makes you want/not want to  continue playing?",
+            "Options": [],
+            "HelperText": "Write down any reasons you have for wanting to or not wanting to continue playing."
+        },
+        {
+            "Question": "Any other comments? (Optional)",
+            "Options": [],
+            "HelperText": "Here you may write down any additional comments, about anything, that you wish to add. The question is optional."
+        }
+    ],
+    "After": [
+        {
+            "Question": "Please indicate the extent to which you agree or disagree with this sentence: 'I want to try again'",
+            "Options": [-3, -2, -1, 0, 1, 2, 3],
+            "HelperText": "Choose how much you agree with the sentence on a scale from -3 (Disagree Strongly) to +3 (Agree Strongly)."
+        },
+        {
+            "Question": "What makes you want/not want to  continue playing?",
+            "Options": [],
+            "HelperText": "Write down any reasons you have for wanting to or not wanting to try again."
+        },
+        {
+            "Question": "Any other comments? (Optional)",
+            "Options": [],
+            "HelperText": "Here you may write down any additional comments, about anything, that you wish to add. The question is optional."
+        }
+    ]
+
 }
