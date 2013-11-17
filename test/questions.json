@@ -4,31 +4,31 @@
             "ID": "gender",
             "Question": "Gender",
             "Options": ["Male", "Female"],
-            "HelperText": "Choose your gender."
+            "HelperText": "Please choose your gender."
         },
         {
             "ID":"age",
             "Question": "Age",
-            "Options": ["Under 15", "16-20", "21-25", "26-30", "31-36", "Above 36"],
-            "HelperText": "Choose your age interval."
+            "Options": ["14 or less", "15-20", "21-26", "27-32", "33-38", "39 or more"],
+            "HelperText": "Please choose your age interval."
         },
         {
             "ID":"playing_freq",
             "Question": "Frequency of Playing",
-            "Options" : ["Daily", "Weekly", "Monthly", "Yearly"],
-            "HelperText" : "Choose how frequently you play games."
+            "Options" : ["Daily", "More than once per week", "Once per week or less", "More than once per month", "Once per month or less", "More than once per year", "Once per year or less"],
+            "HelperText" : "Please choose how frequently you play games on average."
         },
         {
             "ID":"playing_amount",
             "Question": "Amount of Playing",
             "Options": [ "1 hour or less", "2 hours", "3 hours", "4 hours", "5 hours", "6 hours or more"],
-            "HelperText" : "Choose how long you play per gaming session."
+            "HelperText" : "Please choose how long you play per gaming session on average, i.e. how much time you spend gaming when you do play games."
         },
         {
             "ID":"favourite",
             "Question": "Favourite game or game genre",
             "Options": [],
-            "HelperText" : "Write down 3 examples of games or game genres that you like (you may mix)."
+            "HelperText" : "Please write down 3 examples of games or game genres that you like (you can mix)."
         }
     ],
     "Starting": [
