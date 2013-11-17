@@ -30,20 +30,32 @@
 
 //    $time = getdate();
 //    $gender = $_POST['']
-
+/*
     $returnString = '';
     foreach ($_POST as $key => $value) {
         $returnString .= $key . " = " . $value . "\n";
     }
+*/
+    $time = getdate();
+    $cols = "time,";
+    $values = "$time,";
 
-    if ($returnString === '') {
-        $returnString = "Gender: " . $_POST["Gender"] .
-                        "\nAge: " . $_POST["Age"] .
-                        "\nPlayingFrequency: " . $_POST["PlayingFrequency"] .
-                        "\nPlayingAmount: " . $_POST["PlayingAmount"] .
-                        "\nFavourite: " . $_POST["Favourite"];
+//    $i = 0;
+    foreach ($_POST as $key => $value) {
+        $cols .= "$key,";
+        $values .= "'$value',";
+
+//        if ($i > 0) {
+//            $cols .= ",";
+//            $values = ",";
+//        }
+
+    // $_SERVER['CONTENT_LENGTH']
+
+
+//        $i = $i + 1;
     }
 
-    echo $returnString;
+    echo $cols . "\n\n" . $values;
 
 ?>
