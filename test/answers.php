@@ -13,7 +13,7 @@
 
     $table = "p7TestTable";
 
-    $create_table = "CREATE TABLE IF NOT EXISTS $table (
+    $create_table = "CREATE TABLE $table (
             time TEXT NOT NULL,
             gender TEXT NOT NULL,
             age TEXT NOT NULL,
@@ -35,8 +35,8 @@
             after_desire INTEGER NOT NULL,
             after_reasons TEXT NOT NULL,
             after_comments TEXT,
-            raw_time_played,
-            raw_wave_count
+            raw_time_played INTEGER,
+            raw_wave_count INTEGER
         )";
     if (!pg_query($pg_conn, $create_table)) {
         echo "Error with creating table $table: " . pg_last_error($pg_conn);
