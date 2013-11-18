@@ -54,7 +54,8 @@
             raw_total_selections INTEGER NOT NULL,
             raw_units_selected INTEGER NOT NULL,
             raw_enemies_selected INTEGER NOT NULL,
-            raw_force_spawns INTEGER NOT NULL
+            raw_force_spawns INTEGER NOT NULL,
+            scenario TEXT NOT NULL
         )";
     if (!pg_query($pg_conn, $create_table)) {
         echo "Error with creating table $table: " . pg_last_error($pg_conn);
