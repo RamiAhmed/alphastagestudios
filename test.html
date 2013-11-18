@@ -21,6 +21,9 @@
     <link rel="shortcut icon" href="img/icon_placeholder.png">
     <link rel="icon" type="image/png" href="img/icon_placeholder.png">
 
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+
     <!-- Custom styles -->
     <link href="css/index.css" rel="stylesheet">
 
@@ -34,12 +37,104 @@
 
 <body>
 
-      <div id="main-wrapper" class="container-fluid">
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <!--<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">-->
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Try out a novel Unit-based Defense Game (PROTOTYPE 0.0.2)</h1>
+              <p>
+                Developed by new startup indie studio <a href="//www.alphastagestudios.com">Alpha Stage Studios</a>, the game so-far called Right to Rule is intended to be released commercially before 2017. What you can download now is just a really early prototype (version 0.0.2).
+              </p>
+              <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>-->
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <!--<img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">-->
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Participate in Academic Game Studies</h1>
+              <p>
+                By downloading and playing our game, you support the developers of the game in their academic studies at <a href="//http://media.aau.dk">Aalborg University, Copenhagen</a>. Oh, the game will ask you a few questions automatically, please just answer them honestly - it's completely anonymous. The answers are actually the part that helps our education.
+              </p>
+              <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <!--<img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">-->
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Right To Rule</h1>
+              <p>
+                    Right To Rule is a unit-based defense game (like tower defense, but with movable units). Right to Rule currently features a functioning Tactical AI System (TAIS), allowing players to set tactics on their units to influence their behaviour in combat. Right to Rule is powered by <a href="//unity3d.com">Unity3D</a>.
+              </p>
+              <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
 
+      <div class="container marketing">
 
-      </section><!-- /main-content -->
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
+          <h2>Download for Windows</h2>
+          <p>
+            Please note when you download this program that it is just an early prototype. Technical bugs, poor game balance and other issues will occur while playing. We apologize for the inconvenience, but hope that you will still support us by testing out the prototype game.
+          </p>
 
-      <div class="hr"> <hr /> </div>
+            <div class="row">
+              <div class="col-md-6"><a href="">Windows 32-bit (x86)</a></div>
+              <div class="col-md-6"><a href="">Windows 64-bit (x64)</a></div>
+            </div>
+
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
+          <h2>Download for OSX</h2>
+          <p>
+            Please note that the game has two scenarios, one without the Tactical AI System (TAIS) and one with. Players are randomly assigned one to begin with, and are assigned the other after losing the first time. So please keep playing until you've played through both. Thank you!
+          </p>
+
+           <div class="row">
+              <div class="col-md-6"><a href="">OSX 32-bit (x86)</a></div>
+              <div class="col-md-6"><a href="">OSX 64-bit (x64)</a></div>
+            </div>
+
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
+          <h2>Download for Linux</h2>
+          <p>
+            We collect a little game-related data along with your answers. It's sent to our secure database on <a href="//heroku.com">Heroku</a>, and it's completely anonymous. We'll use it for development of the game and in our education, but nothing else. The game developed with the excellent <a href="//unity3d.com">Unity3D</a> game engine.
+          </p>
+
+           <div class="row">
+              <div class="col-md-6"><a href="">Linux 32-bit (x86)</a></div>
+              <div class="col-md-6"><a href="">Linux 64-bit (x64)</a></div>
+            </div>
+
+         <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
       <footer class="footer">
         <section>
@@ -54,8 +149,6 @@
             &copy; Alpha Stage Studios I/S, 2013 | CVR: DK-35090142
         </p>
       </footer> <!-- /footer -->
-
-    </div> <!-- /main-wrapper -->
 
     <!-- AddThis Smart Layers BEGIN -->
     <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
