@@ -1,3 +1,5 @@
+RewriteEngine on
+
 #example.com/page will display the contents of example.com/page.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
