@@ -70,6 +70,11 @@
     foreach ($_POST as $key => $value) {
         if ($key !== "" && $value !== "") {
             $cols .= "$key,";
+
+            if (stristr($key, 'comments') !== FALSE || stristr($key, 'reasons') !== FALSE) {
+                $value = pg_escape_bytea($value);
+            }
+
             $values .= "'$value',";
         }
     }
@@ -77,10 +82,9 @@
     $cols = substr($cols, 0, -1);
     $values = substr($values, 0, -1);
 
-
     $sql = "INSERT INTO $table ($cols) VALUES ($values)";
     if (!pg_query($pg_conn, $sql)) {
-        echo "Error with pg query executing SQL: " . $sql . ", error: " . pg_last_error($pg_conn);
+        echo "Error with pg query executing SQL:  $sql\n, error: " . pg_last_error($pg_conn);
         return;
     }
 
