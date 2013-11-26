@@ -19,7 +19,7 @@
             age TEXT NOT NULL,
             playing_freq TEXT NOT NULL,
             playing_amount TEXT NOT NULL,
-            favourite TEXT NOT NULL,
+            favourite BYTEA NOT NULL,
             starting_desire INTEGER NOT NULL,
             starting_reasons BYTEA NOT NULL,
             starting_comments BYTEA,
@@ -71,7 +71,7 @@
         if ($key !== "" && $value !== "") {
             $cols .= "$key,";
 
-            if (stristr($key, 'comments') !== FALSE || stristr($key, 'reasons') !== FALSE) {
+            if (stristr($key, 'comments') !== FALSE || stristr($key, 'reasons') !== FALSE || strcmp($key, 'favourite') === 0) {
                 $value = pg_escape_bytea($value);
             }
 
