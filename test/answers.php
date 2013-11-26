@@ -14,6 +14,7 @@
     $table = "p7TestTable";
 
     $create_table = "CREATE TABLE IF NOT EXISTS $table (
+            p_id SERIAL PRIMARY KEY NOT NULL,
             time TEXT NOT NULL,
             gender TEXT NOT NULL,
             age TEXT NOT NULL,
@@ -56,7 +57,7 @@
             raw_enemies_selected INTEGER NOT NULL,
             raw_force_spawns INTEGER NOT NULL,
             scenario TEXT NOT NULL
-        )";
+        );";
     if (!pg_query($pg_conn, $create_table)) {
         echo "Error with creating table $table: " . pg_last_error($pg_conn);
         return;
