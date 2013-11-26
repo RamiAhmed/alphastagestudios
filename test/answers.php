@@ -71,7 +71,7 @@
         if ($key !== "" && $value !== "") {
             $cols .= "$key,";
 
-            if (stristr($key, 'comments') !== FALSE || stristr($key, 'reasons') !== FALSE || strcmp($key, 'favourite') === 0) {
+            if (stristr($key, 'comments') !== FALSE || stristr($key, 'reasons') !== FALSE || $key === 'favourite') {
                 $value = pg_escape_bytea($value);
             }
 
