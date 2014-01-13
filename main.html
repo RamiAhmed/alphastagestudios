@@ -43,11 +43,11 @@
 
             <nav role="navigation">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#home" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', '/home']);">Home</a></li>
-                    <li><a href="#portfolio" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', '/portfolio']);">Portfolio</a> </li>
-                    <li><a href="#about" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', '/about']);">About</a></li>
-                    <li><a href="#blog" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', '/blog']);">Blog</a></li>
-                    <li><a href="#games" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', '/games']);">Games</a></li>
+                    <li class="active"><a href="#home" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', 'home']);">Home</a></li>
+                    <li><a href="#portfolio" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', 'portfolio']);">Portfolio</a> </li>
+                    <li><a href="#about" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', 'about']);">About</a></li>
+                    <li><a href="#blog" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', 'blog']);">Blog</a></li>
+                    <li><a href="#games" data-toggle="pill" onClick="javascript: _gaq.push(['_trackPageview', 'games']);">Games</a></li>
                 </ul>
             </nav>
         </div>
@@ -315,7 +315,7 @@
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-42053022-1']);
-    _gaq.push(['_trackPageview']);
+    _gaq.push(['_trackPageview', 'index']);
     (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 
@@ -341,28 +341,15 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
-
-    <!-- Outbound Analytics JQuery Google Analytics Plugin -->
-    <script type="text/javascript" src="//rawgithub.com/gmurphey/jquery.outbound-analytics/master/dist/jquery.outbound-analytics.min.js" charset="utf-8"></script>
 
     <!-- Custom blog framework -->
     <script type="text/javascript" src="js/blog.js" charset="utf-8"></script>
 
     <!-- Send email from About page -->
     <script type="text/javascript" src="js/contact.js" charset="utf-8"></script>
-
-    <!-- Setup google analytics link tracking -->
-    <script type="text/javascript">
-        $().ready(function() {
-            /*$('p').outboundAnalytics({'category': 'In-Text Links'});
-            $('header').outboundAnalytics({'category': 'Tab Links'});
-            $('.blog-link-btn').outboundAnalytics({'category': 'Blog Links'});
-            */
-            $.outboundAnalytics();
-        });
-    </script>
 
 </body>
 
